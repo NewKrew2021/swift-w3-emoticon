@@ -15,6 +15,7 @@
 		F75C7AB025B54261007B6622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75C7AAE25B54261007B6622 /* LaunchScreen.storyboard */; };
 		F75C7ABB25B54261007B6622 /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7ABA25B54261007B6622 /* EmoticonAppTests.swift */; };
 		F75C7AC625B54262007B6622 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AC525B54262007B6622 /* EmoticonAppUITests.swift */; };
+		F75C7AD825B58AEE007B6622 /* EmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F75C7AC125B54262007B6622 /* EmoticonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75C7AC525B54262007B6622 /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		F75C7AC725B54262007B6622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F75C7AAC25B54261007B6622 /* Assets.xcassets */,
 				F75C7AAE25B54261007B6622 /* LaunchScreen.storyboard */,
 				F75C7AB125B54261007B6622 /* Info.plist */,
+				F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */,
 			);
 			path = EmoticonApp;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				F75C7AA825B54261007B6622 /* ViewController.swift in Sources */,
 				F75C7AA425B54261007B6622 /* AppDelegate.swift in Sources */,
 				F75C7AA625B54261007B6622 /* SceneDelegate.swift in Sources */,
+				F75C7AD825B58AEE007B6622 /* EmoticonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
