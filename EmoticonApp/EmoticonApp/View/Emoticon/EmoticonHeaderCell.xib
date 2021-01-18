@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmoticonHeaderCell" customModule="EmoticonApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이벤트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v18-fK-W0d">
+                    <rect key="frame" x="5" y="39" width="44.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="친구 추가하면 겨울맞이 이모티콘 선물!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="umS-MY-vmV">
+                    <rect key="frame" x="5" y="75" width="160" height="75"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="qHb-NG-d00"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ubr-Q8-9QI">
+                    <rect key="frame" x="249" y="75" width="160" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="6k2-l8-4Af"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="umS-MY-vmV" firstAttribute="leading" secondItem="v18-fK-W0d" secondAttribute="leading" id="2LO-ff-RFf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ubr-Q8-9QI" secondAttribute="bottom" constant="5" id="L23-BR-cbq"/>
+                <constraint firstItem="v18-fK-W0d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="P8b-2X-FU2"/>
+                <constraint firstItem="Ubr-Q8-9QI" firstAttribute="top" secondItem="umS-MY-vmV" secondAttribute="top" id="PR5-wc-a44"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="v18-fK-W0d" secondAttribute="top" constant="5" id="gxd-Ta-daL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ubr-Q8-9QI" secondAttribute="trailing" constant="5" id="ikl-5I-OQT"/>
+                <constraint firstItem="umS-MY-vmV" firstAttribute="top" secondItem="v18-fK-W0d" secondAttribute="bottom" constant="15" id="qGU-B0-fA4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="umS-MY-vmV" secondAttribute="bottom" constant="50" id="qXE-tn-g5z"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
