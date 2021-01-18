@@ -37,3 +37,10 @@
 
 ![image-20210118210817576](README.assets/image-20210118210817576.png)
 
+### Fill UpperView(2)
+
+- add Label : titleInView
+- add Label : descriptionInView
+
+![image-20210118214924554](README.assets/image-20210118214924554.png)
+
