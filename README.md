@@ -25,3 +25,7 @@
 
 ![image-20210118200355913](README.assets/image-20210118200355913.png)
 
+### convert some view into code
+
+- add upperview in code
+- add some constraints in code
