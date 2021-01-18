@@ -9,12 +9,12 @@ import UIKit
 
 class EmoticonViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
-    let nibName_Emoticon = UINib(nibName: "EmoticonTableViewCell", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        let nibName_Emoticon = UINib(nibName: "EmoticonTableViewCell", bundle: nil)
         tableView.register(nibName_Emoticon, forCellReuseIdentifier: "emoticonTVCell")
         tableView.register(UINib(nibName: "EmoticonHeaderCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "EmoticonHeaderCell")
         tableView.separatorStyle = .none
@@ -25,17 +25,16 @@ class EmoticonViewController: UIViewController {
 
 extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "emoticonCell", for: indexPath) as? EmoticonTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "emoticonTVCell", for: indexPath) as? EmoticonTableViewCell else {
             return UITableViewCell()
         }
-        
         cell.titleLabel.text = Emoticon.samples[indexPath.row]["title"]
         cell.subTitleLabel.text = Emoticon.samples[indexPath.row]["author"]
-        return UITableViewCell()
+        return cell
     }
 
     //헤더 뷰 생성
