@@ -11,17 +11,15 @@ class MainImage: UIView {
 
     let pattern: UIImageView = UIImageView()
     let character: UIImageView = UIImageView()
-    
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
-
+        self.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin, .flexibleWidth, .flexibleTopMargin]
         setUI()
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
 
     private func setUI() {
@@ -30,7 +28,7 @@ class MainImage: UIView {
         setbackgroundPattern()
         setImage()
     }
-    
+
     private func setTitle() {
         let labelY = self.frame.height
         let label = UILabel(frame: CGRect(x: 10, y: 10, width: 100, height: 30))
@@ -47,32 +45,26 @@ class MainImage: UIView {
         label.text = "친구 추가하면\n겨울맞이\n이모티콘 선물!"
         label.numberOfLines = 0
         label.font = label.font.withSize(30)
-
         label.sizeToFit()
-
         self.addSubview(label)
     }
-    
+
     private func setbackgroundPattern() {
         if let patternImage = UIImage(named: "pattern") {
             self.backgroundColor = UIColor(patternImage: patternImage)
         }
     }
     private func setImage() {
-        let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width
-        let characterSize = CGSize(width: self.frame.width * 0.5, height: self.frame.height * 0.8)
+        let characterSize = CGSize(width: self.frame.width/2, height: 200)
         
         if let characterImage = UIImage(named: "basket") {
             character.image = characterImage
             self.addSubview(character)
-            character.frame.origin = CGPoint(x: screenWidth-characterSize.width, y: frame.height-characterSize.height)
+            character.frame.origin = CGPoint(x: frame.width-characterSize.width, y: frame.height-characterSize.height)
             character.frame.size.width = characterSize.width
             character.frame.size.height = characterSize.height
-
             character.contentMode = .scaleAspectFit
-
+            character.layer.borderWidth = 1
         }
-        character.autoresizingMask = [.flexibleRightMargin, .flexibleHeight, .flexibleWidth]
     }
 }
