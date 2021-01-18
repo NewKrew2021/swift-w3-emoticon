@@ -15,6 +15,7 @@
 		D2E9297F25B52C8300E13879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E9297D25B52C8300E13879 /* LaunchScreen.storyboard */; };
 		D2E9298A25B52C8400E13879 /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9298925B52C8400E13879 /* EmoticonAppTests.swift */; };
 		D2E9299525B52C8400E13879 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9299425B52C8400E13879 /* EmoticonAppUITests.swift */; };
+		D2E929C625B5A15800E13879 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E929C525B5A15800E13879 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D2E9299025B52C8400E13879 /* EmoticonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E9299425B52C8400E13879 /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		D2E9299625B52C8400E13879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E929C525B5A15800E13879 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D2E9297225B52C8200E13879 /* AppDelegate.swift */,
 				D2E9297425B52C8200E13879 /* SceneDelegate.swift */,
 				D2E9297625B52C8200E13879 /* ViewController.swift */,
+				D2E929C525B5A15800E13879 /* TableViewController.swift */,
 				D2E9297825B52C8200E13879 /* Main.storyboard */,
 				D2E9297B25B52C8300E13879 /* Assets.xcassets */,
 				D2E9297D25B52C8300E13879 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				D2E9297725B52C8200E13879 /* ViewController.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
 				D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */,
+				D2E929C625B5A15800E13879 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,3 +17,11 @@
 
 ![image-20210118130348960](README.assets/image-20210118130348960.png)
 
+### add TableView in the View
+
+- add TableView
+- declare list of title/author/image
+- override methods : tableView()
+
+![image-20210118200355913](README.assets/image-20210118200355913.png)
+
