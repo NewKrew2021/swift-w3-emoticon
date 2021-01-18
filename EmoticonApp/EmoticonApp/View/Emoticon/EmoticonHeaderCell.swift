@@ -7,6 +7,12 @@
 
 import UIKit
 
-class EmoticonHeaderCell: UITableViewHeaderFooterView{
-    
+class EmoticonHeaderCell: UITableViewHeaderFooterView {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    override func awakeFromNib() {
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "pattern.png") ?? UIImage())
+    }
 }
