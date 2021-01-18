@@ -44,3 +44,10 @@
 
 ![image-20210118214924554](README.assets/image-20210118214924554.png)
 
+### Add UpperInnerView
+
+- add UpperInnerView as a subview of upperView
+- give upperInnerView padding
+
+![image-20210118225401483](README.assets/image-20210118225401483.png)
+
