@@ -9,3 +9,11 @@
 
 ![image-20210118114223431](README.assets/image-20210118114223431.png)
 
+### Add some assets
+
+- add two images : pattern, basket
+
+![image-20210118130338774](README.assets/image-20210118130338774.png)
+
+![image-20210118130348960](README.assets/image-20210118130348960.png)
+
