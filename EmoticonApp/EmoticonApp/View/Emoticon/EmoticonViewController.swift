@@ -12,6 +12,10 @@ class EmoticonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initTableView()
+    }
+    
+    private func initTableView(){
         tableView.delegate = self
         tableView.dataSource = self
         let nibName_Emoticon = UINib(nibName: "EmoticonTableViewCell", bundle: nil)
@@ -20,12 +24,11 @@ class EmoticonViewController: UIViewController {
         tableView.separatorStyle = .none
     }
     
-    
 }
 
 extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Emoticon.samples.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
