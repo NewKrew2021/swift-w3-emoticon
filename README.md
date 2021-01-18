@@ -29,3 +29,11 @@
 
 - add upperview in code
 - add some constraints in code
+
+### Fill upperView
+
+- fill background with pattern image
+- add jeje Image
+
+![image-20210118210817576](README.assets/image-20210118210817576.png)
+
