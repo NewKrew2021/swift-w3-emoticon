@@ -22,5 +22,16 @@ struct Emoticon {
             [ "title" : "하찮은 외계인 밍찡", "author" : "라밍", "image" : "image11.png" ],
             [ "title" : "안녕! 아기 보노보노", "author" : "보노보노", "image" : "image12.png" ]
             ]
-
+    
+    func size() -> Int {
+        return self.list.count
+    }
+    
+    func title(index : Int) -> String {
+        return self.list[index]["title"] ?? ""
+    }
+    
+    func author(index : Int) -> String {
+        return self.list[index]["author"] ?? ""
+    }
 }

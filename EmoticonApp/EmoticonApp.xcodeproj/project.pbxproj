@@ -16,6 +16,7 @@
 		321F8B4525B5823C007FAC1B /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B4425B5823C007FAC1B /* EmoticonAppTests.swift */; };
 		321F8B5025B5823C007FAC1B /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B4F25B5823C007FAC1B /* EmoticonAppUITests.swift */; };
 		321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
+		321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		321F8B4F25B5823C007FAC1B /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		321F8B5125B5823C007FAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321F8B6625B597FA007FAC1B /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				321F8B3125B5823C007FAC1B /* ViewController.swift */,
+				321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				321F8B3225B5823C007FAC1B /* ViewController.swift in Sources */,
 				321F8B2E25B5823C007FAC1B /* AppDelegate.swift in Sources */,
 				321F8B3025B5823C007FAC1B /* SceneDelegate.swift in Sources */,
+				321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */,
 				321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
