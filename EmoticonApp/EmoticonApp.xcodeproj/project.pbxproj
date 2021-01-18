@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		5D4B730A25B51E6D004417B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B730925B51E6D004417B3 /* AppDelegate.swift */; };
 		5D4B730C25B51E6D004417B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B730B25B51E6D004417B3 /* SceneDelegate.swift */; };
-		5D4B730E25B51E6D004417B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B730D25B51E6D004417B3 /* ViewController.swift */; };
+		5D4B730E25B51E6D004417B3 /* EmojiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B730D25B51E6D004417B3 /* EmojiListViewController.swift */; };
 		5D4B731125B51E6D004417B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4B730F25B51E6D004417B3 /* Main.storyboard */; };
 		5D4B731325B51E6E004417B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4B731225B51E6E004417B3 /* Assets.xcassets */; };
 		5D4B731625B51E6E004417B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4B731425B51E6E004417B3 /* LaunchScreen.storyboard */; };
+		5D4B732725B54572004417B3 /* MainImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B732625B54572004417B3 /* MainImage.swift */; };
+		5D4B732B25B54993004417B3 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B732A25B54993004417B3 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D4B730625B51E6D004417B3 /* EmoticonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoticonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4B730925B51E6D004417B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D4B730B25B51E6D004417B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D4B730D25B51E6D004417B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D4B730D25B51E6D004417B3 /* EmojiListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListViewController.swift; sourceTree = "<group>"; };
 		5D4B731025B51E6D004417B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D4B731225B51E6E004417B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D4B731525B51E6E004417B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D4B731725B51E6E004417B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D4B732625B54572004417B3 /* MainImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImage.swift; sourceTree = "<group>"; };
+		5D4B732A25B54993004417B3 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		5D4B730825B51E6D004417B3 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				5D4B732925B5497C004417B3 /* Extensions */,
+				5D4B732425B52DBF004417B3 /* Views */,
+				5D4B731E25B521E0004417B3 /* Controllers */,
 				5D4B730925B51E6D004417B3 /* AppDelegate.swift */,
 				5D4B730B25B51E6D004417B3 /* SceneDelegate.swift */,
-				5D4B730D25B51E6D004417B3 /* ViewController.swift */,
 				5D4B730F25B51E6D004417B3 /* Main.storyboard */,
 				5D4B731225B51E6E004417B3 /* Assets.xcassets */,
 				5D4B731425B51E6E004417B3 /* LaunchScreen.storyboard */,
 				5D4B731725B51E6E004417B3 /* Info.plist */,
 			);
 			path = EmoticonApp;
+			sourceTree = "<group>";
+		};
+		5D4B731E25B521E0004417B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B730D25B51E6D004417B3 /* EmojiListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5D4B732425B52DBF004417B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B732625B54572004417B3 /* MainImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D4B732925B5497C004417B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B732A25B54993004417B3 /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +107,7 @@
 				5D4B730225B51E6D004417B3 /* Sources */,
 				5D4B730325B51E6D004417B3 /* Frameworks */,
 				5D4B730425B51E6D004417B3 /* Resources */,
+				5D4B732225B52698004417B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,13 +163,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D4B732225B52698004417B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D4B730225B51E6D004417B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4B730E25B51E6D004417B3 /* ViewController.swift in Sources */,
+				5D4B730E25B51E6D004417B3 /* EmojiListViewController.swift in Sources */,
 				5D4B730A25B51E6D004417B3 /* AppDelegate.swift in Sources */,
+				5D4B732725B54572004417B3 /* MainImage.swift in Sources */,
+				5D4B732B25B54993004417B3 /* ViewControllerExtension.swift in Sources */,
 				5D4B730C25B51E6D004417B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
