@@ -30,8 +30,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = emoticonTable.dequeueReusableCell(withIdentifier: "emoticonTableCell", for: indexPath) as! EmoticonTableViewCell
         
-        cell.title.text = emoticon.title(index: indexPath.row)
-        cell.author.text = emoticon.author(index: indexPath.row)
+        cell.setTitle(text: emoticon.title(index: indexPath.row))
+        cell.setAuthor(text: emoticon.author(index: indexPath.row))
         
         return cell
     }

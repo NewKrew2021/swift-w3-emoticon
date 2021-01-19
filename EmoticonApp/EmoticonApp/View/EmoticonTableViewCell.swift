@@ -19,5 +19,12 @@ class EmoticonTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    func setTitle(text: String) {
+        title.text = text
+    }
+    
+    func setAuthor(text: String) {
+        author.text = text
+    }
 }
