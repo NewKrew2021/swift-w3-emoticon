@@ -26,15 +26,15 @@ struct Emoticon {
         return list.count
     }
     
-    func title(index: Int) -> String? {
-        return list[index]["title"]
+    func title(index: Int) -> String {
+        return list[index]["title"] ?? ""
     }
     
-    func author(index: Int) -> String? {
-        return list[index]["author"]
+    func author(index: Int) -> String {
+        return list[index]["author"] ?? ""
     }
     
-    func image(index: Int) -> String? {
-        return list[index]["image"]
+    func image(index: Int) -> String {
+        return list[index]["image"] ?? ""
     }
 }

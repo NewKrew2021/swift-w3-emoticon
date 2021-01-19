@@ -74,3 +74,13 @@
 
 - create myCell class
 - set the class as a custom class of cell
+
+### add some Subviews
+
+- titleLabel
+- descriptionLabel
+- leadingImage
+- extension UILabel to add method setConstraint
+
+![image-20210119150619707](README.assets/image-20210119150619707.png)
+
