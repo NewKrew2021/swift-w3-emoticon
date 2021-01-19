@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var emojiData: EmojiList?
-    let cellHeight = CGFloat(100)
+    var cellHeight: CGFloat = CGFloat(100)
+    let numOfCell: CGFloat = 6.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,8 @@ class MainViewController: UIViewController {
 
     private func setTableView() {
         getEmojiData()
-        self.myTableView = UITableView(frame: CGRect(x: 0, y: self.topbarHeight+mainImage.frame.height+20, width: self.screenWidth, height: self.screenHeight-self.mainImage.frame.height))
+        let positionY = self.topbarHeight+mainImage.frame.height+20
+        self.myTableView = UITableView(frame: CGRect(x: 0, y: positionY, width: self.screenWidth, height: self.screenHeight-positionY))
 
         myTableView.alwaysBounceVertical = false
         myTableView.showsVerticalScrollIndicator = false
@@ -60,6 +62,7 @@ class MainViewController: UIViewController {
         myTableView.delegate = self
         myTableView.register(EmojiTableViewCell.self, forCellReuseIdentifier: EmojiTableViewCell.cellIdentifier)
         view.addSubview(self.myTableView)
+        cellHeight = CGFloat((self.screenHeight-positionY)/numOfCell)
     }
 }
 
