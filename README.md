@@ -100,3 +100,6 @@
 
 ![image-20210119203104181](README.assets/image-20210119203104181.png)
 
+### Modify : how to measure height
+
+- using initial height instead of height at that moment
