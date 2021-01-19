@@ -15,10 +15,6 @@ class ViewController: UIViewController {
     
     private let emoticonService: EmoticonService = EmoticonService.instance
     
-    override func loadView() {
-        super.loadView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let patternImgage = UIImage(named: "pattern"){
