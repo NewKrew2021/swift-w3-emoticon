@@ -18,6 +18,10 @@ struct Cart {
         ownEmoticons.append(History(title: title, date: date))
     }
 
+    static func removeAll() {
+        ownEmoticons.removeAll()
+    }
+
     static subscript(index: Int) -> History {
         return ownEmoticons[index]
     }

@@ -54,7 +54,9 @@ class HistoryViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
 
-    @objc private func tappedClear() {}
+    @objc private func tappedClear() {
+        
+    }
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {

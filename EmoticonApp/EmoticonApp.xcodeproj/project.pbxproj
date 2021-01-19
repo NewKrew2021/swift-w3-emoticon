@@ -26,6 +26,7 @@
 		C2E6330925B69C80005B2733 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E6330725B69C80005B2733 /* HistoryTableViewCell.xib */; };
 		C2E6331425B69E15005B2733 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6331325B69E15005B2733 /* UITableViewCell+.swift */; };
 		C2E6331C25B6A292005B2733 /* Notification.Name+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6331B25B6A292005B2733 /* Notification.Name+.swift */; };
+		C2E6332425B6A766005B2733 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6332325B6A766005B2733 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C2E6330725B69C80005B2733 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		C2E6331325B69E15005B2733 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		C2E6331B25B6A292005B2733 /* Notification.Name+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+.swift"; sourceTree = "<group>"; };
+		C2E6332325B6A766005B2733 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				C2E6331325B69E15005B2733 /* UITableViewCell+.swift */,
 				C2E6331B25B6A292005B2733 /* Notification.Name+.swift */,
+				C2E6332325B6A766005B2733 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				C2E6330825B69C80005B2733 /* HistoryTableViewCell.swift in Sources */,
 				C2E6325825B51D6D005B2733 /* EmoticonViewController.swift in Sources */,
+				C2E6332425B6A766005B2733 /* UIViewController+.swift in Sources */,
 				C2E632F725B69764005B2733 /* Cart.swift in Sources */,
 				C2E6331425B69E15005B2733 /* UITableViewCell+.swift in Sources */,
 				C2E6325425B51D6D005B2733 /* AppDelegate.swift in Sources */,
