@@ -81,4 +81,13 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "삭제") { [weak self] _, _, _ in
+            Cart.remove(index: indexPath.row)
+            self?.tableView.reloadData()
+        }
+
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
 }

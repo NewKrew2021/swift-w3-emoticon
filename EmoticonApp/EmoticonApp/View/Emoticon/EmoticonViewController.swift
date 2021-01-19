@@ -81,11 +81,6 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
         return Shop.count
     }
 
-    // 셀의 높이
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-
     // 셀이 어떻게 표현될 것인가?
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmoticonTableViewCell", for: indexPath) as? EmoticonTableViewCell else {
@@ -97,10 +92,15 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    // 헤더 뷰 생성
+    // 헤더 뷰가 어떻게 표현될 것인가?
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "EmoticonHeaderCell") as? EmoticonHeaderCell else { return UIView() }
         return header
+    }
+
+    // 셀의 높이
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 
     // 헤더 뷰 높이 설정
