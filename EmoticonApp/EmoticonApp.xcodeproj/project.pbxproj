@@ -17,6 +17,7 @@
 		321F8B5025B5823C007FAC1B /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B4F25B5823C007FAC1B /* EmoticonAppUITests.swift */; };
 		321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
 		321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */; };
+		324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324882FA25B681940031BEC6 /* EmoticonTopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		321F8B5125B5823C007FAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321F8B6625B597FA007FAC1B /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
+		324882FA25B681940031BEC6 /* EmoticonTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				321F8B3125B5823C007FAC1B /* ViewController.swift */,
 				321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */,
+				324882FA25B681940031BEC6 /* EmoticonTopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				321F8B3225B5823C007FAC1B /* ViewController.swift in Sources */,
 				321F8B2E25B5823C007FAC1B /* AppDelegate.swift in Sources */,
+				324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */,
 				321F8B3025B5823C007FAC1B /* SceneDelegate.swift in Sources */,
 				321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */,
 				321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */,
