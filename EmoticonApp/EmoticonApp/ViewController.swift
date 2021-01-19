@@ -63,7 +63,6 @@ class ViewController: UIViewController {
         upperInnerView.addSubview(descriptionInView)
         descriptionInView.text = "친구 추가하면\n겨울맞이\n이모티콘 선물!"
         descriptionInView.font = UIFont(descriptor: UIFontDescriptor(), size: 25)
-        descriptionInView.backgroundColor = .white
         descriptionInView.sizeToFit()
         descriptionInView.numberOfLines = 3
         descriptionInView.translatesAutoresizingMaskIntoConstraints = false

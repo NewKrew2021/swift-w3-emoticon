@@ -63,3 +63,9 @@
 - make a Model : struct Emoticon
   - list data
   - 3 methods : title, author, image
+
+### Modify - TableViewController
+
+- erase codes using raw data list
+- add object : Emoticon()
+- instead of access index of list directly, using struct method
