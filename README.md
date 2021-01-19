@@ -90,3 +90,13 @@
 
 ![image-20210119151913748](README.assets/image-20210119151913748.png)
 
+### configure all elements in custom cell
+
+- title label
+- author label
+- ImageView
+- purchaceLabel
+- set constrainits
+
+![image-20210119203104181](README.assets/image-20210119203104181.png)
+

@@ -46,7 +46,7 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height/3
+        return tableView.frame.height/6
     }
     
 }
