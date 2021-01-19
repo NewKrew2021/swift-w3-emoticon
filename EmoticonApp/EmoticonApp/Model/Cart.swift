@@ -8,7 +8,14 @@
 import Foundation
 
 struct Cart {
-    static var ownEmoticons: [History] = []
+    static var ownEmoticons: [History] = {
+        var array: [History] = []
+        if let data = UserDefault.getData() {
+            let dataArray = try! PropertyListDecoder().decode([History].self, from: data)
+            array = dataArray
+        }
+        return array
+    }()
 
     static var count: Int {
         ownEmoticons.count
@@ -16,12 +23,13 @@ struct Cart {
 
     static func buyEmoticon(title: String, date: Date) {
         ownEmoticons.append(History(title: title, date: date))
+        UserDefault.addData(Self.ownEmoticons)
     }
 
-    static func remove(index: Int){
+    static func remove(index: Int) {
         ownEmoticons.remove(at: index)
     }
-    
+
     static func removeAll() {
         ownEmoticons.removeAll()
     }
@@ -31,7 +39,7 @@ struct Cart {
     }
 }
 
-struct History {
+struct History: Codable {
     let title: String
     let date: Date
 }
