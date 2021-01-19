@@ -9,21 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var topViewText: UILabel!
+    @IBOutlet weak var topView: EmoticonTopView!
     @IBOutlet weak var emoticonTable: UITableView!
     private let emoticon = Emoticon()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern") ?? UIImage())
-        topViewText.text = "친구 추가하면\n겨울맞이\n이모티콘 선물!"
-        topViewText.sizeToFit()
+        topView.loadView()
         
         emoticonTable.delegate = self
         emoticonTable.dataSource = self
-        emoticonTable.rowHeight = 50
+        emoticonTable.rowHeight = 70
     }
 
 }
@@ -33,13 +30,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = emoticonTable.dequeueReusableCell(withIdentifier: "emoticonTableCell", for: indexPath) as! EmoticonTableViewCell
         
-        cell.title.text = emoticon.title(index: indexPath.row)
-        cell.author.text = emoticon.author(index: indexPath.row)
+        cell.setTitle(text: emoticon.title(index: indexPath.row))
+        cell.setAuthor(text: emoticon.author(index: indexPath.row))
+        cell.setImage(image: emoticon.image(index: indexPath.row))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.emoticon.size()
+        return self.emoticon.size
     }
 }

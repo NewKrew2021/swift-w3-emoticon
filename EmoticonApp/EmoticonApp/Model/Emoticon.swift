@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Emoticon {
     private let list = [
@@ -23,7 +24,7 @@ struct Emoticon {
             [ "title" : "안녕! 아기 보노보노", "author" : "보노보노", "image" : "image12.png" ]
             ]
     
-    func size() -> Int {
+    var size: Int {
         return self.list.count
     }
     
@@ -33,5 +34,9 @@ struct Emoticon {
     
     func author(index : Int) -> String {
         return self.list[index]["author"] ?? ""
+    }
+    
+    func image(index : Int) -> UIImage {
+        return UIImage(named: self.list[index]["image"] ?? "") ?? UIImage()
     }
 }

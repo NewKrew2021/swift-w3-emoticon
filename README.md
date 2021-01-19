@@ -9,3 +9,11 @@
 4. 테이블셀 정보 출력 구현
 
 <img width="315" alt="sc" src="https://user-images.githubusercontent.com/46565404/104912689-ef21bc80-59cf-11eb-9caf-85628b5a5d4d.png">
+
+## Step2
+1/19 15:10
+1. 풀리퀘스트 코멘트 내용들 수정
+2. 이모티콘 image파일들 에셋에 추가
+3. 커스텀 테이블 셀에 이미지와 구매버튼 추가
+
+<img width="295" alt="sc" src="https://user-images.githubusercontent.com/46565404/104994781-77ec3700-5a68-11eb-8c1d-a022e2b73f68.png">

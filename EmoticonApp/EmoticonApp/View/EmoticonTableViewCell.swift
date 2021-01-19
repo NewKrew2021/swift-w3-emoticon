@@ -11,6 +11,7 @@ class EmoticonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var emoticonImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +20,16 @@ class EmoticonTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    func setTitle(text: String) {
+        title.text = text
+    }
+    
+    func setAuthor(text: String) {
+        author.text = text
+    }
+    
+    func setImage(image: UIImage) {
+        emoticonImage.image = image
+    }
 }
