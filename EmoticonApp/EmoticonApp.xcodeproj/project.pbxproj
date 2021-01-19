@@ -20,6 +20,7 @@
 		324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324882FA25B681940031BEC6 /* EmoticonTopView.swift */; };
 		3248830625B68B4E0031BEC6 /* EmoticonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248830525B68B4E0031BEC6 /* EmoticonTests.swift */; };
 		3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
+		3248831E25B6C6ED0031BEC6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248831D25B6C6ED0031BEC6 /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3248830525B68B4E0031BEC6 /* EmoticonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTests.swift; sourceTree = "<group>"; };
 		3248830725B68B4E0031BEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3248831D25B6C6ED0031BEC6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				321F8B3125B5823C007FAC1B /* ViewController.swift */,
 				321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */,
 				324882FA25B681940031BEC6 /* EmoticonTopView.swift */,
+				3248831D25B6C6ED0031BEC6 /* CartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			files = (
 				321F8B3225B5823C007FAC1B /* ViewController.swift in Sources */,
 				321F8B2E25B5823C007FAC1B /* AppDelegate.swift in Sources */,
+				3248831E25B6C6ED0031BEC6 /* CartViewController.swift in Sources */,
 				324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */,
 				321F8B3025B5823C007FAC1B /* SceneDelegate.swift in Sources */,
 				321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */,

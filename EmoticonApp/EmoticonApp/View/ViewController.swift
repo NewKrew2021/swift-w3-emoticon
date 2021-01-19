@@ -16,16 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(cartButtonClicked))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(clickedCartButton))
         
-        topView.loadView()
+        topView.initView()
         
         emoticonTable.delegate = self
         emoticonTable.dataSource = self
         emoticonTable.rowHeight = 70
     }
 
-    @objc func cartButtonClicked() {
+    @objc func clickedCartButton() {
         guard let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "cartViewController") else { return }
         self.navigationController?.pushViewController(cartViewController, animated: true)
     }

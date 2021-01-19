@@ -121,20 +121,33 @@
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Orz-1A-k6f">
+        <!--Cart View Controller-->
+        <scene sceneID="O41-uh-rae">
             <objects>
-                <viewController storyboardIdentifier="cartViewController" id="CWE-06-zFM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4ke-aw-gxw">
+                <tableViewController storyboardIdentifier="cartViewController" id="CF1-mf-eoh" customClass="CartViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zt-08-PM0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="FgC-k0-cfs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I6T-AS-hL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Tg6-pJ-hjR">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tg6-pJ-hjR" id="uGl-c3-dU7">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CF1-mf-eoh" id="srw-8t-N2n"/>
+                            <outlet property="delegate" destination="CF1-mf-eoh" id="lll-Yh-M5c"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYO-4Z-Olc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="115"/>
+            <point key="canvasLocation" x="1601" y="115"/>
         </scene>
     </scenes>
     <resources>
