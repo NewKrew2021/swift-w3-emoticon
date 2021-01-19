@@ -10,7 +10,7 @@ import UIKit
 class EmoticonViewController: UIViewController {
     private let emoticonCellName = "EmoticonTableViewCell"
     private let emoticonHeaderName = "EmoticonHeaderCell"
-    
+
     var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +20,7 @@ class EmoticonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "이모티콘"
+        title = "이모티콘"
         addTableView()
         initTableView()
     }
@@ -29,14 +29,14 @@ class EmoticonViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
-    private func addTableView(){
+    private func addTableView() {
         view.addSubview(tableView)
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
-    
+
     private func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,6 +51,10 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Shop.count
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmoticonTableViewCell", for: indexPath) as? EmoticonTableViewCell else {
@@ -58,6 +62,7 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.titleLabel.text = Shop[indexPath.row]["title"]
         cell.subTitleLabel.text = Shop[indexPath.row]["author"]
+        cell.imgView.image = UIImage(named: Shop[indexPath.row]["image"] ?? "") ?? UIImage()
         return cell
     }
 

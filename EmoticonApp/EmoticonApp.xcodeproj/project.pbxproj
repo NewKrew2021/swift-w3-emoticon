@@ -157,8 +157,8 @@
 				C2E6325725B51D6D005B2733 /* EmoticonViewController.swift */,
 				C2E632A525B573CC005B2733 /* EmoticonTableViewCell.swift */,
 				C2E632A625B573CC005B2733 /* EmoticonTableViewCell.xib */,
-				C2E632BA25B5769E005B2733 /* EmoticonHeaderCell.xib */,
 				C2E632C225B576EC005B2733 /* EmoticonHeaderCell.swift */,
+				C2E632BA25B5769E005B2733 /* EmoticonHeaderCell.xib */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";

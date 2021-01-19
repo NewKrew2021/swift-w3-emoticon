@@ -10,6 +10,8 @@ import UIKit
 class EmoticonTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
+    @IBOutlet var imgView: UIImageView!
+    @IBOutlet var buyButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
