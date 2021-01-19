@@ -51,3 +51,15 @@
 
 ![image-20210118225401483](README.assets/image-20210118225401483.png)
 
+### Midify - descriptionInView
+
+- remove heightAnchor, widthAnchor
+- add method : sizeToFit()
+
+### Make model group
+
+- make model group
+- make a file : Emoticon.swift
+- make a Model : struct Emoticon
+  - list data
+  - 3 methods : title, author, image

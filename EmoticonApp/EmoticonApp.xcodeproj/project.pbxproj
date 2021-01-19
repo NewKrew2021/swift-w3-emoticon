@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2A2101A25B670E900904156 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2101925B670E900904156 /* Emoticon.swift */; };
 		D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9297225B52C8200E13879 /* AppDelegate.swift */; };
 		D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9297425B52C8200E13879 /* SceneDelegate.swift */; };
 		D2E9297725B52C8200E13879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9297625B52C8200E13879 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2A2101925B670E900904156 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		D2E9296F25B52C8200E13879 /* EmoticonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoticonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E9297225B52C8200E13879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E9297425B52C8200E13879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2A2100D25B6702400904156 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2A2101925B670E900904156 /* Emoticon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D2E9296625B52C8200E13879 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		D2E9297125B52C8200E13879 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2A2100D25B6702400904156 /* Model */,
 				D2E9297225B52C8200E13879 /* AppDelegate.swift */,
 				D2E9297425B52C8200E13879 /* SceneDelegate.swift */,
 				D2E9297625B52C8200E13879 /* ViewController.swift */,
@@ -262,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2E9297725B52C8200E13879 /* ViewController.swift in Sources */,
+				D2A2101A25B670E900904156 /* Emoticon.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
 				D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */,
 				D2E929C625B5A15800E13879 /* TableViewController.swift in Sources */,
