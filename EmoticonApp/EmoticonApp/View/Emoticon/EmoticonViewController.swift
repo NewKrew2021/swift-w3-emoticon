@@ -34,6 +34,7 @@ class EmoticonViewController: UIViewController {
 
     private func initNavigationBar() {
         title = "이모티콘"
+        shopBarButton.action = #selector(tappedCart)
         navigationItem.rightBarButtonItem = shopBarButton
     }
 
@@ -53,17 +54,27 @@ class EmoticonViewController: UIViewController {
         tableView.register(UINib(nibName: emoticonHeaderName, bundle: nil), forHeaderFooterViewReuseIdentifier: emoticonHeaderName)
         tableView.separatorStyle = .none
     }
+    
+    @objc private func tappedCart(){
+        let historyVC = HistoryViewController()
+        
+        self.navigationController?.pushViewController(historyVC, animated: true)
+        
+    }
 }
 
 extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
+    // 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Shop.count
     }
 
+    // 셀의 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
 
+    // 셀이 어떻게 표현될 것인가?
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmoticonTableViewCell", for: indexPath) as? EmoticonTableViewCell else {
             return UITableViewCell()
