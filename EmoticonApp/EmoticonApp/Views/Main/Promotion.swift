@@ -65,7 +65,6 @@ class Promotion: UIView {
             character.frame.size.width = characterSize.width
             character.frame.size.height = characterSize.height
             character.contentMode = .scaleAspectFit
-            character.layer.borderWidth = 1
         }
     }
 }

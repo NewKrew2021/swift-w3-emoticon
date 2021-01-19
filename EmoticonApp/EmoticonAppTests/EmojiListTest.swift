@@ -41,7 +41,7 @@ class EmojiListTest: XCTestCase {
         }
         XCTAssertEqual(emojiList.count, mockData.count)
     }
-    
+
     func testEmojiListRemove() throws {
         var emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmoji(property: $0) })
         for _ in 0..<mockData.count {
@@ -49,7 +49,5 @@ class EmojiListTest: XCTestCase {
         }
         XCTAssertEqual(emojiList.count, 0)
     }
-
-    
 
 }
