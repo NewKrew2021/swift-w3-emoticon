@@ -18,6 +18,8 @@
 		321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
 		321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */; };
 		324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324882FA25B681940031BEC6 /* EmoticonTopView.swift */; };
+		3248830625B68B4E0031BEC6 /* EmoticonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248830525B68B4E0031BEC6 /* EmoticonTests.swift */; };
+		3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,13 @@
 			remoteInfo = EmoticonApp;
 		};
 		321F8B4C25B5823C007FAC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 321F8B2225B5823C007FAC1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 321F8B2925B5823C007FAC1B;
+			remoteInfo = EmoticonApp;
+		};
+		3248830825B68B4E0031BEC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 321F8B2225B5823C007FAC1B /* Project object */;
 			proxyType = 1;
@@ -55,6 +64,9 @@
 		321F8B6625B597FA007FAC1B /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 		324882FA25B681940031BEC6 /* EmoticonTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTopView.swift; sourceTree = "<group>"; };
+		3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3248830525B68B4E0031BEC6 /* EmoticonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTests.swift; sourceTree = "<group>"; };
+		3248830725B68B4E0031BEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3248830025B68B4E0031BEC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +107,7 @@
 				321F8B2C25B5823C007FAC1B /* EmoticonApp */,
 				321F8B4325B5823C007FAC1B /* EmoticonAppTests */,
 				321F8B4E25B5823C007FAC1B /* EmoticonAppUITests */,
+				3248830425B68B4E0031BEC6 /* EmoticonTests */,
 				321F8B2B25B5823C007FAC1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +118,7 @@
 				321F8B2A25B5823C007FAC1B /* EmoticonApp.app */,
 				321F8B4025B5823C007FAC1B /* EmoticonAppTests.xctest */,
 				321F8B4B25B5823C007FAC1B /* EmoticonAppUITests.xctest */,
+				3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +172,15 @@
 				324882FA25B681940031BEC6 /* EmoticonTopView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3248830425B68B4E0031BEC6 /* EmoticonTests */ = {
+			isa = PBXGroup;
+			children = (
+				3248830525B68B4E0031BEC6 /* EmoticonTests.swift */,
+				3248830725B68B4E0031BEC6 /* Info.plist */,
+			);
+			path = EmoticonTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +239,24 @@
 			productReference = 321F8B4B25B5823C007FAC1B /* EmoticonAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		3248830225B68B4E0031BEC6 /* EmoticonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3248830A25B68B4E0031BEC6 /* Build configuration list for PBXNativeTarget "EmoticonTests" */;
+			buildPhases = (
+				324882FF25B68B4E0031BEC6 /* Sources */,
+				3248830025B68B4E0031BEC6 /* Frameworks */,
+				3248830125B68B4E0031BEC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3248830925B68B4E0031BEC6 /* PBXTargetDependency */,
+			);
+			name = EmoticonTests;
+			productName = EmoticonTests;
+			productReference = 3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +274,10 @@
 						TestTargetID = 321F8B2925B5823C007FAC1B;
 					};
 					321F8B4A25B5823C007FAC1B = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 321F8B2925B5823C007FAC1B;
+					};
+					3248830225B68B4E0031BEC6 = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 321F8B2925B5823C007FAC1B;
 					};
@@ -247,6 +299,7 @@
 				321F8B2925B5823C007FAC1B /* EmoticonApp */,
 				321F8B3F25B5823C007FAC1B /* EmoticonAppTests */,
 				321F8B4A25B5823C007FAC1B /* EmoticonAppUITests */,
+				3248830225B68B4E0031BEC6 /* EmoticonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,6 +323,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		321F8B4925B5823C007FAC1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3248830125B68B4E0031BEC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,6 +368,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		324882FF25B68B4E0031BEC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3248830625B68B4E0031BEC6 /* EmoticonTests.swift in Sources */,
+				3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -320,6 +389,11 @@
 			isa = PBXTargetDependency;
 			target = 321F8B2925B5823C007FAC1B /* EmoticonApp */;
 			targetProxy = 321F8B4C25B5823C007FAC1B /* PBXContainerItemProxy */;
+		};
+		3248830925B68B4E0031BEC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 321F8B2925B5823C007FAC1B /* EmoticonApp */;
+			targetProxy = 3248830825B68B4E0031BEC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -575,6 +649,44 @@
 			};
 			name = Release;
 		};
+		3248830B25B68B4E0031BEC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EmoticonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = blue.kakaocorp.EmoticonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoticonApp.app/EmoticonApp";
+			};
+			name = Debug;
+		};
+		3248830C25B68B4E0031BEC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EmoticonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = blue.kakaocorp.EmoticonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoticonApp.app/EmoticonApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -610,6 +722,15 @@
 			buildConfigurations = (
 				321F8B5B25B5823C007FAC1B /* Debug */,
 				321F8B5C25B5823C007FAC1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3248830A25B68B4E0031BEC6 /* Build configuration list for PBXNativeTarget "EmoticonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3248830B25B68B4E0031BEC6 /* Debug */,
+				3248830C25B68B4E0031BEC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
