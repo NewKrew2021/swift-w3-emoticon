@@ -69,13 +69,14 @@ extension MainViewController: UITableViewDelegate {
 }
 
 extension MainViewController: UITableViewDataSource {
-  
+    
+    let cellHeight: CGFloat = 100
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojiData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,7 +84,7 @@ extension MainViewController: UITableViewDataSource {
             cell.emoji?.image = UIImage(named: emojiData?[indexPath.row].property["image"] ?? "default")
             cell.emojiName?.text = emojiData?[indexPath.row].property["title"] ?? ""
             cell.emojiDescription?.text = emojiData?[indexPath.row].property["author"] ?? ""
-            cell.setHeight(height: CGFloat(100))
+            cell.setHeight(height: cellHeight)
             return cell
         }
         return UITableViewCell()
