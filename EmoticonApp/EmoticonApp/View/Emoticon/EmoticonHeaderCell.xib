@@ -56,7 +56,7 @@
         </view>
     </objects>
     <resources>
-        <image name="basket" width="575" height="538"/>
+        <image name="basket" width="287.5" height="269"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

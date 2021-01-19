@@ -8,6 +8,9 @@
 import UIKit
 
 class EmoticonViewController: UIViewController {
+    private let emoticonCellName = "EmoticonTableViewCell"
+    private let emoticonHeaderName = "EmoticonHeaderCell"
+    
     var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,9 +41,9 @@ class EmoticonViewController: UIViewController {
         print(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        let nibName_Emoticon = UINib(nibName: "EmoticonTableViewCell", bundle: nil)
-        tableView.register(nibName_Emoticon, forCellReuseIdentifier: "emoticonTVCell")
-        tableView.register(UINib(nibName: "EmoticonHeaderCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "EmoticonHeaderCell")
+        let nibName_Emoticon = UINib(nibName: emoticonCellName, bundle: nil)
+        tableView.register(nibName_Emoticon, forCellReuseIdentifier: emoticonCellName)
+        tableView.register(UINib(nibName: emoticonHeaderName, bundle: nil), forHeaderFooterViewReuseIdentifier: emoticonHeaderName)
         tableView.separatorStyle = .none
     }
 }

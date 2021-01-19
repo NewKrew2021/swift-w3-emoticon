@@ -13,6 +13,7 @@ class EmoticonHeaderCell: UITableViewHeaderFooterView {
     }
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern") ?? UIImage())
         self.backgroundView = backgroundView
