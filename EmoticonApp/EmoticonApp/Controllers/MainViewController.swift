@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var emojiData: EmojiList?
-
+    let cellHeight = CGFloat(100)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -75,7 +76,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return cellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,7 +84,7 @@ extension MainViewController: UITableViewDataSource {
             cell.emoji?.image = UIImage(named: emojiData?[indexPath.row].property["image"] ?? "default")
             cell.emojiName?.text = emojiData?[indexPath.row].property["title"] ?? ""
             cell.emojiDescription?.text = emojiData?[indexPath.row].property["author"] ?? ""
-            cell.setHeight(height: CGFloat(100))
+            cell.setHeight(height: cellHeight)
             return cell
         }
         return UITableViewCell()
