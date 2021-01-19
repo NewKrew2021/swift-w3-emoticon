@@ -36,10 +36,10 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! myCell
         let row = indexPath.row
-        cell.textLabel!.text = emoticon.title(index: row)
-        cell.imageView!.image = UIImage(named: emoticon.image(index: row)!)
+//        cell.textLabel!.text = emoticon.title(index: row)
+//        cell.imageView!.image = UIImage(named: emoticon.image(index: row)!)
         return cell
     }
     

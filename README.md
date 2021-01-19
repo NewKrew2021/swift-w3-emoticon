@@ -69,3 +69,8 @@
 - erase codes using raw data list
 - add object : Emoticon()
 - instead of access index of list directly, using struct method
+
+### create myCell.swfit
+
+- create myCell class
+- set the class as a custom class of cell
