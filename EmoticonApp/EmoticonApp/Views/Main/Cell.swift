@@ -30,9 +30,11 @@ class EmojiTableViewCell: UITableViewCell {
         emoji = UIImageView()
         emoji?.contentMode = .scaleAspectFit
         emojiName = UILabel()
-        emojiName?.font = UIFont.boldSystemFont(ofSize: 20)
+        emojiName?.font = UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .medium)
+        emojiName?.contentMode = .top
         emojiDescription = UILabel()
-        emojiDescription?.font = UIFont.boldSystemFont(ofSize: 15)
+        emojiDescription?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize, weight: .light)
+        emojiDescription?.contentMode = .top
     }
     
     func setHeight(height: CGFloat) {

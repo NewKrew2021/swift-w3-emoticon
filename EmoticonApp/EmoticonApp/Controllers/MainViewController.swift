@@ -87,6 +87,7 @@ extension MainViewController: UITableViewDataSource {
             cell.emoji?.image = UIImage(named: emojiData?[indexPath.row].property["image"] ?? "default")
             cell.emojiName?.text = emojiData?[indexPath.row].property["title"] ?? ""
             cell.emojiDescription?.text = emojiData?[indexPath.row].property["author"] ?? ""
+            cell.selectionStyle = .none
             cell.setHeight(height: cellHeight)
             return cell
         }
