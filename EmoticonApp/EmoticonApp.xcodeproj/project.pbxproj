@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		F75C7AA425B54261007B6622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA325B54261007B6622 /* AppDelegate.swift */; };
 		F75C7AA625B54261007B6622 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA525B54261007B6622 /* SceneDelegate.swift */; };
-		F75C7AA825B54261007B6622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA725B54261007B6622 /* ViewController.swift */; };
+		F75C7AA825B54261007B6622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA725B54261007B6622 /* MainViewController.swift */; };
 		F75C7AAB25B54261007B6622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75C7AA925B54261007B6622 /* Main.storyboard */; };
 		F75C7AAD25B54261007B6622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75C7AAC25B54261007B6622 /* Assets.xcassets */; };
 		F75C7AB025B54261007B6622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F75C7AAE25B54261007B6622 /* LaunchScreen.storyboard */; };
 		F75C7ABB25B54261007B6622 /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7ABA25B54261007B6622 /* EmoticonAppTests.swift */; };
 		F75C7AC625B54262007B6622 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AC525B54262007B6622 /* EmoticonAppUITests.swift */; };
 		F75C7AD825B58AEE007B6622 /* EmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */; };
+		F75C7AE525B6729E007B6622 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AE425B6729E007B6622 /* Emoticon.swift */; };
+		F75C7AED25B67637007B6622 /* EmoticonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AEC25B67637007B6622 /* EmoticonService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		F75C7AA025B54261007B6622 /* EmoticonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoticonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75C7AA325B54261007B6622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F75C7AA525B54261007B6622 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F75C7AA725B54261007B6622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F75C7AA725B54261007B6622 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F75C7AAA25B54261007B6622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F75C7AAC25B54261007B6622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F75C7AAF25B54261007B6622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		F75C7AC525B54262007B6622 /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		F75C7AC725B54262007B6622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonCell.swift; sourceTree = "<group>"; };
+		F75C7AE425B6729E007B6622 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		F75C7AEC25B67637007B6622 /* EmoticonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,15 @@
 		F75C7AA225B54261007B6622 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				F75C7AF125B69A4D007B6622 /* View */,
+				F75C7AE325B67250007B6622 /* Controller */,
+				F75C7AE225B6724A007B6622 /* Model */,
 				F75C7AA325B54261007B6622 /* AppDelegate.swift */,
 				F75C7AA525B54261007B6622 /* SceneDelegate.swift */,
-				F75C7AA725B54261007B6622 /* ViewController.swift */,
 				F75C7AA925B54261007B6622 /* Main.storyboard */,
 				F75C7AAC25B54261007B6622 /* Assets.xcassets */,
 				F75C7AAE25B54261007B6622 /* LaunchScreen.storyboard */,
 				F75C7AB125B54261007B6622 /* Info.plist */,
-				F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */,
 			);
 			path = EmoticonApp;
 			sourceTree = "<group>";
@@ -129,6 +134,31 @@
 				F75C7AC725B54262007B6622 /* Info.plist */,
 			);
 			path = EmoticonAppUITests;
+			sourceTree = "<group>";
+		};
+		F75C7AE225B6724A007B6622 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F75C7AE425B6729E007B6622 /* Emoticon.swift */,
+				F75C7AEC25B67637007B6622 /* EmoticonService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F75C7AE325B67250007B6622 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F75C7AA725B54261007B6622 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F75C7AF125B69A4D007B6622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F75C7AA825B54261007B6622 /* ViewController.swift in Sources */,
+				F75C7AA825B54261007B6622 /* MainViewController.swift in Sources */,
+				F75C7AED25B67637007B6622 /* EmoticonService.swift in Sources */,
+				F75C7AE525B6729E007B6622 /* Emoticon.swift in Sources */,
 				F75C7AA425B54261007B6622 /* AppDelegate.swift in Sources */,
 				F75C7AA625B54261007B6622 /* SceneDelegate.swift in Sources */,
 				F75C7AD825B58AEE007B6622 /* EmoticonCell.swift in Sources */,
