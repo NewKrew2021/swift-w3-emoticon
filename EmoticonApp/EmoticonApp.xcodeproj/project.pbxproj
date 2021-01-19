@@ -20,7 +20,6 @@
 		C2E632A825B573CC005B2733 /* EmoticonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E632A625B573CC005B2733 /* EmoticonTableViewCell.xib */; };
 		C2E632BB25B5769E005B2733 /* EmoticonHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E632BA25B5769E005B2733 /* EmoticonHeaderCell.xib */; };
 		C2E632C325B576EC005B2733 /* EmoticonHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E632C225B576EC005B2733 /* EmoticonHeaderCell.swift */; };
-		C2E632D225B5812E005B2733 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E632D125B5812E005B2733 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +59,6 @@
 		C2E632A625B573CC005B2733 /* EmoticonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoticonTableViewCell.xib; sourceTree = "<group>"; };
 		C2E632BA25B5769E005B2733 /* EmoticonHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoticonHeaderCell.xib; sourceTree = "<group>"; };
 		C2E632C225B576EC005B2733 /* EmoticonHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonHeaderCell.swift; sourceTree = "<group>"; };
-		C2E632D125B5812E005B2733 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +171,6 @@
 		C2E632D025B58122005B2733 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C2E632D125B5812E005B2733 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,7 +309,6 @@
 			files = (
 				C2E6325825B51D6D005B2733 /* EmoticonViewController.swift in Sources */,
 				C2E6325425B51D6D005B2733 /* AppDelegate.swift in Sources */,
-				C2E632D225B5812E005B2733 /* UIView+.swift in Sources */,
 				C2E6325625B51D6D005B2733 /* SceneDelegate.swift in Sources */,
 				C2E632A725B573CC005B2733 /* EmoticonTableViewCell.swift in Sources */,
 				C2E632C325B576EC005B2733 /* EmoticonHeaderCell.swift in Sources */,

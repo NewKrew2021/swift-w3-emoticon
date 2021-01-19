@@ -16,3 +16,10 @@ class EmoticonTableViewCell: UITableViewCell {
         self.setBorder(width: 0.2, color: UIColor.black.cgColor)
     }
 }
+
+extension EmoticonTableViewCell {
+    func setBorder(width: CGFloat, color: CGColor) {
+        self.layer.borderWidth = width
+        self.layer.borderColor = color
+    }
+}
