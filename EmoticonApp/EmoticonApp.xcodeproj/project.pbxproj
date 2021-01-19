@@ -86,9 +86,16 @@
 			isa = PBXGroup;
 			children = (
 				D2A2101925B670E900904156 /* Emoticon.swift */,
-				D2A2103A25B69FDA00904156 /* myCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D2A2103F25B6E03000904156 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2A2103A25B69FDA00904156 /* myCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D2E9296625B52C8200E13879 = {
@@ -114,6 +121,7 @@
 		D2E9297125B52C8200E13879 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2A2103F25B6E03000904156 /* View */,
 				D2A2100D25B6702400904156 /* Model */,
 				D2E9297225B52C8200E13879 /* AppDelegate.swift */,
 				D2E9297425B52C8200E13879 /* SceneDelegate.swift */,

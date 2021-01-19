@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var upperView = UIView()
+    private var upperView = myView()
     private var upperInnerView = UIView()
     private var titleInView = UILabel()
     private var descriptionInView = UILabel()
@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         upperImageView.bottomAnchor.constraint(equalTo: upperInnerView.bottomAnchor).isActive = true
         upperImageView.leadingAnchor.constraint(equalTo: upperInnerView.centerXAnchor).isActive = true
         upperImageView.trailingAnchor.constraint(equalTo: upperInnerView.trailingAnchor).isActive = true
+        upperImageView.contentMode = .scaleAspectFit
         
         upperInnerView.addSubview(titleInView)
         titleInView.text = "이벤트"
@@ -68,5 +69,11 @@ class ViewController: UIViewController {
         descriptionInView.translatesAutoresizingMaskIntoConstraints = false
         descriptionInView.topAnchor.constraint(equalTo: titleInView.bottomAnchor, constant: 30).isActive = true
         descriptionInView.leadingAnchor.constraint(equalTo: titleInView.leadingAnchor).isActive = true
+    }
+}
+
+class myView : UIView {
+    func mySetting() {
+        
     }
 }
