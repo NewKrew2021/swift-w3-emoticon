@@ -27,6 +27,13 @@ class EmojiListTest: XCTestCase {
           [ "title": "안녕! 아기 보노보노", "author": "보노보노", "image": "image12.png" ]
           ]
 
+    func testEmojiListCreate() throws {
+        let emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmoji(property: $0) })
+        for (index, emoji) in emojiList.enumerated() {
+            XCTAssertEqual(emoji.property, mockData[index])
+        }
+    }
+
     func testEmojiListAppend() throws {
         var emojiList: EmojiList = EmojiList(list: [EmojiType]())
         for emoji in mockData {
@@ -34,12 +41,15 @@ class EmojiListTest: XCTestCase {
         }
         XCTAssertEqual(emojiList.count, mockData.count)
     }
-
-    func testEmojiListIteration() throws {
-        let emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmoji(property: $0) })
-        for (index, emoji) in emojiList.enumerated() {
-            XCTAssertEqual(emoji.property, mockData[index])
+    
+    func testEmojiListRemove() throws {
+        var emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmoji(property: $0) })
+        for _ in 0..<mockData.count {
+            emojiList.remove(at: 0)
         }
+        XCTAssertEqual(emojiList.count, 0)
     }
+
+    
 
 }
