@@ -9,4 +9,5 @@ import Foundation
 
 extension Notification.Name{
     static let buyEmoticon = Notification.Name("buyEmoticon")
+    static let removeAllHistory = Notification.Name("removeAllHistory")
 }

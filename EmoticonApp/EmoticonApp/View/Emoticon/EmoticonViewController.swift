@@ -65,9 +65,13 @@ class EmoticonViewController: UIViewController {
 
     @objc private func buyEmoticon(_ notification: Notification) {
         guard let data = notification.object as? History else { return }
-        showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오") {
+        showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오", destructive: nil) {
             Cart.buyEmoticon(title: data.title, date: data.date)
         }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .buyEmoticon, object: nil)
     }
 }
 

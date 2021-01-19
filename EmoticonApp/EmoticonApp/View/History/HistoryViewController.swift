@@ -33,6 +33,7 @@ class HistoryViewController: UIViewController {
 
     private func initNavigationBar() {
         title = "히스토리"
+        clearBarButton.target = self
         clearBarButton.action = #selector(tappedClear)
         navigationItem.rightBarButtonItem = clearBarButton
     }
@@ -55,7 +56,11 @@ class HistoryViewController: UIViewController {
     }
 
     @objc private func tappedClear() {
-        
+        showAlert(style: .alert, title: "삭제", message: "모든 구매내역을 삭제하시겠습니까?", confirm: nil, destructive: "삭제") { [weak self] in
+            guard let self = self else { return }
+            Cart.removeAll()
+            self.tableView.reloadData()
+        }
     }
 }
 

@@ -8,17 +8,30 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(style: UIAlertController.Style, title: String, message: String?, confirm: String = "확인", cancel: String = "취소", completion: @escaping () -> Void) {
+    func showAlert(style: UIAlertController.Style, title: String, message: String?, confirm: String?, cancel: String = "취소", destructive: String?, completion: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        let confirm = UIAlertAction(title: confirm, style: .default, handler: { [weak self] _ in
-            guard let self = self else { return }
-            completion()
-            self.showToast(vc: self, msg: "구매되었습니다.", sec: 0.5)
-        })
-        let cancel = UIAlertAction(title: cancel, style: .cancel, handler: nil)
         
-        alert.addAction(confirm)
-        alert.addAction(cancel)
+        if confirm != nil {
+            let confirmAction = UIAlertAction(title: confirm, style:
+                .default) { [weak self] _ in
+                guard let self = self else { return }
+                completion()
+                self.showToast(vc: self, msg: "구매되었습니다.", sec: 0.5)
+            }
+            alert.addAction(confirmAction)
+        }
+        
+        if destructive != nil {
+            let destructiveAction = UIAlertAction(title: destructive, style: .destructive) { [weak self] _ in
+                guard let self = self else { return }
+                completion()
+                self.showToast(vc: self, msg: "삭제되었습니다.", sec: 0.5)
+            }
+            alert.addAction(destructiveAction)
+        }
+        
+        let cancelAction = UIAlertAction(title: cancel, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
     }
