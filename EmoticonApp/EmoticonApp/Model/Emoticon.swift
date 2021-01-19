@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Emoticon {
     private let list = [
-            [ "title" : "유년기오구의 쪼꼬만 일상", "author" : "문랩", "image" : "image01.png" ],
+            [ "title" : "유년기오구의 쪼꼬만 일상ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ", "author" : "문랩", "image" : "image01.png" ],
             [ "title" : "콩글리시 이즈 꿀잼2", "author" : "노페이퍼", "image" : "image02.png" ],
             [ "title" : "진짜 찐?", "author" : "mohe", "image" : "image03.png" ],
             [ "title" : "바다 갈매기 매봉이는 여유로워", "author" : "이우산", "image" : "image04.png" ],
@@ -33,5 +34,9 @@ struct Emoticon {
     
     func author(index : Int) -> String {
         return self.list[index]["author"] ?? ""
+    }
+    
+    func image(index : Int) -> UIImage {
+        return UIImage(named: self.list[index]["image"] ?? "") ?? UIImage()
     }
 }

@@ -11,6 +11,7 @@ class EmoticonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var emoticonImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +27,9 @@ class EmoticonTableViewCell: UITableViewCell {
     
     func setAuthor(text: String) {
         author.text = text
+    }
+    
+    func setImage(image: UIImage) {
+        emoticonImage.image = image
     }
 }

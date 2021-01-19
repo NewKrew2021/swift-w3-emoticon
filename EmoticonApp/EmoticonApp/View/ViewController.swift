@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         emoticonTable.delegate = self
         emoticonTable.dataSource = self
-        emoticonTable.rowHeight = 50
+        emoticonTable.rowHeight = 70
     }
 
 }
@@ -32,6 +32,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         cell.setTitle(text: emoticon.title(index: indexPath.row))
         cell.setAuthor(text: emoticon.author(index: indexPath.row))
+        cell.setImage(image: emoticon.image(index: indexPath.row))
         
         return cell
     }
