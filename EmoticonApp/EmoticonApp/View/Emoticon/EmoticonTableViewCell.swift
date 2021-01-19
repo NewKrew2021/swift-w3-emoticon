@@ -13,6 +13,6 @@ class EmoticonTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setBorder(width: 1, color: UIColor.black.cgColor)
+        self.setBorder(width: 0.2, color: UIColor.black.cgColor)
     }
 }
