@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var emoticonList: UITableView!
     
+    private let emoticonService: EmoticonService = EmoticonService.instance
+    
     override func loadView() {
         super.loadView()
     }
@@ -29,13 +31,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Emoticon.list.count
+        return emoticonService.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emoticonCell", for: indexPath) as! EmoticonCell//!를 없앨 방법 고민해보자
-        cell.title.text = Emoticon.list[indexPath.row]["title"]
-        cell.author.text = Emoticon.list[indexPath.row]["author"]
+        let emoticon = emoticonService.emoticons[indexPath.row]
+        cell.title.text = emoticon.title
+        cell.author.text = emoticon.author
         return cell
     }
     

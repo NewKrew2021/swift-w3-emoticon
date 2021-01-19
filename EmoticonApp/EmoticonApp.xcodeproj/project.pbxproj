@@ -17,6 +17,7 @@
 		F75C7AC625B54262007B6622 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AC525B54262007B6622 /* EmoticonAppUITests.swift */; };
 		F75C7AD825B58AEE007B6622 /* EmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */; };
 		F75C7AE525B6729E007B6622 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AE425B6729E007B6622 /* Emoticon.swift */; };
+		F75C7AED25B67637007B6622 /* EmoticonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AEC25B67637007B6622 /* EmoticonService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F75C7AC725B54262007B6622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonCell.swift; sourceTree = "<group>"; };
 		F75C7AE425B6729E007B6622 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		F75C7AEC25B67637007B6622 /* EmoticonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F75C7AE425B6729E007B6622 /* Emoticon.swift */,
+				F75C7AEC25B67637007B6622 /* EmoticonService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75C7AA825B54261007B6622 /* ViewController.swift in Sources */,
+				F75C7AED25B67637007B6622 /* EmoticonService.swift in Sources */,
 				F75C7AE525B6729E007B6622 /* Emoticon.swift in Sources */,
 				F75C7AA425B54261007B6622 /* AppDelegate.swift in Sources */,
 				F75C7AA625B54261007B6622 /* SceneDelegate.swift in Sources */,
