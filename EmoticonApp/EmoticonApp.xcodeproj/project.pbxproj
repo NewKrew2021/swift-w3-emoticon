@@ -15,11 +15,12 @@
 		C2E6326025B51D6E005B2733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E6325E25B51D6E005B2733 /* LaunchScreen.storyboard */; };
 		C2E6326B25B51D6E005B2733 /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6326A25B51D6E005B2733 /* EmoticonAppTests.swift */; };
 		C2E6327625B51D6E005B2733 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6327525B51D6E005B2733 /* EmoticonAppUITests.swift */; };
-		C2E6328825B571B3005B2733 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6328725B571B3005B2733 /* Emoticon.swift */; };
+		C2E6328825B571B3005B2733 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6328725B571B3005B2733 /* Shop.swift */; };
 		C2E632A725B573CC005B2733 /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E632A525B573CC005B2733 /* EmoticonTableViewCell.swift */; };
 		C2E632A825B573CC005B2733 /* EmoticonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E632A625B573CC005B2733 /* EmoticonTableViewCell.xib */; };
 		C2E632BB25B5769E005B2733 /* EmoticonHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E632BA25B5769E005B2733 /* EmoticonHeaderCell.xib */; };
 		C2E632C325B576EC005B2733 /* EmoticonHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E632C225B576EC005B2733 /* EmoticonHeaderCell.swift */; };
+		C2E632E625B67A99005B2733 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E632E525B67A99005B2733 /* Emoticon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +55,12 @@
 		C2E6327125B51D6E005B2733 /* EmoticonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6327525B51D6E005B2733 /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		C2E6327725B51D6E005B2733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2E6328725B571B3005B2733 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		C2E6328725B571B3005B2733 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		C2E632A525B573CC005B2733 /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 		C2E632A625B573CC005B2733 /* EmoticonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoticonTableViewCell.xib; sourceTree = "<group>"; };
 		C2E632BA25B5769E005B2733 /* EmoticonHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoticonHeaderCell.xib; sourceTree = "<group>"; };
 		C2E632C225B576EC005B2733 /* EmoticonHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonHeaderCell.swift; sourceTree = "<group>"; };
+		C2E632E525B67A99005B2733 /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +145,8 @@
 		C2E6328625B571A7005B2733 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C2E6328725B571B3005B2733 /* Emoticon.swift */,
+				C2E6328725B571B3005B2733 /* Shop.swift */,
+				C2E632E525B67A99005B2733 /* Emoticon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,7 +315,8 @@
 				C2E6325625B51D6D005B2733 /* SceneDelegate.swift in Sources */,
 				C2E632A725B573CC005B2733 /* EmoticonTableViewCell.swift in Sources */,
 				C2E632C325B576EC005B2733 /* EmoticonHeaderCell.swift in Sources */,
-				C2E6328825B571B3005B2733 /* Emoticon.swift in Sources */,
+				C2E6328825B571B3005B2733 /* Shop.swift in Sources */,
+				C2E632E625B67A99005B2733 /* Emoticon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

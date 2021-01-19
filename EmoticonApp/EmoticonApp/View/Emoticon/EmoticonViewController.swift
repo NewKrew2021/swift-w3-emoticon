@@ -38,7 +38,6 @@ class EmoticonViewController: UIViewController {
     }
     
     private func initTableView() {
-        print(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         let nibName_Emoticon = UINib(nibName: emoticonCellName, bundle: nil)
@@ -50,15 +49,15 @@ class EmoticonViewController: UIViewController {
 
 extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Emoticon.samples.count
+        return Shop.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "emoticonTVCell", for: indexPath) as? EmoticonTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmoticonTableViewCell", for: indexPath) as? EmoticonTableViewCell else {
             return UITableViewCell()
         }
-        cell.titleLabel.text = Emoticon.samples[indexPath.row]["title"]
-        cell.subTitleLabel.text = Emoticon.samples[indexPath.row]["author"]
+        cell.titleLabel.text = Shop[indexPath.row]["title"]
+        cell.subTitleLabel.text = Shop[indexPath.row]["author"]
         return cell
     }
 
