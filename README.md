@@ -51,3 +51,55 @@
 
 ![image-20210118225401483](README.assets/image-20210118225401483.png)
 
+### Midify - descriptionInView
+
+- remove heightAnchor, widthAnchor
+- add method : sizeToFit()
+
+### Make model group
+
+- make model group
+- make a file : Emoticon.swift
+- make a Model : struct Emoticon
+  - list data
+  - 3 methods : title, author, image
+
+### Modify - TableViewController
+
+- erase codes using raw data list
+- add object : Emoticon()
+- instead of access index of list directly, using struct method
+
+### create myCell.swfit
+
+- create myCell class
+- set the class as a custom class of cell
+
+### add some Subviews
+
+- titleLabel
+- descriptionLabel
+- leadingImage
+- extension UILabel to add method setConstraint
+
+![image-20210119150619707](README.assets/image-20210119150619707.png)
+
+### setting cell height
+
+- setting cell height using `tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)` method
+
+![image-20210119151913748](README.assets/image-20210119151913748.png)
+
+### configure all elements in custom cell
+
+- title label
+- author label
+- ImageView
+- purchaceLabel
+- set constrainits
+
+![image-20210119203104181](README.assets/image-20210119203104181.png)
+
+### Modify : how to measure height
+
+- using initial height instead of height at that moment
