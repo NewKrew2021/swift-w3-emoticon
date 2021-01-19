@@ -8,14 +8,18 @@
 import Foundation
 
 struct Cart {
-    private static var ownEmoticons: [History] = []
+    static var ownEmoticons: [History] = []
 
-    static var count: Int{
+    static var count: Int {
         ownEmoticons.count
     }
-    
+
     static func buyEmoticon(title: String, date: Date) {
         ownEmoticons.append(History(title: title, date: date))
+    }
+
+    static subscript(index: Int) -> History {
+        return ownEmoticons[index]
     }
 }
 

@@ -25,6 +25,7 @@
 		C2E6330825B69C80005B2733 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6330625B69C80005B2733 /* HistoryTableViewCell.swift */; };
 		C2E6330925B69C80005B2733 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E6330725B69C80005B2733 /* HistoryTableViewCell.xib */; };
 		C2E6331425B69E15005B2733 /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6331325B69E15005B2733 /* UITableViewCell+.swift */; };
+		C2E6331C25B6A292005B2733 /* Notification.Name+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6331B25B6A292005B2733 /* Notification.Name+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C2E6330625B69C80005B2733 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C2E6330725B69C80005B2733 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		C2E6331325B69E15005B2733 /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		C2E6331B25B6A292005B2733 /* Notification.Name+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				C2E6331325B69E15005B2733 /* UITableViewCell+.swift */,
+				C2E6331B25B6A292005B2733 /* Notification.Name+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				C2E6331425B69E15005B2733 /* UITableViewCell+.swift in Sources */,
 				C2E6325425B51D6D005B2733 /* AppDelegate.swift in Sources */,
 				C2E6325625B51D6D005B2733 /* SceneDelegate.swift in Sources */,
+				C2E6331C25B6A292005B2733 /* Notification.Name+.swift in Sources */,
 				C2E632A725B573CC005B2733 /* EmoticonTableViewCell.swift in Sources */,
 				C2E632C325B576EC005B2733 /* EmoticonHeaderCell.swift in Sources */,
 				C2E6328825B571B3005B2733 /* Shop.swift in Sources */,

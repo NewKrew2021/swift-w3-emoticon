@@ -30,10 +30,12 @@ class EmoticonViewController: UIViewController {
         addTableView()
         initTableView()
         initNavigationBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(buyEmoticon), name: .buyEmoticon, object: nil)
     }
 
     private func initNavigationBar() {
         title = "이모티콘"
+        shopBarButton.target = self
         shopBarButton.action = #selector(tappedCart)
         navigationItem.rightBarButtonItem = shopBarButton
     }
@@ -54,12 +56,15 @@ class EmoticonViewController: UIViewController {
         tableView.register(UINib(nibName: emoticonHeaderName, bundle: nil), forHeaderFooterViewReuseIdentifier: emoticonHeaderName)
         tableView.separatorStyle = .none
     }
-    
-    @objc private func tappedCart(){
+
+    @objc private func tappedCart() {
         let historyVC = HistoryViewController()
-        
-        self.navigationController?.pushViewController(historyVC, animated: true)
-        
+        navigationController?.pushViewController(historyVC, animated: true)
+    }
+
+    @objc private func buyEmoticon(_ notification: Notification) {
+        guard let data = notification.object as? History else { return }
+        Cart.buyEmoticon(title: data.title, date: data.date)
     }
 }
 

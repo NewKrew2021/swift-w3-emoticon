@@ -17,14 +17,33 @@ class HistoryViewController: UIViewController {
         return view
     }()
 
+    private var clearBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "Clear"
+        button.style = .plain
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        initNavigationBar()
+        initTableView()
+        addTableView()
     }
 
     private func initNavigationBar() {
         title = "히스토리"
         clearBarButton.action = #selector(tappedClear)
         navigationItem.rightBarButtonItem = clearBarButton
+    }
+
+    private func initTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nibName_History = UINib(nibName: historyCellName, bundle: nil)
+        tableView.register(nibName_History, forCellReuseIdentifier: historyCellName)
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
     }
 
     private func addTableView() {
@@ -35,13 +54,7 @@ class HistoryViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
 
-    private func initTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        let nibName_History = UINib(nibName: historyCellName, bundle: nil)
-        tableView.register(nibName_History, forCellReuseIdentifier: historyCellName)
-        tableView.separatorStyle = .none
-    }
+    @objc private func tappedClear() {}
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,8 +68,10 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: historyCellName, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
-        
-        
-        
+
+        cell.titleLabel.text = Cart[indexPath.row].title
+        cell.dateLabel.text = Cart[indexPath.row].date.description
+
+        return cell
     }
 }
