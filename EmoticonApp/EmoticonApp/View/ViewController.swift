@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(cartButtonClicked))
+        
         topView.loadView()
         
         emoticonTable.delegate = self
@@ -23,6 +25,10 @@ class ViewController: UIViewController {
         emoticonTable.rowHeight = 70
     }
 
+    @objc func cartButtonClicked() {
+        guard let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "cartViewController") else { return }
+        self.navigationController?.pushViewController(cartViewController, animated: true)
+    }
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {

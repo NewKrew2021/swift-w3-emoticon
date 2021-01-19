@@ -93,7 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="emoticon" id="xm1-Mq-LwA"/>
+                    <navigationItem key="navigationItem" title="emoticon" leftItemsSupplementBackButton="YES" id="xm1-Mq-LwA"/>
                     <connections>
                         <outlet property="emoticonTable" destination="M7b-6F-s2A" id="p2V-Rw-D9y"/>
                         <outlet property="topView" destination="fQT-WP-dIY" id="811-BU-oKL"/>
@@ -120,6 +120,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDk-Og-dTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="114.50892857142857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Orz-1A-k6f">
+            <objects>
+                <viewController storyboardIdentifier="cartViewController" id="CWE-06-zFM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ke-aw-gxw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FgC-k0-cfs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6T-AS-hL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="115"/>
         </scene>
     </scenes>
     <resources>
