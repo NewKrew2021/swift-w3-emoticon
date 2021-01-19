@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainImage: UIView {
+class Promotion: UIView {
 
     let pattern: UIImageView = UIImageView()
     let character: UIImageView = UIImageView()
@@ -16,6 +16,7 @@ class MainImage: UIView {
         super.init(frame: frame)
         self.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin, .flexibleWidth, .flexibleTopMargin]
         setUI()
+        self.sizeToFit()
     }
 
     required init?(coder: NSCoder) {
@@ -30,13 +31,13 @@ class MainImage: UIView {
     }
 
     private func setTitle() {
-        let labelY = self.frame.height
         let label = UILabel(frame: CGRect(x: 10, y: 10, width: 100, height: 30))
         label.textAlignment = NSTextAlignment.left
         label.text = "이벤트"
         label.textColor = .blue
         label.font = label.font.withSize(25)
         self.addSubview(label)
+        label.autoresizingMask = [.flexibleLeftMargin, .flexibleTopMargin]
     }
 
     private func setDescription() {
@@ -56,7 +57,7 @@ class MainImage: UIView {
     }
     private func setImage() {
         let characterSize = CGSize(width: self.frame.width/2, height: 200)
-        
+
         if let characterImage = UIImage(named: "basket") {
             character.image = characterImage
             self.addSubview(character)
@@ -64,7 +65,6 @@ class MainImage: UIView {
             character.frame.size.width = characterSize.width
             character.frame.size.height = characterSize.height
             character.contentMode = .scaleAspectFit
-            character.layer.borderWidth = 1
         }
     }
 }
