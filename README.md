@@ -84,3 +84,9 @@
 
 ![image-20210119150619707](README.assets/image-20210119150619707.png)
 
+### setting cell height
+
+- setting cell height using `tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)` method
+
+![image-20210119151913748](README.assets/image-20210119151913748.png)
+
