@@ -11,22 +11,30 @@ class EmoticonViewController: UIViewController {
     private let emoticonCellName = "EmoticonTableViewCell"
     private let emoticonHeaderName = "EmoticonHeaderCell"
 
-    var tableView: UITableView = {
+    private var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
 
+    private var shopBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(systemName: "cart.fill")
+        button.style = .plain
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "이모티콘"
         addTableView()
         initTableView()
+        initNavigationBar()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    private func initNavigationBar() {
+        title = "이모티콘"
+        navigationItem.rightBarButtonItem = shopBarButton
     }
 
     private func addTableView() {
@@ -51,7 +59,7 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Shop.count
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
