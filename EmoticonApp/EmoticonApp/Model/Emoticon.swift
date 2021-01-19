@@ -23,7 +23,7 @@ struct Emoticon {
             [ "title" : "안녕! 아기 보노보노", "author" : "보노보노", "image" : "image12.png" ]
             ]
     
-    func size() -> Int {
+    var size: Int {
         return self.list.count
     }
     

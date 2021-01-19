@@ -40,6 +40,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.emoticon.size()
+        return self.emoticon.size
     }
 }
