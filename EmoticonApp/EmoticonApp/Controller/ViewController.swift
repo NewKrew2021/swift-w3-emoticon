@@ -37,8 +37,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emoticonCell", for: indexPath) as! EmoticonCell//!를 없앨 방법 고민해보자
         let emoticon = emoticonService.emoticons[indexPath.row]
-        cell.title.text = emoticon.title
-        cell.author.text = emoticon.author
+        cell.thumbnail = UIImage(named: emoticon.image)
+        cell.title = emoticon.title
+        cell.author = emoticon.author
         return cell
     }
     

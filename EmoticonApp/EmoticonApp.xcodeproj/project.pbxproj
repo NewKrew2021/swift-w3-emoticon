@@ -105,6 +105,7 @@
 		F75C7AA225B54261007B6622 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				F75C7AF125B69A4D007B6622 /* View */,
 				F75C7AE325B67250007B6622 /* Controller */,
 				F75C7AE225B6724A007B6622 /* Model */,
 				F75C7AA325B54261007B6622 /* AppDelegate.swift */,
@@ -113,7 +114,6 @@
 				F75C7AAC25B54261007B6622 /* Assets.xcassets */,
 				F75C7AAE25B54261007B6622 /* LaunchScreen.storyboard */,
 				F75C7AB125B54261007B6622 /* Info.plist */,
-				F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */,
 			);
 			path = EmoticonApp;
 			sourceTree = "<group>";
@@ -151,6 +151,14 @@
 				F75C7AA725B54261007B6622 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F75C7AF125B69A4D007B6622 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F75C7AD725B58AEE007B6622 /* EmoticonCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
