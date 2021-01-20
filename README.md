@@ -117,3 +117,9 @@
   - apply this modification -> TableViewController can pass minimum data to configure a cell
 - add variable : emoticons.count
 
+### Feedback Modify - TableViewController tableView methods
+
+- add Emoticions.registerEmoticons() method in viewDidLoad()
+- return Emoticons.count in tebleview method
+- call cell.setEmoticon method instead of calling 3 methods
+
