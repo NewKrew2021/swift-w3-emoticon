@@ -10,7 +10,7 @@ import UIKit
 class myCell: UITableViewCell {
     
     private var titleLabel = UILabel()
-    private var descriptionLabel = UILabel()
+    private var authorLabel = UILabel()
     private var purchaseLabel = UILabel()
     private var leadingImage = UIImageView()
     private var standardHeight : CGFloat?
@@ -21,7 +21,7 @@ class myCell: UITableViewCell {
         // Initialization code
         addSubview(leadingImage)
         addSubview(titleLabel)
-        addSubview(descriptionLabel)
+        addSubview(authorLabel)
         addSubview(purchaseLabel)
         setConstraints()
         contentView.layer.borderWidth = 1
@@ -33,22 +33,16 @@ class myCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setTitleText(text : String) {
-        titleLabel.text = text
-    }
-    
-    func setDescriptionText(text : String) {
-        descriptionLabel.text = text
-    }
-    
-    func setImage(src : String) {
-        leadingImage.image = UIImage(named: src)
+    func setEmoticon(emoticon : Emoticon) {
+        titleLabel.text = emoticon.title
+        authorLabel.text = emoticon.author
+        leadingImage.image = UIImage(named: emoticon.image)
     }
     
     func setConstraints() {
         guard let height = standardHeight else { return }
         titleLabel.setConstraint(target: .title, standardView: leadingImage, height : height)
-        descriptionLabel.setConstraint(target: .description, standardView: leadingImage, height: height)
+        authorLabel.setConstraint(target: .description, standardView: leadingImage, height: height)
         leadingImage.setConstraint(standardView: self, height: height)
         purchaseLabel.text = "구매"
         purchaseLabel.setConstraint(target: .purchase, standardView: self, height: height)

@@ -123,3 +123,7 @@
 - return Emoticons.count in tebleview method
 - call cell.setEmoticon method instead of calling 3 methods
 
+### Feedback Modify - myCell Methods
+
+- combine 3 methods that configure each subview into 1method : setEmoticon()
+
