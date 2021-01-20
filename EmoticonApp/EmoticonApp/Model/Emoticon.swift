@@ -5,7 +5,6 @@
 //  Created by 이청원 on 2021/01/18.
 //
 
-import Foundation
 import UIKit
 
 struct Emoticon {
