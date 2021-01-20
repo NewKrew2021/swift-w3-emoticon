@@ -11,7 +11,7 @@ class TableViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    private let emoticon = Emoticon()
+    private let emoticon = Emoticons()
     
     override func viewDidLoad() {
         super.viewDidLoad()

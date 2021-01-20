@@ -104,3 +104,10 @@
 
 - using initial height instead of height at that moment
 
+### Got some feedback --> Modify!
+
+- change struct name : Emoticon -> Emoticons
+  - add two methods to create unique data : getEmoticons(), registerEmoticons
+- make another struct : Emoticon
+  - implement getter and setter
+
