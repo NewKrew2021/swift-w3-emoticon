@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        navigationItem.setNavigationItem()
-        
+        setNavigationItem()
+
         view.addSubview(upperView)
         upperView.setUpperView(standardView: view)
         upperView.setUpperInnerView(padding: CGFloat(20))
@@ -27,4 +27,16 @@ class ViewController: UIViewController {
         
         belowView.setBelowView(upperView: upperView, superView: view)
     }
+    
+    func setNavigationItem() {
+        let item = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(cartButtonTouched))
+        self.navigationController?.navigationBar.topItem?.title = "emoticon"
+        self.navigationItem.setRightBarButton(item, animated: true)
+    }
+    
+    @objc func cartButtonTouched() {
+        guard let nextController = storyboard?.instantiateViewController(withIdentifier: "HitsoryTableViewController") else {  return }
+        navigationController?.pushViewController(nextController, animated: true)
+    }
+
 }

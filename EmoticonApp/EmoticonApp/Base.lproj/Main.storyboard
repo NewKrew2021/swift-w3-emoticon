@@ -71,6 +71,34 @@
             </objects>
             <point key="canvasLocation" x="1947.826086956522" y="93.415178571428569"/>
         </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="cGW-sf-lzS">
+            <objects>
+                <tableViewController storyboardIdentifier="HitsoryTableViewController" id="04j-fP-B1f" customClass="HistoryTableViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iaY-va-bx8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nV8-Z4-vx7">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nV8-Z4-vx7" id="eed-n2-Eus">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="04j-fP-B1f" id="YmJ-Q2-WNH"/>
+                            <outlet property="delegate" destination="04j-fP-B1f" id="Cxp-mX-hPU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1b9-Tv-zOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2696" y="85"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cBZ-6H-0RF">
             <objects>

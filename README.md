@@ -155,3 +155,10 @@
 
 ### Rename : TableViewController -> EmoticonListTableViewController
 
+### Add action to cart button
+
+- add action : push new ViewController(HistoryTableViewController)
+- remove : NavitationItemExtension
+
+![image-20210120193712831](README.assets/image-20210120193712831.png)
+
