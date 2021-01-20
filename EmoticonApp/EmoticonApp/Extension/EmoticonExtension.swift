@@ -8,7 +8,7 @@
 import UIKit
 
 extension Emoticon {
-    func image(index : Int) -> UIImage {
-        return UIImage(named: self.list[index]["image"] ?? "") ?? UIImage()
+    static func image(index : Int) -> UIImage {
+        return UIImage(named: Emoticon.list[index]["image"] ?? "") ?? UIImage()
     }
 }

@@ -11,7 +11,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var topView: EmoticonTopView!
     @IBOutlet weak var emoticonTable: UITableView!
-    private let emoticon = Emoticon()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     @objc func buyEmoticon() {
-        print("buyEmoticon")
+        
     }
 }
 
@@ -44,13 +43,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = emoticonTable.dequeueReusableCell(withIdentifier: "emoticonTableCell", for: indexPath) as! EmoticonTableViewCell
         
-        cell.setData(title: emoticon.title(index: indexPath.row), author: emoticon.author(index: indexPath.row), image: emoticon.image(index: indexPath.row))
+        cell.setData(title: Emoticon.title(index: indexPath.row), author: Emoticon.author(index: indexPath.row), image: Emoticon.image(index: indexPath.row))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.emoticon.size
+        return Emoticon.size
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

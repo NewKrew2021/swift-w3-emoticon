@@ -8,7 +8,7 @@
 import Foundation
 
 struct Emoticon {
-    let list = [
+    static let list = [
             [ "title" : "유년기오구의 쪼꼬만 일상", "author" : "문랩", "image" : "image01.png" ],
             [ "title" : "콩글리시 이즈 꿀잼2", "author" : "노페이퍼", "image" : "image02.png" ],
             [ "title" : "진짜 찐?", "author" : "mohe", "image" : "image03.png" ],
@@ -23,15 +23,15 @@ struct Emoticon {
             [ "title" : "안녕! 아기 보노보노", "author" : "보노보노", "image" : "image12.png" ]
             ]
     
-    var size: Int {
+    static var size: Int {
         return self.list.count
     }
     
-    func title(index : Int) -> String {
+    static func title(index : Int) -> String {
         return self.list[index]["title"] ?? ""
     }
     
-    func author(index : Int) -> String {
+    static func author(index : Int) -> String {
         return self.list[index]["author"] ?? ""
     }
 }
