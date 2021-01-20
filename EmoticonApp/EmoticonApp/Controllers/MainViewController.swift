@@ -47,6 +47,7 @@ class MainViewController: UIViewController, UITableViewDelegate {
     }
 
     private func setUI() {
+        setNavigationItem()
         setMainImage()
         setTableView()
     }
@@ -69,11 +70,21 @@ class MainViewController: UIViewController, UITableViewDelegate {
         cellHeight = CGFloat((self.screenHeight-positionY)/numOfCell)
     }
     
+    private func setNavigationItem() {
+        let item = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(goToHistory))
+        self.navigationItem.setRightBarButton(item, animated: true)
+    }
+    
     private func clickAlertOK(id: String) {
         if let emoji = emojiList.findById(id: id) {
             cart.push(emoji: emoji)
         }
     }
+    
+    @objc private func goToHistory() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryViewController") {
+            self.navigationController?.pushViewController(vc, animated: true)    }
+        }
     
 }
 

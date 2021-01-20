@@ -19,6 +19,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Emoticon" id="wOn-N9-0xF"/>
+                    <connections>
+                        <segue destination="eqs-hq-Np2" kind="presentation" modalPresentationStyle="fullScreen" id="kwF-WC-g85"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rm-Hn-8sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-1970" y="321"/>
         </scene>
-        <!--Table View Controller-->
+        <!--History View Controller-->
         <scene sceneID="CrR-3r-OB2">
             <objects>
-                <tableViewController id="eqs-hq-Np2" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eqs-hq-Np2" customClass="HistoryViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eg2-9y-V3g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUJ-wX-rdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="321"/>
+            <point key="canvasLocation" x="-41" y="321"/>
         </scene>
     </scenes>
     <resources>
