@@ -7,8 +7,9 @@
 
 import Foundation
 
-class EmoticonService {
-    static let instance = EmoticonService()
+class EmoticonServiceImpl: EmoticonService {
+    
+    static let instance: EmoticonService = EmoticonServiceImpl()
     private var emoticons: [Emoticon] = []
     public var count: Int {
         get {

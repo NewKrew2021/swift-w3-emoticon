@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var emoticonList: UITableView!
     
-    private let emoticonService: EmoticonService = EmoticonService.instance
+    private let emoticonService: EmoticonService = EmoticonServiceImpl.instance
     private let upperView = MainImageView()
     
     override func viewDidLoad() {
