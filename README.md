@@ -129,5 +129,14 @@
 
 ### Feedback Modify - remove unused overriding method in myCell.swift
 
-### Feedback Modify - Naming Convention 
+### Feedback Modify - Naming Convention
+
+### Feedback Modify -  Decompose ViewController into View and Controller
+
+- make UpperBelowView.swift
+- make class : UpperView
+  - add set methods : setUpperView, setUpperInnerView, setUpperImage, setUpperImageView, setUpperImageView, setTitleInView, setDescriptionInView
+  - add get methods : getUpperInnerView, getTitleInView
+- extension class : UIVlew
+  - add method : setBelowView
 

@@ -43,7 +43,6 @@ class MyCell: UITableViewCell {
         purchaseLabel.setConstraint(target: .purchase, standardView: self, height: height)
     }
 }
-
 extension UILabel {
     enum labelType {
         case title
