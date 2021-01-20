@@ -45,6 +45,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="구매"/>
+                                                    <connections>
+                                                        <action selector="clickedPurchase:" destination="hU6-ec-vo0" eventType="touchUpInside" id="e0f-uz-EjK"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF5-1j-jLS">
                                                     <rect key="frame" x="65" y="38" width="269" height="12"/>

@@ -14,6 +14,8 @@ class CartViewController: UITableViewController {
 
         navigationItem.title = "History"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clickedClearButton))
+        
+        
     }
     
     @objc func clickedClearButton() {

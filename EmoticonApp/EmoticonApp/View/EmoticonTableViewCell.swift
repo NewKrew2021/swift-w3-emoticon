@@ -18,4 +18,8 @@ class EmoticonTableViewCell: UITableViewCell {
         authorLabel.text = author
         emoticonImage.image = image
     }
+    
+    @IBAction func clickedPurchase(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "purchaseButton"),object: nil)
+    }
 }

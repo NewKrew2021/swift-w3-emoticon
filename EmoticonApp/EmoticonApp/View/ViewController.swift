@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(clickedCartButton))
         
+        NotificationCenter.default.addObserver(self,
+                    selector: #selector(buyEmoticon),
+                    name: NSNotification.Name(rawValue: "purchaseButton"),
+                    object: nil)
+        
         topView.initView()
         
         emoticonTable.delegate = self
@@ -27,6 +32,10 @@ class ViewController: UIViewController {
     @objc func clickedCartButton() {
         guard let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "cartViewController") else { return }
         self.navigationController?.pushViewController(cartViewController, animated: true)
+    }
+    
+    @objc func buyEmoticon() {
+        print("buyEmoticon")
     }
 }
 
