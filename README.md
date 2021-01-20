@@ -166,3 +166,18 @@
 
 ![image-20210120193914057](README.assets/image-20210120193914057.png)
 
+### make Clear Button
+
+- make clear button with action : clearButtonTouched
+- add the button as a right bar button
+
+![image-20210120194622193](README.assets/image-20210120194622193.png)
+
+### NotificationCenter1
+
+- addObserver : EmoticonListTableViewController
+- new method : addHistory
+- addPost : buyButtonTouched
+
+![image-20210120232640641](README.assets/image-20210120232640641.png)
+

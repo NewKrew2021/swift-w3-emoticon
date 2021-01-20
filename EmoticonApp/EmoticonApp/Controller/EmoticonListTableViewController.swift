@@ -19,9 +19,15 @@ class EmoticonListTableViewController: UIViewController {
         tableView.assignDelegateAndDataSource(controller: self)
 
         Emoticons.registerEmoticons()
+        NotificationCenter.default.addObserver(self, selector: #selector(addHistory(_:)), name: .buyButtonTouched, object: nil)
     }
     
 
+    @objc func addHistory(_ notification : Notification) {
+        guard let history = notification.userInfo?["history"] as? History else { return }
+        Histories.addHistory(history: history)
+    }
+    
 }
 
 extension EmoticonListTableViewController : UITableViewDelegate, UITableViewDataSource {
@@ -42,4 +48,8 @@ extension EmoticonListTableViewController : UITableViewDelegate, UITableViewData
         return tableView.frame.height/6
     }
     
+}
+
+extension Notification.Name {
+    static let buyButtonTouched = Notification.Name("buyButtonTouched")
 }

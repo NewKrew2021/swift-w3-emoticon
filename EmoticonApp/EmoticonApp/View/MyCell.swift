@@ -11,7 +11,7 @@ class MyCell: UITableViewCell {
     
     private var titleLabel = UILabel()
     private var authorLabel = UILabel()
-    private var purchaseLabel = UILabel()
+    var purchaseButton = UIButton()
     private var leadingImage = UIImageView()
     private var standardHeight : CGFloat?
 
@@ -22,7 +22,7 @@ class MyCell: UITableViewCell {
         addSubview(leadingImage)
         addSubview(titleLabel)
         addSubview(authorLabel)
-        addSubview(purchaseLabel)
+        addSubview(purchaseButton)
         setConstraints()
         standardHeight = standardHeight == nil ? frame.height : standardHeight
     }
@@ -38,15 +38,28 @@ class MyCell: UITableViewCell {
         titleLabel.setConstraint(target: .title, standardView: leadingImage, height : height)
         authorLabel.setConstraint(target: .description, standardView: leadingImage, height: height)
         leadingImage.setConstraint(standardView: self, height: height)
-        purchaseLabel.text = "구매"
-        purchaseLabel.setConstraint(target: .purchase, standardView: self, height: height)
+        setPurchaseButton(standardView : self, height : height)
+    }
+    
+    func setPurchaseButton(standardView : UIView, height : CGFloat) {
+        purchaseButton.translatesAutoresizingMaskIntoConstraints = false
+        purchaseButton.leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant : -1.2 * height).isActive = true
+        purchaseButton.centerYAnchor.constraint(equalTo: standardView.centerYAnchor).isActive = true
+        purchaseButton.setTitle("구매", for: .normal)
+        purchaseButton.setTitleColor(.systemBlue, for: .normal)
+        purchaseButton.addTarget(self, action: #selector(buyButtonTouched), for: .touchUpInside)
+    }
+    
+    @objc func buyButtonTouched() {
+        let titleText = titleLabel.text!
+        let history = History(title: titleText, time: "2020-11-24 09:51:37 + 0000")
+        NotificationCenter.default.post(name: .buyButtonTouched, object: nil, userInfo: ["history" : history])
     }
 }
 extension UILabel {
     enum labelType {
         case title
         case description
-        case purchase
     }
     
     func setConstraint(target: labelType, standardView : UIView, height : CGFloat) {
@@ -63,11 +76,7 @@ extension UILabel {
             topAnchor.constraint(equalTo: standardView.centerYAnchor, constant: padding).isActive = true
             textColor = .gray
             break
-        case .purchase:
-//            leadingAnchor.constraint(equalToSystemSpacingAfter: standardView.trailingAnchor, multiplier: 0.1).isActive = true
-            leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant : -1.2 * height).isActive = true
-            centerYAnchor.constraint(equalTo: standardView.centerYAnchor).isActive = true
-            textColor = .systemBlue
+            
         }
     }
 }
