@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         
         emoticonTable.delegate = self
         emoticonTable.dataSource = self
-        emoticonTable.rowHeight = 70
     }
 
     @objc func clickedCartButton() {
@@ -43,5 +42,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.emoticon.size
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
