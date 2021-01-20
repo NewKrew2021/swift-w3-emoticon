@@ -11,11 +11,9 @@ class CartCell: UITableViewCell {
 
     @IBOutlet weak var emoticonName: UILabel!
     @IBOutlet weak var selectDateAndTime: UILabel!
-    let formatter = DateFormatter()
     
-    func setCell(emoticonName: String) {
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.emoticonName.text = emoticonName
-        self.selectDateAndTime.text = formatter.string(from: Date())
+    func setCell(product: Product) {
+        emoticonName.text = product.emoticonName
+        selectDateAndTime.text = product.selectTimeAndDate
     }
 }

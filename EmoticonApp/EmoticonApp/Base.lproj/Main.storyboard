@@ -60,6 +60,9 @@
                                                         <constraint firstAttribute="width" constant="30" id="b1h-cY-3ZO"/>
                                                     </constraints>
                                                     <state key="normal" title="구매"/>
+                                                    <connections>
+                                                        <action selector="selectEmoticon:" destination="U3N-sy-kNc" eventType="touchUpInside" id="o5g-H8-92h"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -98,7 +101,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cart.fill" catalog="system"/>
                                 <connections>
-                                    <segue destination="eFQ-rJ-kh6" kind="show" id="idr-vc-XhU"/>
+                                    <action selector="moveToCartView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esS-2g-yZX"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -114,13 +117,13 @@
         <!--history-->
         <scene sceneID="p8r-57-tIQ">
             <objects>
-                <tableViewController id="eFQ-rJ-kh6" customClass="CartViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CartViewController" id="eFQ-rJ-kh6" customClass="CartViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tG3-Ii-TIt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u0M-co-8cl" customClass="CartCell" customModule="EmoticonApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" id="u0M-co-8cl" customClass="CartCell" customModule="EmoticonApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0M-co-8cl" id="J3j-Uk-Jgv">

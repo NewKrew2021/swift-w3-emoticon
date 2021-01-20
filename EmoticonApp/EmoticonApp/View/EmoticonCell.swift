@@ -19,4 +19,8 @@ class EmoticonCell: UITableViewCell {
         author.text = emoticon.author
         author.sizeToFit()
     }
+    
+    @IBAction func selectEmoticon(_ sender: Any) {
+        NotificationCenter.default.post(name: .selectEmoticon, object: nil, userInfo: ["title": title.text ?? "err"])
+    }
 }
