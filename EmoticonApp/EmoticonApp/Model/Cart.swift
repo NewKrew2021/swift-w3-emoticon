@@ -14,4 +14,14 @@ struct Cart {
         self.data.append(history)
         HistoryData.addData(data)
     }
+    
+    static func removeAll() {
+        self.data.removeAll()
+        HistoryData.addData(data)
+    }
+    
+    static func remove(index: Int) {
+        self.data.remove(at: index)
+        HistoryData.addData(data)
+    }
 }

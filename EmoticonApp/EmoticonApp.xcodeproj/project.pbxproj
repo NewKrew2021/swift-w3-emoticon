@@ -25,6 +25,10 @@
 		3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
 		3248831E25B6C6ED0031BEC6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248831D25B6C6ED0031BEC6 /* CartViewController.swift */; };
 		324D687D25B833F4005674DA /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D687C25B833F4005674DA /* Cart.swift */; };
+		324D68A625B84992005674DA /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D68A525B84992005674DA /* CartTests.swift */; };
+		324D68B225B8499D005674DA /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D687C25B833F4005674DA /* Cart.swift */; };
+		324D68B825B84A29005674DA /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32460A4825B82CB10049BEEF /* HistoryData.swift */; };
+		324D68C925B84AAD005674DA /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32460A4E25B82D420049BEEF /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,13 @@
 			remoteInfo = EmoticonApp;
 		};
 		3248830825B68B4E0031BEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 321F8B2225B5823C007FAC1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 321F8B2925B5823C007FAC1B;
+			remoteInfo = EmoticonApp;
+		};
+		324D68A825B84992005674DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 321F8B2225B5823C007FAC1B /* Project object */;
 			proxyType = 1;
@@ -77,6 +88,9 @@
 		3248830725B68B4E0031BEC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3248831D25B6C6ED0031BEC6 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		324D687C25B833F4005674DA /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		324D68A325B84992005674DA /* CartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		324D68A525B84992005674DA /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
+		324D68A725B84992005674DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +122,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		324D68A025B84992005674DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -118,6 +139,7 @@
 				321F8B4325B5823C007FAC1B /* EmoticonAppTests */,
 				321F8B4E25B5823C007FAC1B /* EmoticonAppUITests */,
 				3248830425B68B4E0031BEC6 /* EmoticonTests */,
+				324D68A425B84992005674DA /* CartTests */,
 				321F8B2B25B5823C007FAC1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +151,7 @@
 				321F8B4025B5823C007FAC1B /* EmoticonAppTests.xctest */,
 				321F8B4B25B5823C007FAC1B /* EmoticonAppUITests.xctest */,
 				3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */,
+				324D68A325B84992005674DA /* CartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +237,15 @@
 			path = EmoticonTests;
 			sourceTree = "<group>";
 		};
+		324D68A425B84992005674DA /* CartTests */ = {
+			isa = PBXGroup;
+			children = (
+				324D68A525B84992005674DA /* CartTests.swift */,
+				324D68A725B84992005674DA /* Info.plist */,
+			);
+			path = CartTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +320,24 @@
 			productReference = 3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		324D68A225B84992005674DA /* CartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 324D68AA25B84992005674DA /* Build configuration list for PBXNativeTarget "CartTests" */;
+			buildPhases = (
+				324D689F25B84992005674DA /* Sources */,
+				324D68A025B84992005674DA /* Frameworks */,
+				324D68A125B84992005674DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				324D68A925B84992005674DA /* PBXTargetDependency */,
+			);
+			name = CartTests;
+			productName = CartTests;
+			productReference = 324D68A325B84992005674DA /* CartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -312,6 +362,10 @@
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 321F8B2925B5823C007FAC1B;
 					};
+					324D68A225B84992005674DA = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 321F8B2925B5823C007FAC1B;
+					};
 				};
 			};
 			buildConfigurationList = 321F8B2525B5823C007FAC1B /* Build configuration list for PBXProject "EmoticonApp" */;
@@ -331,6 +385,7 @@
 				321F8B3F25B5823C007FAC1B /* EmoticonAppTests */,
 				321F8B4A25B5823C007FAC1B /* EmoticonAppUITests */,
 				3248830225B68B4E0031BEC6 /* EmoticonTests */,
+				324D68A225B84992005674DA /* CartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -361,6 +416,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3248830125B68B4E0031BEC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		324D68A125B84992005674DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,6 +475,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		324D689F25B84992005674DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324D68A625B84992005674DA /* CartTests.swift in Sources */,
+				324D68B225B8499D005674DA /* Cart.swift in Sources */,
+				324D68C925B84AAD005674DA /* History.swift in Sources */,
+				324D68B825B84A29005674DA /* HistoryData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -430,6 +503,11 @@
 			isa = PBXTargetDependency;
 			target = 321F8B2925B5823C007FAC1B /* EmoticonApp */;
 			targetProxy = 3248830825B68B4E0031BEC6 /* PBXContainerItemProxy */;
+		};
+		324D68A925B84992005674DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 321F8B2925B5823C007FAC1B /* EmoticonApp */;
+			targetProxy = 324D68A825B84992005674DA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -723,6 +801,44 @@
 			};
 			name = Release;
 		};
+		324D68AB25B84992005674DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = blue.kakaocorp.CartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoticonApp.app/EmoticonApp";
+			};
+			name = Debug;
+		};
+		324D68AC25B84992005674DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = blue.kakaocorp.CartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoticonApp.app/EmoticonApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -767,6 +883,15 @@
 			buildConfigurations = (
 				3248830B25B68B4E0031BEC6 /* Debug */,
 				3248830C25B68B4E0031BEC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		324D68AA25B84992005674DA /* Build configuration list for PBXNativeTarget "CartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				324D68AB25B84992005674DA /* Debug */,
+				324D68AC25B84992005674DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
