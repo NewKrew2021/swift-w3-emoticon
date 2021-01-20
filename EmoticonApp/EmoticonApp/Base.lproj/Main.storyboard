@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--emoticon-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,7 +79,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="l2L-0A-an4"/>
+                    <navigationItem key="navigationItem" title="emoticon" id="l2L-0A-an4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="5rf-WA-VYn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iOD-x2-AxZ">
+                                <rect key="frame" x="297" y="11" width="77" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="cart.fill" catalog="system"/>
+                            </button>
+                            <connections>
+                                <segue destination="eFQ-rJ-kh6" kind="show" id="UC2-gR-aTg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emoticonList" destination="pPA-cv-0il" id="HDh-c3-fwS"/>
                     </connections>
@@ -87,6 +98,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="941.53846153846155" y="88.151658767772503"/>
+        </scene>
+        <!--history-->
+        <scene sceneID="p8r-57-tIQ">
+            <objects>
+                <tableViewController id="eFQ-rJ-kh6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tG3-Ii-TIt">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="u0M-co-8cl">
+                                <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0M-co-8cl" id="J3j-Uk-Jgv">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eFQ-rJ-kh6" id="fDJ-qd-5cz"/>
+                            <outlet property="delegate" destination="eFQ-rJ-kh6" id="VH6-aW-a7H"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="history" id="h9m-e0-9eY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1Z-R3-f7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="11e-E6-bD9">
@@ -108,6 +148,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
