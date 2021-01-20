@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class EmoticonListTableViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +24,7 @@ class TableViewController: UIViewController {
 
 }
 
-extension TableViewController : UITableViewDelegate, UITableViewDataSource {
+extension EmoticonListTableViewController : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Emoticons.count

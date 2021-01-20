@@ -18,7 +18,7 @@ extension UITableView {
         tableFooterView = UIView()
     }
     
-    func assignDelegateAndDataSource(controller : TableViewController) {
+    func assignDelegateAndDataSource(controller : EmoticonListTableViewController) {
         delegate = controller
         dataSource = controller
     }

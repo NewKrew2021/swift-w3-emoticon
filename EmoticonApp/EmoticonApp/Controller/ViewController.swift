@@ -11,10 +11,12 @@ class ViewController: UIViewController {
 
     private var upperView = UpperView()
     @IBOutlet weak var belowView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationItem.setNavigationItem()
+        
         view.addSubview(upperView)
         upperView.setUpperView(standardView: view)
         upperView.setUpperInnerView(padding: CGFloat(20))

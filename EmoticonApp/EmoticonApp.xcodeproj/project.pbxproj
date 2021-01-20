@@ -17,9 +17,10 @@
 		D2E9297F25B52C8300E13879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E9297D25B52C8300E13879 /* LaunchScreen.storyboard */; };
 		D2E9298A25B52C8400E13879 /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9298925B52C8400E13879 /* EmoticonAppTests.swift */; };
 		D2E9299525B52C8400E13879 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9299425B52C8400E13879 /* EmoticonAppUITests.swift */; };
-		D2E929C625B5A15800E13879 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E929C525B5A15800E13879 /* TableViewController.swift */; };
+		D2E929C625B5A15800E13879 /* EmoticonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E929C525B5A15800E13879 /* EmoticonListTableViewController.swift */; };
 		D2F331E625B7E77E0054F6DD /* UpperBelowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331E525B7E77E0054F6DD /* UpperBelowView.swift */; };
 		D2F331EE25B812040054F6DD /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331ED25B812040054F6DD /* TableViewExtension.swift */; };
+		D2F331F625B81E190054F6DD /* NavigationItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331F525B81E190054F6DD /* NavigationItemExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +57,10 @@
 		D2E9299025B52C8400E13879 /* EmoticonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E9299425B52C8400E13879 /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		D2E9299625B52C8400E13879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2E929C525B5A15800E13879 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D2E929C525B5A15800E13879 /* EmoticonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonListTableViewController.swift; sourceTree = "<group>"; };
 		D2F331E525B7E77E0054F6DD /* UpperBelowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBelowView.swift; sourceTree = "<group>"; };
 		D2F331ED25B812040054F6DD /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		D2F331F525B81E190054F6DD /* NavigationItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				D2A2103A25B69FDA00904156 /* MyCell.swift */,
 				D2F331E525B7E77E0054F6DD /* UpperBelowView.swift */,
 				D2F331ED25B812040054F6DD /* TableViewExtension.swift */,
+				D2F331F525B81E190054F6DD /* NavigationItemExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E9297625B52C8200E13879 /* ViewController.swift */,
-				D2E929C525B5A15800E13879 /* TableViewController.swift */,
+				D2E929C525B5A15800E13879 /* EmoticonListTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,11 +303,12 @@
 				D2E9297725B52C8200E13879 /* ViewController.swift in Sources */,
 				D2A2103B25B69FDA00904156 /* MyCell.swift in Sources */,
 				D2A2101A25B670E900904156 /* Emoticons.swift in Sources */,
+				D2F331F625B81E190054F6DD /* NavigationItemExtension.swift in Sources */,
 				D2F331E625B7E77E0054F6DD /* UpperBelowView.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
 				D2F331EE25B812040054F6DD /* TableViewExtension.swift in Sources */,
 				D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */,
-				D2E929C625B5A15800E13879 /* TableViewController.swift in Sources */,
+				D2E929C625B5A15800E13879 /* EmoticonListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

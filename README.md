@@ -146,3 +146,12 @@
 - extension class : UITableView
   - add set methods : setTableView, assignDelegateAndDataSource
 
+### Add NavigationController
+
+- Embed NavigationController
+- extension UINavigationItem -> add method : setNavigationItem
+
+![image-20210120172210451](README.assets/image-20210120172210451.png)
+
+### Rename : TableViewController -> EmoticonListTableViewController
+
