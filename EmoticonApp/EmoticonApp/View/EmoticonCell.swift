@@ -13,8 +13,8 @@ class EmoticonCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
     func setCell(emoticon: Emoticon) {
-        self.thumbnail.image = emoticon.image
-        self.title.text = emoticon.title
-        self.author.text = emoticon.author
+        thumbnail.image = UIImage(named: emoticon.image)
+        title.text = emoticon.title
+        author.text = emoticon.author
     }
 }

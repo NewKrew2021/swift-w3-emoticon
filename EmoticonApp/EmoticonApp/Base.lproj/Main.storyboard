@@ -64,9 +64,9 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="emoticonCell"/>
                                         <connections>
-                                            <outlet property="_author" destination="9RZ-XN-zyq" id="5km-Wk-JoB"/>
-                                            <outlet property="_thumbnail" destination="U9W-Uk-z8t" id="Z66-x9-9N6"/>
-                                            <outlet property="_title" destination="pZc-a1-E2x" id="pMp-Ze-wes"/>
+                                            <outlet property="author" destination="9RZ-XN-zyq" id="3o8-S8-4P8"/>
+                                            <outlet property="thumbnail" destination="U9W-Uk-z8t" id="Xvg-aZ-Dc7"/>
+                                            <outlet property="title" destination="pZc-a1-E2x" id="KqB-uj-YFw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
