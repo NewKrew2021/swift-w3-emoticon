@@ -41,7 +41,7 @@ class EmoticonService {
         emoticons.append(emoticon)
     }
     
-    public func getEmoticon(at: Int) -> Emoticon {
-        return emoticons[at]
+    subscript(index: Int) -> Emoticon {
+        return emoticons[index]
     }
 }
