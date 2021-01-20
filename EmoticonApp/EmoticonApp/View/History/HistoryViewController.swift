@@ -9,6 +9,7 @@ import UIKit
 
 class HistoryViewController: UIViewController {
     private let historyCellName = "HistoryTableViewCell"
+    private var cart = Cart.shared
 
     private var tableView: UITableView = {
         let view = UITableView()
@@ -58,7 +59,7 @@ class HistoryViewController: UIViewController {
     @objc private func tappedClear() {
         showAlert(style: .alert, title: "삭제", message: "모든 구매내역을 삭제하시겠습니까?", confirm: nil, destructive: "삭제") { [weak self] in
             guard let self = self else { return }
-            Cart.removeAll()
+            self.cart.removeAll()
             self.tableView.reloadData()
         }
     }
@@ -66,7 +67,7 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Cart.count
+        return cart.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,16 +77,17 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: historyCellName, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
 
-        cell.titleLabel.text = Cart[indexPath.row].title
-        cell.dateLabel.text = Cart[indexPath.row].date.description
+        cell.titleLabel.text = cart[indexPath.row].title
+        cell.dateLabel.text = cart[indexPath.row].date.description
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "삭제") { [weak self] _, _, _ in
-            Cart.remove(index: indexPath.row)
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.cart.remove(index: indexPath.row)
+            self.tableView.reloadData()
         }
 
         return UISwipeActionsConfiguration(actions: [delete])
