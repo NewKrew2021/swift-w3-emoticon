@@ -11,6 +11,7 @@ class EmoticonViewController: UIViewController {
     private let emoticonCellName = "EmoticonTableViewCell"
     private let emoticonHeaderName = "EmoticonHeaderCell"
     private var cart = Cart.shared
+    private let shop = Shop.shared
 
     private var tableView: UITableView = {
         let view = UITableView()
@@ -66,7 +67,7 @@ class EmoticonViewController: UIViewController {
 
     @objc private func buyEmoticon(_ notification: Notification) {
         guard let data = notification.object as? History else { return }
-        showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오", destructive: nil) {[weak self] in
+        showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오", destructive: nil) { [weak self] in
             guard let self = self else { return }
             self.cart.buyEmoticon(title: data.title, date: data.date)
         }
@@ -80,7 +81,7 @@ class EmoticonViewController: UIViewController {
 extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
     // 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Shop.count
+        return shop.count
     }
 
     // 셀이 어떻게 표현될 것인가?
@@ -88,9 +89,10 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmoticonTableViewCell", for: indexPath) as? EmoticonTableViewCell else {
             return UITableViewCell()
         }
-        cell.titleLabel.text = Shop[indexPath.row]["title"]
-        cell.subTitleLabel.text = Shop[indexPath.row]["author"]
-        cell.imgView.image = UIImage(named: Shop[indexPath.row]["image"] ?? "") ?? UIImage()
+        let emoticon = shop[indexPath.row]
+        cell.titleLabel.text = emoticon.title
+        cell.subTitleLabel.text = emoticon.author
+        cell.imgView.image = UIImage(named: emoticon.imagePath)
         return cell
     }
 
