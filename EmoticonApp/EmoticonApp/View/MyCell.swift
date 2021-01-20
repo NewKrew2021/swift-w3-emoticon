@@ -7,7 +7,7 @@
 
 import UIKit
 
-class myCell: UITableViewCell {
+class MyCell: UITableViewCell {
     
     private var titleLabel = UILabel()
     private var authorLabel = UILabel()

@@ -37,7 +37,7 @@ extension TableViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! myCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as! MyCell
         let row = indexPath.row
         cell.setEmoticon(emoticon : Emoticons.getEmoticon(index: row))
         cell.setConstraints()

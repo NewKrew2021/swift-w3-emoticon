@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D2A2101A25B670E900904156 /* Emoticons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2101925B670E900904156 /* Emoticons.swift */; };
-		D2A2103B25B69FDA00904156 /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2103A25B69FDA00904156 /* myCell.swift */; };
+		D2A2103B25B69FDA00904156 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A2103A25B69FDA00904156 /* MyCell.swift */; };
 		D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9297225B52C8200E13879 /* AppDelegate.swift */; };
 		D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9297425B52C8200E13879 /* SceneDelegate.swift */; };
 		D2E9297725B52C8200E13879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9297625B52C8200E13879 /* ViewController.swift */; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		D2A2101925B670E900904156 /* Emoticons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticons.swift; sourceTree = "<group>"; };
-		D2A2103A25B69FDA00904156 /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		D2A2103A25B69FDA00904156 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		D2E9296F25B52C8200E13879 /* EmoticonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoticonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2E9297225B52C8200E13879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2E9297425B52C8200E13879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		D2A2103F25B6E03000904156 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D2A2103A25B69FDA00904156 /* myCell.swift */,
+				D2A2103A25B69FDA00904156 /* MyCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2E9297725B52C8200E13879 /* ViewController.swift in Sources */,
-				D2A2103B25B69FDA00904156 /* myCell.swift in Sources */,
+				D2A2103B25B69FDA00904156 /* MyCell.swift in Sources */,
 				D2A2101A25B670E900904156 /* Emoticons.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
 				D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */,

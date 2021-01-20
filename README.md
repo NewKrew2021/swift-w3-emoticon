@@ -127,5 +127,7 @@
 
 - combine 3 methods that configure each subview into 1method : setEmoticon()
 
-### Feedback Modfiy - remove unused overriding method
+### Feedback Modify - remove unused overriding method in myCell.swift
+
+### Feedback Modify - Naming Convention 
 

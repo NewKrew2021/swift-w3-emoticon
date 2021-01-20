@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var upperView = myView()
+    private var upperView = MyView()
     private var upperInnerView = UIView()
     private var titleInView = UILabel()
     private var descriptionInView = UILabel()
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     }
 }
 
-class myView : UIView {
+class MyView : UIView {
     func mySetting() {
         
     }
