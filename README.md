@@ -103,3 +103,87 @@
 ### Modify : how to measure height
 
 - using initial height instead of height at that moment
+
+### Got some feedback --> Modify!
+
+- change struct name : Emoticon -> Emoticons
+  - add two methods to create unique data : getEmoticons(), registerEmoticons
+- make another struct : Emoticon
+  - implement getter and setter
+
+### Feedback Modify2
+
+- change method : Emoticons.getEmoticons() -> getEmoticon(index : Int)
+  - apply this modification -> TableViewController can pass minimum data to configure a cell
+- add variable : emoticons.count
+
+### Feedback Modify - TableViewController tableView methods
+
+- add Emoticions.registerEmoticons() method in viewDidLoad()
+- return Emoticons.count in tebleview method
+- call cell.setEmoticon method instead of calling 3 methods
+
+### Feedback Modify - myCell Methods
+
+- combine 3 methods that configure each subview into 1method : setEmoticon()
+
+### Feedback Modify - remove unused overriding method in myCell.swift
+
+### Feedback Modify - Naming Convention
+
+### Feedback Modify -  Decompose ViewController into View and Controller
+
+- make UpperBelowView.swift
+- make class : UpperView
+  - add set methods : setUpperView, setUpperInnerView, setUpperImage, setUpperImageView, setUpperImageView, setTitleInView, setDescriptionInView
+  - add get methods : getUpperInnerView, getTitleInView
+- extension class : UIVlew
+  - add method : setBelowView
+
+### Feedback Modify - Decompose TableViewController into View and Controller
+
+- make TableViewExtension.swift
+- extension class : UITableView
+  - add set methods : setTableView, assignDelegateAndDataSource
+
+### Add NavigationController
+
+- Embed NavigationController
+- extension UINavigationItem -> add method : setNavigationItem
+
+![image-20210120172210451](README.assets/image-20210120172210451.png)
+
+### Rename : TableViewController -> EmoticonListTableViewController
+
+### Add action to cart button
+
+- add action : push new ViewController(HistoryTableViewController)
+- remove : NavitationItemExtension
+
+![image-20210120193712831](README.assets/image-20210120193712831.png)
+
+### Remove useless borders
+
+![image-20210120193914057](README.assets/image-20210120193914057.png)
+
+### make Clear Button
+
+- make clear button with action : clearButtonTouched
+- add the button as a right bar button
+
+![image-20210120194622193](README.assets/image-20210120194622193.png)
+
+### NotificationCenter
+
+- addObserver : EmoticonListTableViewController
+- new method : addHistory
+- addPost : buyButtonTouched
+
+![image-20210120232640641](README.assets/image-20210120232640641.png)
+
+### ClearButton
+
+- add action : clearButtonTouched
+
+![image-20210120234431411](README.assets/image-20210120234431411.png)
+
