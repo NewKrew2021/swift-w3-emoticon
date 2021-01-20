@@ -9,12 +9,7 @@ import Foundation
 
 class EmoticonService {
     static let instance = EmoticonService()
-    private var _emoticons: [Emoticon] = []
-    public var emoticons: [Emoticon] {
-        get {
-            return _emoticons
-        }
-    }
+    private var emoticons: [Emoticon] = []
     public var count: Int {
         get {
             return emoticons.count
@@ -38,11 +33,15 @@ class EmoticonService {
             ]
         for data in list {
             guard let title: String = data["title"], let author:String = data["author"], let image: String = data["image"] else { continue }
-            _emoticons.append(Emoticon(title: title, author: author, image: image))
+            emoticons.append(Emoticon(title: title, author: author, image: image))
         }
     }
     
     public func addEmoticon(emoticon: Emoticon) {
-        _emoticons.append(emoticon)
+        emoticons.append(emoticon)
+    }
+    
+    public func getEmoticon(at: Int) -> Emoticon {
+        return emoticons[at]
     }
 }
