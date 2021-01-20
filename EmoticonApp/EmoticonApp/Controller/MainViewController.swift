@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
     
     func initTableView() {
         view.addSubview(emoticonList)
-        emoticonList.rowHeight = 80
+        emoticonList.rowHeight = 70
         emoticonList.translatesAutoresizingMaskIntoConstraints = false
         emoticonList.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         emoticonList.topAnchor.constraint(equalTo: upperView.bottomAnchor, constant: 10).isActive = true

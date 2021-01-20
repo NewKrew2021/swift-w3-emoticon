@@ -7,14 +7,8 @@
 
 import UIKit
 
-class MainTableView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class MainTableView: UITableView {
+    func test() {
     }
-    */
 
 }

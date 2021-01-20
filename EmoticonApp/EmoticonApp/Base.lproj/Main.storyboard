@@ -28,39 +28,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillProportionally" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-w0-bld">
-                                                    <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="200"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-Uk-z8t">
+                                                    <rect key="frame" x="10" y="5" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="U9W-Uk-z8t" secondAttribute="height" multiplier="1:1" id="aSh-Ns-JLf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uig-bI-iIh">
+                                                    <rect key="frame" x="64" y="5" width="246" height="44"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-Uk-z8t">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="200"/>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uig-bI-iIh">
-                                                            <rect key="frame" x="50" y="0.0" width="39.666666666666657" height="33.666666666666664"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZc-a1-E2x">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="19.333333333333332"/>
-                                                                    <accessibility key="accessibilityConfiguration" identifier="emoticonTitle"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RZ-XN-zyq">
-                                                                    <rect key="frame" x="0.0" y="19.333333333333332" width="39.666666666666664" height="14.333333333333332"/>
-                                                                    <accessibility key="accessibilityConfiguration" identifier="emoticonAuthor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZc-a1-E2x">
+                                                            <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="22"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="emoticonTitle"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RZ-XN-zyq">
+                                                            <rect key="frame" x="0.0" y="22" width="31" height="22"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="emoticonAuthor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-Ad-flP">
-                                                    <rect key="frame" x="340" y="11" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-Ad-flP">
+                                                    <rect key="frame" x="340" y="12" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="UVY-Oo-1qu"/>
+                                                        <constraint firstAttribute="width" constant="30" id="b1h-cY-3ZO"/>
+                                                    </constraints>
                                                     <state key="normal" title="구매"/>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U9W-Uk-z8t" firstAttribute="leading" secondItem="QSa-o5-YGD" secondAttribute="leading" constant="10" id="7xk-dP-3Oe"/>
+                                                <constraint firstItem="U9W-Uk-z8t" firstAttribute="top" secondItem="QSa-o5-YGD" secondAttribute="top" constant="5" id="9hS-UO-cim"/>
+                                                <constraint firstItem="NaL-Ad-flP" firstAttribute="leading" secondItem="uig-bI-iIh" secondAttribute="trailing" constant="30" id="Eqz-Wk-pSb"/>
+                                                <constraint firstAttribute="bottom" secondItem="U9W-Uk-z8t" secondAttribute="bottom" constant="5" id="S2I-ot-pxQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="uig-bI-iIh" secondAttribute="bottom" constant="5" id="WtJ-hm-rbY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NaL-Ad-flP" secondAttribute="trailing" id="YVH-k7-NBr"/>
+                                                <constraint firstItem="uig-bI-iIh" firstAttribute="top" secondItem="QSa-o5-YGD" secondAttribute="top" constant="5" id="eFr-TQ-ZYd"/>
+                                                <constraint firstItem="NaL-Ad-flP" firstAttribute="centerY" secondItem="QSa-o5-YGD" secondAttribute="centerY" id="kh3-kU-SRM"/>
+                                                <constraint firstItem="uig-bI-iIh" firstAttribute="leading" secondItem="U9W-Uk-z8t" secondAttribute="trailing" constant="10" id="q38-om-gEz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="emoticonCell"/>
                                         <connections>
