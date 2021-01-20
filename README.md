@@ -16,4 +16,12 @@
 2. 이모티콘 image파일들 에셋에 추가
 3. 커스텀 테이블 셀에 이미지와 구매버튼 추가
 
-<img width="295" alt="sc" src="https://user-images.githubusercontent.com/46565404/104994781-77ec3700-5a68-11eb-8c1d-a022e2b73f68.png">
+<img width="295" alt="sc" src="https://user-images.githubusercontent.com/46565404/104994781- 77ec3700-5a68-11eb-8c1d-a022e2b73f68.png">
+
+## Step3
+1/20 20:40
+1. 네비게이션 컨트롤러로 History화면 추가
+2. Notification으로 구매버튼 클릭시 UserDefault에 History 저장
+3. Card 객체에 대해 test Code 작성
+
+<img width="290" alt="sc" src="https://user-images.githubusercontent.com/46565404/105170500-58383a00-5b60-11eb-93b1-bd4f4b7fa87a.png">
