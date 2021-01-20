@@ -97,10 +97,10 @@
                                 <rect key="frame" x="297" y="11" width="77" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="cart.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="eFQ-rJ-kh6" kind="show" id="idr-vc-XhU"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="eFQ-rJ-kh6" kind="show" id="UC2-gR-aTg"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
