@@ -127,3 +127,5 @@
 
 - combine 3 methods that configure each subview into 1method : setEmoticon()
 
+### Feedback Modfiy - remove unused overriding method
+

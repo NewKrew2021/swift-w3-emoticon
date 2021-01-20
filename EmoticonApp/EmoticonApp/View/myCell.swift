@@ -27,11 +27,6 @@ class myCell: UITableViewCell {
         contentView.layer.borderWidth = 1
         standardHeight = standardHeight == nil ? frame.height : standardHeight
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
     
     func setEmoticon(emoticon : Emoticon) {
         titleLabel.text = emoticon.title
