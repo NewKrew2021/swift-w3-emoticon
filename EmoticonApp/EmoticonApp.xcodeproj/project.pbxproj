@@ -20,6 +20,7 @@
 		5D4B736025B6B7D6004417B3 /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B735F25B6B7D6004417B3 /* EmoticonAppTests.swift */; };
 		5D4B736925B6B7DF004417B3 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B733D25B67A09004417B3 /* Emoji.swift */; };
 		5D4B736D25B6B802004417B3 /* EmojiListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B736C25B6B802004417B3 /* EmojiListTest.swift */; };
+		5D4B739825B82A48004417B3 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B739725B82A48004417B3 /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5D4B735F25B6B7D6004417B3 /* EmoticonAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppTests.swift; sourceTree = "<group>"; };
 		5D4B736125B6B7D6004417B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D4B736C25B6B802004417B3 /* EmojiListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListTest.swift; sourceTree = "<group>"; };
+		5D4B739725B82A48004417B3 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5D4B733D25B67A09004417B3 /* Emoji.swift */,
+				5D4B739725B82A48004417B3 /* Cart.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				5D4B735425B6AE9D004417B3 /* MainViewController.swift in Sources */,
 				5D4B730C25B51E6D004417B3 /* SceneDelegate.swift in Sources */,
 				5D4B734225B6A2F1004417B3 /* Cell.swift in Sources */,
+				5D4B739825B82A48004417B3 /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
