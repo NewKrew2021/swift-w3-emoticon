@@ -10,12 +10,15 @@ import Foundation
 struct Emoticons {
     
     static private var emoticons : [Emoticon] = []
+    static var count : Int {
+        return emoticons.count
+    }
     
-    static func getEmoticons() -> [Emoticon] {
+    static func getEmoticon(index : Int) -> Emoticon {
         if emoticons.count == 0 {
             registerEmoticons()
         }
-        return emoticons
+        return emoticons[index]
     }
     
     static func registerEmoticons() {

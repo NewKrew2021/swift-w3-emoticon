@@ -111,3 +111,9 @@
 - make another struct : Emoticon
   - implement getter and setter
 
+### Feedback Modify2
+
+- change method : Emoticons.getEmoticons() -> getEmoticon(index : Int)
+  - apply this modification -> TableViewController can pass minimum data to configure a cell
+- add variable : emoticons.count
+
