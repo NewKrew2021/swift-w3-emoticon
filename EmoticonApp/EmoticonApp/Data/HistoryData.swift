@@ -11,13 +11,14 @@ struct HistoryData {
     static let db = UserDefaults.standard
     
     static func getData() -> [History]? {
-        let data = db.data(forKey: "history")
-        let decodedArray = try! JSONDecoder().decode([History].self, from: data!)
-        return decodedArray
+        var histories:[History]?
+        if let data = UserDefaults.standard.value(forKey:"history") as? Data {
+            histories = try? PropertyListDecoder().decode([History].self, from: data)
+        }
+        return histories
     }
 
     static func addData(_ data: [History]) {
-        let encodedArray = try! JSONEncoder().encode(data)
-        db.set(encodedArray, forKey: "history")
+        db.set(try? PropertyListEncoder().encode(data), forKey:"history")
     }
 }

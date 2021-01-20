@@ -8,10 +8,10 @@
 import Foundation
 
 struct Cart {
-    var data = HistoryData.getData()
+    static var data = HistoryData.getData() ?? [History]()
     
-    mutating func add(title:String, date:Date) {
-        self.data?.append(History(title: title, data: date))
-        HistoryData.addData(data ?? [History]())
+    static func add(history:History) {
+        self.data.append(history)
+        HistoryData.addData(data)
     }
 }

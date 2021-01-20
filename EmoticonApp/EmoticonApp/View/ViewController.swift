@@ -33,8 +33,9 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(cartViewController, animated: true)
     }
     
-    @objc func buyEmoticon() {
-        
+    @objc func buyEmoticon(_ notification:Notification) {
+        let history = notification.object as! History
+        Cart.add(history: history)
     }
 }
 
