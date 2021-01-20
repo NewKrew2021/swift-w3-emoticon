@@ -140,3 +140,9 @@
 - extension class : UIVlew
   - add method : setBelowView
 
+### Feedback Modify - Decompose TableViewController into View and Controller
+
+- make TableViewExtension.swift
+- extension class : UITableView
+  - add set methods : setTableView, assignDelegateAndDataSource
+
