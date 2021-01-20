@@ -22,6 +22,10 @@ struct Histories {
         histories.append(history)
     }
     
+    static func clearHistory() {
+        histories.removeAll()
+    }
+
     static func fakeHistory() {
         for data in temphistory {
             histories.append(History(title: data[0], time: data[1]))

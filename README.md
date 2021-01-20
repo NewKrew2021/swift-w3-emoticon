@@ -173,11 +173,17 @@
 
 ![image-20210120194622193](README.assets/image-20210120194622193.png)
 
-### NotificationCenter1
+### NotificationCenter
 
 - addObserver : EmoticonListTableViewController
 - new method : addHistory
 - addPost : buyButtonTouched
 
 ![image-20210120232640641](README.assets/image-20210120232640641.png)
+
+### ClearButton
+
+- add action : clearButtonTouched
+
+![image-20210120234431411](README.assets/image-20210120234431411.png)
 

@@ -16,8 +16,6 @@ class HistoryTableViewController: UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        Histories.fakeHistory()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,7 +44,8 @@ class HistoryTableViewController: UITableViewController {
     }
     
     @objc func clearButtonTouched() {
-        // clear!!
+        Histories.clearHistory()
+        navigationController?.popViewController(animated: true)
     }
 
 }
