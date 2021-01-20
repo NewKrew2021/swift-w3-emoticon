@@ -9,31 +9,18 @@ import UIKit
 
 class EmoticonCell: UITableViewCell {
 
-    @IBOutlet weak var _thumbnail: UIImageView!
-    var thumbnail: UIImage? {
-        get {
-            return _thumbnail.image
-        }
-        set {
-            _thumbnail.image = newValue
-        }
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var author: UILabel!
+    func setCell(emoticon: Emoticon) {
+        thumbnail.image = UIImage(named: emoticon.image)
+        title.text = emoticon.title
+        title.sizeToFit()
+        author.text = emoticon.author
+        author.sizeToFit()
     }
-    @IBOutlet weak var _title: UILabel!
-    var title: String? {
-        get {
-            return _title.text
-        }
-        set {
-            _title.text = newValue
-        }
-    }
-    @IBOutlet weak var _author: UILabel!
-    var author: String? {
-        get {
-            return _author.text
-        }
-        set {
-            _author.text = newValue
-        }
+    
+    @IBAction func selectEmoticon(_ sender: Any) {
+        NotificationCenter.default.post(name: .selectEmoticon, object: nil, userInfo: ["title": title.text ?? "err"])
     }
 }
