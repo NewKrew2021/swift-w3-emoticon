@@ -8,17 +8,16 @@
 import Foundation
 
 struct UserDefault {
-    // UserDefaults.standard 자체가 싱글톤
+    private let key_History = "histories"
+    let db = UserDefaults.standard
 
-    static let db = UserDefaults.standard
-
-    static func getData() -> Data? {
-        return db.data(forKey: "histories") ?? nil
+    func getData() -> Data? {
+        return db.data(forKey: key_History) ?? nil
     }
 
-    static func addData(_ dataArray: [History]) {
-        if let data = try? PropertyListEncoder().encode(dataArray){
-            UserDefault.db.set(data, forKey: "histories")
+    func addData(_ dataArray: [History]) {
+        if let data = try? PropertyListEncoder().encode(dataArray) {
+            db.set(data, forKey: key_History)
         }
     }
 }
