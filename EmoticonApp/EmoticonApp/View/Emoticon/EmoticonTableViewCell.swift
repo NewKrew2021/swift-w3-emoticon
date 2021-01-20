@@ -17,7 +17,7 @@ class EmoticonTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setBorder(width: 0.2, color: UIColor.black.cgColor)
 
-        buyButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedBuyButton)))
+        buyButton.addTarget(self, action: #selector(tappedBuyButton), for: .touchUpInside)
     }
 
     @objc private func tappedBuyButton() {
@@ -25,4 +25,8 @@ class EmoticonTableViewCell: UITableViewCell {
             NotificationCenter.default.post(name: .buyEmoticon, object: History(title: title, date: Date()))
         }
     }
+}
+
+extension Notification.Name {
+    static let buyEmoticon = Notification.Name("buyEmoticon")
 }
