@@ -10,7 +10,7 @@ import Foundation
 protocol CartType {
     static var shared: CartType { get }
     var defaults: UserDefaults { get }
-    var dict: Dictionary<String, EmojiType> { get }
+    var dict: [String: EmojiType] { get }
     func find(id: String) -> EmojiType?
     mutating func push(emoji: EmojiType)
     mutating func pop(emoji: EmojiType)
@@ -23,23 +23,23 @@ class Cart: CartType, CustomStringConvertible {
     }
     static let shared: CartType = Cart()
     internal let defaults: UserDefaults = UserDefaults.standard
-    internal var dict: Dictionary<String, EmojiType> = [String: EmojiType]()
+    internal var dict: [String: EmojiType] = [String: EmojiType]()
     private let cartKey: String = "Cart"
-    
+
     init() {
-        if let save = defaults.value(forKey: cartKey) as? Dictionary<String, EmojiType> {
+        if let save = defaults.value(forKey: cartKey) as? [String: EmojiType] {
             dict = save
         }
     }
-    
+
     deinit {
         defaults.set(dict, forKey: cartKey)
     }
-    
+
     func find(id: String) -> EmojiType? {
         return dict[id]
     }
-    
+
     func push(emoji: EmojiType) {
         dict[emoji.id] = emoji
     }
@@ -54,4 +54,3 @@ class Cart: CartType, CustomStringConvertible {
         }
     }
 }
-

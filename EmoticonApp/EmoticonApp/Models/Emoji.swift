@@ -18,7 +18,7 @@ protocol EmojiListModel {
     var list: [EmojiType] { get }
     var count: Int { get }
     mutating func append(_ newElement: EmojiType)
-    mutating func remove(at:Int)
+    mutating func remove(at: Int)
     func findById(id: String) -> EmojiType?
     subscript(index: Int) -> EmojiType { get set }
 }
@@ -28,21 +28,21 @@ struct Emoji: EmojiType {
     let author: String
     let image: String
     let id: String
-    
+
     enum Property: String {
         case title, author, image
     }
-    
+
     init(title: String, author: String, image: String) {
         self.title = title
         self.author = author
         self.image = image
         self.id = "emoji-id-\(Emoji.randomId(length: 10))"
     }
-    
+
     private static func randomId(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyz0123456789"
-        return String((0..<length).map{ _ in letters.randomElement()! })
+        return String((0..<length).map { _ in letters.randomElement()! })
     }
 }
 
@@ -67,7 +67,7 @@ struct EmojiList: EmojiListModel {
     mutating func remove(at: Int) {
         list.remove(at: at)
     }
-    
+
     func findById(id: String) -> EmojiType? {
         for emoji in list {
             if emoji.id == id {

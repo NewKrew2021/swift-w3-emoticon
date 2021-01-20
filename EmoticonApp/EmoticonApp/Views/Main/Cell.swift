@@ -19,8 +19,8 @@ class EmojiTableViewCell: UITableViewCell {
     var emojiName: UILabel = UILabel()
     var emojiDescription: UILabel = UILabel()
     var buy: UIButton = UIButton()
-    var delegate: EmojiTableCellDelegate?
-    
+    weak var delegate: EmojiTableCellDelegate?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
@@ -69,7 +69,7 @@ class EmojiTableViewCell: UITableViewCell {
         contentView.addSubview(emojiDescription)
         contentView.addSubview(buy)
     }
-    
+
     @objc func buyTapped() {
         delegate?.buttonTapped(id: emojiId)
     }

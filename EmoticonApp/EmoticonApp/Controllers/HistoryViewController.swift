@@ -12,7 +12,5 @@ class HistoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-
 
 }

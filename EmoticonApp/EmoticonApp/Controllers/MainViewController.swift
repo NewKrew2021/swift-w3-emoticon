@@ -20,13 +20,13 @@ class MainViewController: UIViewController, UITableViewDelegate {
     private var cellHeight: CGFloat = CGFloat(100)
     private let numOfCell: CGFloat = 6.5
     private var alert: UIAlertController
-    
+
     init() {
         emojiList = emojiService.data
         alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         emojiList = emojiService.data
         alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
@@ -69,23 +69,23 @@ class MainViewController: UIViewController, UITableViewDelegate {
         view.addSubview(self.myTableView)
         cellHeight = CGFloat((self.screenHeight-positionY)/numOfCell)
     }
-    
+
     private func setNavigationItem() {
         let item = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(goToHistory))
         self.navigationItem.setRightBarButton(item, animated: true)
     }
-    
+
     private func clickAlertOK(id: String) {
         if let emoji = emojiList.findById(id: id) {
             cart.push(emoji: emoji)
         }
     }
-    
+
     @objc private func goToHistory() {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryViewController") {
             self.navigationController?.pushViewController(vc, animated: true)    }
         }
-    
+
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -120,5 +120,5 @@ extension MainViewController: EmojiTableCellDelegate {
         self.present(alert, animated: true, completion: nil)
         self.clickedItemId = id
     }
-    
+
 }
