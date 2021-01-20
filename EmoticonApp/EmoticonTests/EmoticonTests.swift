@@ -18,17 +18,17 @@ class EmoticonTests: XCTestCase {
     }
 
     func testEmoticonSize() throws {
-        let res = emoticon.size
+        let res = Emoticon.size
         XCTAssertEqual(res, 12)
     }
     
     func testEmoticonTitle() throws {
-        let res = emoticon.title(index: 1)
+        let res = Emoticon.title(index: 1)
         XCTAssertEqual(res, "콩글리시 이즈 꿀잼2")
     }
     
     func testEmoticonAuthor() throws {
-        let res = emoticon.author(index: 2)
+        let res = Emoticon.author(index: 2)
         XCTAssertEqual(res, "mohe")
     }
 }

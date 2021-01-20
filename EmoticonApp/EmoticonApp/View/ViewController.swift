@@ -11,18 +11,32 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var topView: EmoticonTopView!
     @IBOutlet weak var emoticonTable: UITableView!
-    private let emoticon = Emoticon()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topView.loadView()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(clickedCartButton))
+        
+        NotificationCenter.default.addObserver(self,
+                    selector: #selector(buyEmoticon),
+                    name: NSNotification.Name(rawValue: "purchaseButton"),
+                    object: nil)
+        
+        topView.initView()
         
         emoticonTable.delegate = self
         emoticonTable.dataSource = self
-        emoticonTable.rowHeight = 70
     }
 
+    @objc func clickedCartButton() {
+        guard let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "cartViewController") else { return }
+        self.navigationController?.pushViewController(cartViewController, animated: true)
+    }
+    
+    @objc func buyEmoticon(_ notification:Notification) {
+        let history = notification.object as! History
+        Cart.add(history: history)
+    }
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -30,14 +44,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = emoticonTable.dequeueReusableCell(withIdentifier: "emoticonTableCell", for: indexPath) as! EmoticonTableViewCell
         
-        cell.setTitle(text: emoticon.title(index: indexPath.row))
-        cell.setAuthor(text: emoticon.author(index: indexPath.row))
-        cell.setImage(image: emoticon.image(index: indexPath.row))
+        cell.setData(title: Emoticon.title(index: indexPath.row), author: Emoticon.author(index: indexPath.row), image: Emoticon.image(index: indexPath.row))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.emoticon.size
+        return Emoticon.size
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
