@@ -10,6 +10,7 @@ import UIKit
 class EmoticonViewController: UIViewController {
     private let emoticonCellName = "EmoticonTableViewCell"
     private let emoticonHeaderName = "EmoticonHeaderCell"
+    private var cart = Cart.shared
 
     private var tableView: UITableView = {
         let view = UITableView()
@@ -65,9 +66,9 @@ class EmoticonViewController: UIViewController {
 
     @objc private func buyEmoticon(_ notification: Notification) {
         guard let data = notification.object as? History else { return }
-        showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오", destructive: nil) {
-            Cart.buyEmoticon(title: data.title, date: data.date)
-            
+        showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오", destructive: nil) {[weak self] in
+            guard let self = self else { return }
+            self.cart.buyEmoticon(title: data.title, date: data.date)
         }
     }
 

@@ -9,15 +9,19 @@ import Foundation
 
 struct UserDefault {
     private let key_History = "histories"
-    let db = UserDefaults.standard
 
-    func getData() -> Data? {
-        return db.data(forKey: key_History) ?? nil
+    func getData() -> [History]? {
+        var arr: [History] = []
+        if let data = UserDefaults.standard.data(forKey: key_History) {
+            let dataArray = try! PropertyListDecoder().decode([History].self, from: data)
+            arr = dataArray
+        }
+        return arr
     }
 
-    func addData(_ dataArray: [History]) {
+    func setData(_ dataArray: [History]) {
         if let data = try? PropertyListEncoder().encode(dataArray) {
-            db.set(data, forKey: key_History)
+            UserDefaults.standard.set(data, forKey: key_History)
         }
     }
 }
