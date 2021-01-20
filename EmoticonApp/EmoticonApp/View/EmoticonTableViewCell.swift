@@ -9,27 +9,13 @@ import UIKit
 
 class EmoticonTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var emoticonImage: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    func setTitle(text: String) {
-        title.text = text
-    }
-    
-    func setAuthor(text: String) {
-        author.text = text
-    }
-    
-    func setImage(image: UIImage) {
+    func setData(title:String, author:String, image:UIImage) {
+        titleLabel.text = title
+        authorLabel.text = author
         emoticonImage.image = image
     }
 }

@@ -17,6 +17,7 @@
 		321F8B5025B5823C007FAC1B /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B4F25B5823C007FAC1B /* EmoticonAppUITests.swift */; };
 		321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
 		321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */; };
+		32460A3E25B7C81D0049BEEF /* EmoticonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32460A3D25B7C81D0049BEEF /* EmoticonExtension.swift */; };
 		324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324882FA25B681940031BEC6 /* EmoticonTopView.swift */; };
 		3248830625B68B4E0031BEC6 /* EmoticonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248830525B68B4E0031BEC6 /* EmoticonTests.swift */; };
 		3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
@@ -64,6 +65,7 @@
 		321F8B5125B5823C007FAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		321F8B6625B597FA007FAC1B /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
+		32460A3D25B7C81D0049BEEF /* EmoticonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonExtension.swift; sourceTree = "<group>"; };
 		324882FA25B681940031BEC6 /* EmoticonTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTopView.swift; sourceTree = "<group>"; };
 		3248830325B68B4E0031BEC6 /* EmoticonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3248830525B68B4E0031BEC6 /* EmoticonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTests.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		321F8B2C25B5823C007FAC1B /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				32460A3B25B7C7EF0049BEEF /* Extension */,
 				321F8B6525B597E2007FAC1B /* View */,
 				321F8B6425B597D6007FAC1B /* Model */,
 				321F8B2D25B5823C007FAC1B /* AppDelegate.swift */,
@@ -175,6 +178,14 @@
 				3248831D25B6C6ED0031BEC6 /* CartViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		32460A3B25B7C7EF0049BEEF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				32460A3D25B7C81D0049BEEF /* EmoticonExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		3248830425B68B4E0031BEC6 /* EmoticonTests */ = {
@@ -351,6 +362,7 @@
 				3248831E25B6C6ED0031BEC6 /* CartViewController.swift in Sources */,
 				324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */,
 				321F8B3025B5823C007FAC1B /* SceneDelegate.swift in Sources */,
+				32460A3E25B7C81D0049BEEF /* EmoticonExtension.swift in Sources */,
 				321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */,
 				321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */,
 			);

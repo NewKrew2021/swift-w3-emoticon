@@ -68,9 +68,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="author" destination="cF5-1j-jLS" id="Mp1-4Z-A70"/>
+                                            <outlet property="authorLabel" destination="cF5-1j-jLS" id="Mp1-4Z-A70"/>
                                             <outlet property="emoticonImage" destination="ZCw-Jv-O7q" id="tVC-Qt-KoX"/>
-                                            <outlet property="title" destination="edm-WK-6VI" id="zne-c2-IZ7"/>
+                                            <outlet property="titleLabel" destination="edm-WK-6VI" id="zne-c2-IZ7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
