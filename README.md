@@ -162,3 +162,7 @@
 
 ![image-20210120193712831](README.assets/image-20210120193712831.png)
 
+### Remove useless borders
+
+![image-20210120193914057](README.assets/image-20210120193914057.png)
+

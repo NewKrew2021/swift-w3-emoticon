@@ -24,7 +24,6 @@ class MyCell: UITableViewCell {
         addSubview(authorLabel)
         addSubview(purchaseLabel)
         setConstraints()
-        contentView.layer.borderWidth = 1
         standardHeight = standardHeight == nil ? frame.height : standardHeight
     }
     
@@ -58,20 +57,17 @@ extension UILabel {
         case .title:
             leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant: 2 * padding).isActive = true
             topAnchor.constraint(equalTo: standardView.topAnchor, constant: padding).isActive = true
-            layer.borderWidth = 1
             break
         case .description:
             leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant: 2 * padding).isActive = true
             topAnchor.constraint(equalTo: standardView.centerYAnchor, constant: padding).isActive = true
             textColor = .gray
-            layer.borderWidth = 1
             break
         case .purchase:
 //            leadingAnchor.constraint(equalToSystemSpacingAfter: standardView.trailingAnchor, multiplier: 0.1).isActive = true
             leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant : -1.2 * height).isActive = true
             centerYAnchor.constraint(equalTo: standardView.centerYAnchor).isActive = true
             textColor = .systemBlue
-            layer.borderWidth = 1
         }
     }
 }
@@ -84,6 +80,5 @@ extension UIImageView {
         heightAnchor.constraint(equalTo: standardView.heightAnchor, constant: -2 * padding).isActive = true
         leadingAnchor.constraint(equalTo: standardView.leadingAnchor, constant: padding).isActive = true
         widthAnchor.constraint(equalTo: standardView.heightAnchor, constant: -2 * padding).isActive = true
-        layer.borderWidth = 1
     }
 }
