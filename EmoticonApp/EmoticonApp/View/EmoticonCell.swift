@@ -18,10 +18,5 @@ class EmoticonCell: UITableViewCell {
         title.sizeToFit()
         author.text = emoticon.author
         author.sizeToFit()
-        
-        thumbnail.translatesAutoresizingMaskIntoConstraints = false
-        thumbnail.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        thumbnail.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        thumbnail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
     }
 }

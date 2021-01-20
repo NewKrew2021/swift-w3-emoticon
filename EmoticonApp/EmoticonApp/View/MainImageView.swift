@@ -14,15 +14,6 @@ class MainImageView: UIView {
 
     
     func initself() {
-//        view.addSubview(self)
-//        self.translatesAutoresizingMaskIntoConstraints = false
-//        self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
-//        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        self.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -30).isActive = true
-//        self.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2).isActive = true
-//        guard let patternImgage = UIImage(named: "pattern") else { return }
-//        self.backgroundColor = UIColor(patternImage: patternImgage)
-//
         initTitle()
         initMainText()
         initSubImage()
