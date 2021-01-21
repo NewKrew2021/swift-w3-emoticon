@@ -42,6 +42,19 @@ class CartViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [indexPath], with: .none)
+            Cart.remove(index: indexPath.row)
+            self.tableView.endUpdates()
+        }
+    }
 }
 
 
