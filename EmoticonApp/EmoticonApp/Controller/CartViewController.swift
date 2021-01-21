@@ -13,7 +13,6 @@ class CartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,9 +30,15 @@ class CartViewController: UITableViewController {
         return cell
     }
     
-    @objc func addToCart(_ notification: Notification) {
-        guard let emoticonName = notification.userInfo?["title"] as? String else { return }
-        cartService.addProduct(product: Product(emoticonName: emoticonName))
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cartService.removeProduct(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    @IBAction func clearCart(_ sender: Any) {
+        cartService.removeAll()
         tableView.reloadData()
     }
 }

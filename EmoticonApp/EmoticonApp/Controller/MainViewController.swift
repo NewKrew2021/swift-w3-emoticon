@@ -12,14 +12,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var emoticonList: UITableView!
     
     private let emoticonService: EmoticonService = EmoticonServiceImpl.instance
+    private let cartService: CartService = CartServiceImpl.instance
+    
     private let upperView = MainImageView()
-    private var cartViewController: CartViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        cartViewController = self.storyboard?.instantiateViewController(identifier: "CartViewController")
-        NotificationCenter.default.addObserver(cartViewController, selector: #selector(cartViewController?.addToCart(_:)), name: .selectEmoticon, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addToCart(_:)), name: .selectEmoticon, object: nil)
     }
     func initView() {
         initUpperView()
@@ -47,12 +47,6 @@ class MainViewController: UIViewController {
         emoticonList.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         emoticonList.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
     }
-    
-    @IBAction func moveToCartView(_ sender: Any) {
-        guard let cartViewController = cartViewController else {return}
-        self.navigationController?.pushViewController(cartViewController, animated: true)
-    }
-    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -65,5 +59,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let emoticon = emoticonService[indexPath.row]
         cell.setCell(emoticon: emoticon)
         return cell
+    }
+}
+
+extension MainViewController {
+    
+    @objc func addToCart(_ notification: Notification) {
+        guard let emoticonName = notification.userInfo?["title"] as? String else { return }
+        cartService.addProduct(product: Product(emoticonName: emoticonName))
     }
 }

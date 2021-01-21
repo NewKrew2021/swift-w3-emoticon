@@ -13,7 +13,7 @@ class Product {
     private let formatter = DateFormatter()
     
     init(emoticonName: String) {
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
         self.emoticonName = emoticonName
         self.selectTimeAndDate = formatter.string(from: Date())
     }

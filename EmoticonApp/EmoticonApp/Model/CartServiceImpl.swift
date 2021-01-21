@@ -26,4 +26,12 @@ class CartServiceImpl: CartService {
     subscript(index: Int) -> Product {
         return products[index]
     }
+    
+    public func removeProduct(at: Int) {
+        products.remove(at: at)
+    }
+    
+    public func removeAll() {
+        products.removeAll()
+    }
 }
