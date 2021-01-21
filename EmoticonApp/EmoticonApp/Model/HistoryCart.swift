@@ -8,6 +8,7 @@
 import Foundation
 
 class HistoryCart : CartProtocol{
+    
     private var histories : [History] = []
     static internal var historyCart: CartProtocol?
     var count: Int {
@@ -25,8 +26,16 @@ class HistoryCart : CartProtocol{
         }
     }
     
+    func restoreHistories() {
+        histories = UserDefault().getData()
+    }
+
     func getHistory(index: Int) -> History {
         return histories[index]
+    }
+    
+    func getHistories() -> [History] {
+        return histories
     }
     
     func addHistory(history: History) {
@@ -52,8 +61,9 @@ class HistoryCart : CartProtocol{
     }
 }
 
-struct History : Hashable{
+struct History : Hashable, Codable{
     let title : String
     let time : Date
 }
+
 

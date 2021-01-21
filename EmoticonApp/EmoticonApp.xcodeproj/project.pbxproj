@@ -23,6 +23,7 @@
 		D2F3320625B849C40054F6DD /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3320525B849C40054F6DD /* CartCell.swift */; };
 		D2F3320B25B852850054F6DD /* HistoryCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3320A25B852850054F6DD /* HistoryCart.swift */; };
 		D2F3321425B9446D0054F6DD /* CartProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3321325B9446D0054F6DD /* CartProtocol.swift */; };
+		D2F3322E25B9A4B60054F6DD /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3322D25B9A4B60054F6DD /* UserDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D2F3320525B849C40054F6DD /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		D2F3320A25B852850054F6DD /* HistoryCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCart.swift; sourceTree = "<group>"; };
 		D2F3321325B9446D0054F6DD /* CartProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProtocol.swift; sourceTree = "<group>"; };
+		D2F3322D25B9A4B60054F6DD /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				D2A2101925B670E900904156 /* Emoticons.swift */,
 				D2F3320A25B852850054F6DD /* HistoryCart.swift */,
+				D2F3322D25B9A4B60054F6DD /* UserDefault.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				D2F331FE25B822B50054F6DD /* CartViewController.swift in Sources */,
 				D2F3321425B9446D0054F6DD /* CartProtocol.swift in Sources */,
 				D2F331E625B7E77E0054F6DD /* UpperBelowView.swift in Sources */,
+				D2F3322E25B9A4B60054F6DD /* UserDefault.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
 				D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */,
 				D2E929C625B5A15800E13879 /* EmoticonListTableViewController.swift in Sources */,

@@ -16,6 +16,8 @@ class EmoticonListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cart.restoreHistories()
+        
         setTableViewConstraints()
         tableView.delegate = self
         tableView.dataSource = self

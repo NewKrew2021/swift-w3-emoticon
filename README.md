@@ -261,3 +261,7 @@
 
 ![image-20210121203705362](README.assets/image-20210121203705362.png)
 
+### UserDefaults
+
+- create struct : UserDefault
+- save data in user DB using method : applicationWillTerminate
