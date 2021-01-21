@@ -9,12 +9,14 @@ import UIKit
 
 class CartCell: UITableViewCell {
     
+    private var deleteButton = UIButton()
     private var standardHeight : CGFloat?
     private var standardWidth : CGFloat?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        standardHeight = standardHeight == nil ? frame.height : standardHeight
         setConstraints()
         addSwipeRecognizer()
     }
@@ -27,6 +29,23 @@ class CartCell: UITableViewCell {
     }
     
     @objc func historySwiped(_ sender : UISwipeGestureRecognizer) {
+        guard let height = standardHeight else { return }
+        
+        addSubview(deleteButton)
+        detailTextLabel?.trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor, constant: 0).isActive = true
+        deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.setTitleColor(.systemRed, for: .normal)
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2/3).isActive = true
+        deleteButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        deleteButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -height * 1.5).isActive = true
+        deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        deleteButton.addTarget(self, action: #selector(deleteButtonTouched), for: .touchUpInside)
+    }
+    
+    @objc func deleteButtonTouched() {
+        detailTextLabel?.removeConstraint(NSLayoutConstraint())
+        deleteButton.removeFromSuperview()
         guard let tempTextLabel = textLabel else { return }
         guard let tempDetailTextLabel = detailTextLabel else { return }
         NotificationCenter.default.post(name: .historySwiped, object: nil, userInfo: ["title" : tempTextLabel.text ?? "", "time" : tempDetailTextLabel.text ?? ""])
@@ -39,7 +58,6 @@ class CartCell: UITableViewCell {
     
     func setConstraints() {
         guard let height = standardHeight else { return }
-        guard let width = standardWidth else { return }
         textLabel?.translatesAutoresizingMaskIntoConstraints = false
         textLabel?.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         textLabel?.leadingAnchor.constraint(equalTo: leadingAnchor, constant: height/8).isActive = true
@@ -49,7 +67,7 @@ class CartCell: UITableViewCell {
         detailTextLabel?.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         detailTextLabel?.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor).isActive = true
         detailTextLabel?.leadingAnchor.constraint(greaterThanOrEqualTo: textLabel!.trailingAnchor, constant: height * 0.5).isActive = true
-        detailTextLabel?.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        detailTextLabel?.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor).isActive = true
         
     }
     

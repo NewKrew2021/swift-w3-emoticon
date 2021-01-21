@@ -231,3 +231,12 @@
 - chagne HistoryCart Type : struct -> class, to use as singleton
 - in VCs, get HistoryCary instance using getHistoryCart method
 
+### remake Delete
+
+- instead of delete directly when swiped, present `Delete` button
+- touch delete button -> delete the cell
+
+![image-20210121164146708](README.assets/image-20210121164146708.png)
+
+![image-20210121164154688](README.assets/image-20210121164154688.png)
+
