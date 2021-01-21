@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HistoryCart : CartProtocol{
+class HistoryCart : CartProtocol{
     private var histories : [History] = []
     static internal var historyCart: CartProtocol?
     var count: Int {
@@ -21,7 +21,7 @@ struct HistoryCart : CartProtocol{
             return returnCart
         } else {
             historyCart = HistoryCart()
-            return historyCart
+            return historyCart!
         }
     }
     
@@ -29,11 +29,11 @@ struct HistoryCart : CartProtocol{
         return histories[index]
     }
     
-    mutating func addHistory(history: History) {
+    func addHistory(history: History) {
         histories.append(history)
     }
     
-    mutating func deleteHistory(title: String, time: String) {
+    func deleteHistory(title: String, time: String) {
         for index in 0...count {
             let history = getHistory(index: index)
             if history.title == title && history.time == time {
@@ -43,7 +43,7 @@ struct HistoryCart : CartProtocol{
         }
     }
     
-    mutating func clearHistory() {
+    func clearHistory() {
         histories.removeAll()
     }
 }

@@ -225,3 +225,9 @@
 - rename : HistoriesProtocol -> CartProtocol
 - refactor methods
 - make struct HistoryCart Singleton
+
+### Refactoring2
+
+- chagne HistoryCart Type : struct -> class, to use as singleton
+- in VCs, get HistoryCary instance using getHistoryCart method
+

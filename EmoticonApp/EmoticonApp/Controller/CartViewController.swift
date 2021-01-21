@@ -9,6 +9,8 @@ import UIKit
 
 class CartViewController: UITableViewController {
 
+    private var cart : CartProtocol = HistoryCart.getHistoryCart()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,7 @@ class CartViewController: UITableViewController {
         guard let info = notification.userInfo else { return }
         guard let title = info["title"] as? String else { return }
         guard let time = info["time"] as? String else { return }
-        HistoryCart.deleteHistory(title: title, time: time)
+        cart.deleteHistory(title: title, time: time)
         tableView.reloadData()
     }
 
@@ -33,7 +35,7 @@ class CartViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return HistoryCart.count
+        return cart.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,7 +45,7 @@ class CartViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell") as! CartCell
         let row = indexPath.row
-        cell.setHistory(history: HistoryCart.getHistory(index: row))
+        cell.setHistory(history: cart.getHistory(index: row))
         return cell
     }
 
@@ -54,7 +56,7 @@ class CartViewController: UITableViewController {
     }
     
     @objc func clearButtonTouched() {
-        HistoryCart.clearHistory()
+        cart.clearHistory()
         tableView.reloadData()
     }
 

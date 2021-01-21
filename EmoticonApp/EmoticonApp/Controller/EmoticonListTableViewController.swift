@@ -9,6 +9,7 @@ import UIKit
 
 class EmoticonListTableViewController: UIViewController {
 
+    private var cart : CartProtocol = HistoryCart.getHistoryCart()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,7 +26,7 @@ class EmoticonListTableViewController: UIViewController {
 
     @objc func addHistory(_ notification : Notification) {
         guard let history = notification.userInfo?["history"] as? History else { return }
-        HistoryCart.addHistory(history: history)
+        cart.addHistory(history: history)
     }
     
 }
