@@ -15,14 +15,14 @@
 		321F8B3A25B5823C007FAC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321F8B3825B5823C007FAC1B /* LaunchScreen.storyboard */; };
 		321F8B4525B5823C007FAC1B /* EmoticonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B4425B5823C007FAC1B /* EmoticonAppTests.swift */; };
 		321F8B5025B5823C007FAC1B /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B4F25B5823C007FAC1B /* EmoticonAppUITests.swift */; };
-		321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
+		321F8B6725B597FA007FAC1B /* Emoticons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticons.swift */; };
 		321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */; };
 		32460A3E25B7C81D0049BEEF /* EmoticonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32460A3D25B7C81D0049BEEF /* EmoticonExtension.swift */; };
 		32460A4925B82CB10049BEEF /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32460A4825B82CB10049BEEF /* HistoryData.swift */; };
 		32460A4F25B82D420049BEEF /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32460A4E25B82D420049BEEF /* History.swift */; };
 		324882FB25B681940031BEC6 /* EmoticonTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324882FA25B681940031BEC6 /* EmoticonTopView.swift */; };
 		3248830625B68B4E0031BEC6 /* EmoticonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248830525B68B4E0031BEC6 /* EmoticonTests.swift */; };
-		3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticon.swift */; };
+		3248831125B68BE20031BEC6 /* Emoticons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F8B6625B597FA007FAC1B /* Emoticons.swift */; };
 		3248831E25B6C6ED0031BEC6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248831D25B6C6ED0031BEC6 /* CartViewController.swift */; };
 		324AFE1325B9460200AD37F3 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324AFE1225B9460200AD37F3 /* CartService.swift */; };
 		324AFE1F25B94F2800AD37F3 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324AFE1E25B94F2800AD37F3 /* ViewController+.swift */; };
@@ -80,7 +80,7 @@
 		321F8B4B25B5823C007FAC1B /* EmoticonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoticonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		321F8B4F25B5823C007FAC1B /* EmoticonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonAppUITests.swift; sourceTree = "<group>"; };
 		321F8B5125B5823C007FAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		321F8B6625B597FA007FAC1B /* Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		321F8B6625B597FA007FAC1B /* Emoticons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoticons.swift; sourceTree = "<group>"; };
 		321F8B6B25B5A2A5007FAC1B /* EmoticonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonTableViewCell.swift; sourceTree = "<group>"; };
 		32460A3D25B7C81D0049BEEF /* EmoticonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonExtension.swift; sourceTree = "<group>"; };
 		32460A4825B82CB10049BEEF /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		321F8B6425B597D6007FAC1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				321F8B6625B597FA007FAC1B /* Emoticon.swift */,
+				321F8B6625B597FA007FAC1B /* Emoticons.swift */,
 				32460A4E25B82D420049BEEF /* History.swift */,
 				324D687C25B833F4005674DA /* Cart.swift */,
 			);
@@ -465,7 +465,7 @@
 				321F8B3025B5823C007FAC1B /* SceneDelegate.swift in Sources */,
 				32460A3E25B7C81D0049BEEF /* EmoticonExtension.swift in Sources */,
 				321F8B6C25B5A2A5007FAC1B /* EmoticonTableViewCell.swift in Sources */,
-				321F8B6725B597FA007FAC1B /* Emoticon.swift in Sources */,
+				321F8B6725B597FA007FAC1B /* Emoticons.swift in Sources */,
 				32460A4925B82CB10049BEEF /* HistoryData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3248830625B68B4E0031BEC6 /* EmoticonTests.swift in Sources */,
-				3248831125B68BE20031BEC6 /* Emoticon.swift in Sources */,
+				3248831125B68BE20031BEC6 /* Emoticons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
