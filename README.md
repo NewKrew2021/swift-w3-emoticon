@@ -187,3 +187,7 @@
 
 ![image-20210120234431411](README.assets/image-20210120234431411.png)
 
+### ClearButtonTouched - add logic
+
+- add logic : reloadData()
+

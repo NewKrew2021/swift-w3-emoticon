@@ -45,7 +45,7 @@ class HistoryTableViewController: UITableViewController {
     
     @objc func clearButtonTouched() {
         Histories.clearHistory()
-        navigationController?.popViewController(animated: true)
+        tableView.reloadData()
     }
 
 }
