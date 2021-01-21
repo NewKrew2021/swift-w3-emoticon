@@ -38,6 +38,8 @@ class HistoryViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(checkBeforeClear))
         let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
             guard let strongSelf = self else { return }
+            strongSelf.cart.clear()
+            strongSelf.tableView.reloadData()
         }
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
         alert.addAction(UIAlertAction(title: "취소", style: .default, handler: nil))
@@ -58,6 +60,12 @@ class HistoryViewController: UITableViewController {
             return cell
         }
         return UITableViewCell()
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            cart.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
 
 }

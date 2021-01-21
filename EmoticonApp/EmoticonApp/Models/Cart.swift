@@ -14,6 +14,7 @@ protocol CartType {
     var count: Int { get }
     func push(emojiId: UUID)
     func pop(emojiId: UUID)
+    func remove(at index: Int)
     mutating func clear()
     subscript(index: Int) -> CartItem { get }
 }
@@ -63,6 +64,11 @@ class Cart: CartType, CustomStringConvertible {
     func pop(emojiId: UUID) {
         idToCartItem[emojiId] = nil
     }
+    
+    func remove(at index: Int) {
+        let key = Array(idToCartItem.keys)[index]
+        self.idToCartItem[key] = nil
+    }
 
     func clear() {
         for key in idToCartItem.keys {
@@ -71,8 +77,14 @@ class Cart: CartType, CustomStringConvertible {
     }
 
     subscript(index: Int) -> CartItem {
-        let (_, value) = self.idToCartItem[idToCartItem.index(idToCartItem.startIndex, offsetBy: index)]
-        return value
+        get {
+            let (_, value) = self.idToCartItem[idToCartItem.index(idToCartItem.startIndex, offsetBy: index)]
+            return value
+        }
+        set {
+            let key = Array(idToCartItem.keys)[index]
+            self.idToCartItem[key] = newValue
+        }
     }
 
 }
