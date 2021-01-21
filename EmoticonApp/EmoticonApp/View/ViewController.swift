@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     @objc func buyEmoticon(_ notification:Notification) {
         let history = notification.object as! History
         Cart.add(history: history)
+        showAlert(controller: self, message: "구매되었습니다", seconds: 0.4)
     }
 }
 
