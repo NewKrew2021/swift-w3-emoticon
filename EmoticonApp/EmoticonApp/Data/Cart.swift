@@ -7,34 +7,33 @@
 
 import Foundation
 
-struct Cart {
-    static let shared = Self()
+class Cart {
+    static let shared = Cart()
     private let db = UserDefault()
-    private var ownEmoticons: [History] {
-        db.getData()
-    }
+    private var ownEmoticons: [History]
 
     var count: Int {
         ownEmoticons.count
     }
 
-    mutating func buyEmoticon(title: String, date: Date) {
-        var arr = ownEmoticons
-        arr.append(History(title: title, date: date))
-        db.setData(arr)
+    private init() {
+        ownEmoticons = db.getData()
     }
 
-    mutating func remove(index: Int, completionHandler: @escaping () -> Void) {
-        var arr = ownEmoticons
-        arr.remove(at: index)
-        db.setData(arr)
+    func buyEmoticon(history: History) {
+        ownEmoticons.append(history)
+        db.setData(ownEmoticons)
+    }
+
+    func remove(index: Int, completionHandler: @escaping () -> Void) {
+        ownEmoticons.remove(at: index)
+        db.setData(ownEmoticons)
         completionHandler()
     }
 
-    mutating func removeAll(completionHandler: @escaping () -> Void) {
-        var arr = ownEmoticons
-        arr.removeAll()
-        db.setData(arr)
+    func removeAll(completionHandler: @escaping () -> Void) {
+        ownEmoticons.removeAll()
+        db.setData(ownEmoticons)
         completionHandler()
     }
 
