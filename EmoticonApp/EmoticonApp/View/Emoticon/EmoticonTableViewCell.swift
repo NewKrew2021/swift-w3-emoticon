@@ -28,7 +28,7 @@ class EmoticonTableViewCell: UITableViewCell {
 
     @objc private func tappedBuyButton() {
         if let title = titleLabel.text {
-            NotificationCenter.default.post(name: .buyEmoticon, object: History(title: title, date: Date()))
+            NotificationCenter.default.post(name: .buyEmoticon, object: Cart.History(title: title, date: Date()))
         }
     }
 }
