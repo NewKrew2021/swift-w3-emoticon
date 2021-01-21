@@ -30,6 +30,13 @@ class CartViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cartService.removeProduct(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     @IBAction func clearCart(_ sender: Any) {
         cartService.removeAll()
         tableView.reloadData()
