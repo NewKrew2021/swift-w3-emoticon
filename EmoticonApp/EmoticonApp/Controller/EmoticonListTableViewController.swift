@@ -25,7 +25,7 @@ class EmoticonListTableViewController: UIViewController {
 
     @objc func addHistory(_ notification : Notification) {
         guard let history = notification.userInfo?["history"] as? History else { return }
-        Histories.addHistory(history: history)
+        HistoryCart.addHistory(history: history)
     }
     
 }

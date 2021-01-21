@@ -7,24 +7,33 @@
 
 import Foundation
 
-struct HistoryCart : HistoriesProtocol{
-    static private var histories : [History] = []
-    static private var histories: HistoriesProtocol
-    static var count: Int {
+struct HistoryCart : CartProtocol{
+    private var histories : [History] = []
+    static internal var historyCart: CartProtocol?
+    var count: Int {
         get {
             return histories.count
         }
     }
     
-    static func getHistory(index: Int) -> History {
+    static func getHistoryCart() -> CartProtocol{
+        if let returnCart = historyCart {
+            return returnCart
+        } else {
+            historyCart = HistoryCart()
+            return historyCart
+        }
+    }
+    
+    func getHistory(index: Int) -> History {
         return histories[index]
     }
     
-    static func addHistory(history: History) {
+    mutating func addHistory(history: History) {
         histories.append(history)
     }
     
-    static func deleteHistory(title: String, time: String) {
+    mutating func deleteHistory(title: String, time: String) {
         for index in 0...count {
             let history = getHistory(index: index)
             if history.title == title && history.time == time {
@@ -34,7 +43,7 @@ struct HistoryCart : HistoriesProtocol{
         }
     }
     
-    static func clearHistory() {
+    mutating func clearHistory() {
         histories.removeAll()
     }
 }
@@ -63,3 +72,4 @@ struct History : Hashable{
         _time = time
     }
 }
+

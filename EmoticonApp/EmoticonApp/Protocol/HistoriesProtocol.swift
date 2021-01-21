@@ -7,9 +7,11 @@
 
 import Foundation
 
-protocol HistoriesProtocol {
+protocol CratProtocol {
     
     static var count : Int { get }
+    static var histories : CratProtocol { get }
+    init()
     static func getHistory(index : Int) -> History
     static func addHistory(history : History)
     static func deleteHistory(title : String, time : String)

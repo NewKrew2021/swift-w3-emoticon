@@ -220,3 +220,8 @@
 - define mehods : getHistory, addHistory, deleteHistory, clearHistory
 - struct History adopts HistoriesProtocol
 
+### Refactoring
+
+- rename : HistoriesProtocol -> CartProtocol
+- refactor methods
+- make struct HistoryCart Singleton
