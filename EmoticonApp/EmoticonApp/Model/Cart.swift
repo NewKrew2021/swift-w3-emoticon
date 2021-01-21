@@ -12,18 +12,18 @@ struct Cart : CartService {
     static var data = HistoryData.getData() ?? [History]()
 
     static func add(history:History) {
-        self.data.append(history)
-        HistoryData.addData(data)
+        data.append(history)
+        HistoryData.updateData(self.data)
     }
     
     static func removeAll() {
         self.data.removeAll()
-        HistoryData.addData(data)
+        HistoryData.updateData(self.data)
     }
     
     static func remove(index: Int) {
         self.data.remove(at: index)
-        HistoryData.addData(data)
+        HistoryData.updateData(self.data)
     }
     
     static subscript(at index: Int) -> History? {
