@@ -114,7 +114,7 @@ extension MainViewController: UITableViewDataSource {
             let image = emojiList[indexPath.row].image
             let emojiId = emojiList[indexPath.row].id
             cell.setProperty(id: emojiId, title: title, author: author, imageName: image)
-            cell.setHeight(height: cellHeight)
+            cell.resize(width: screenWidth, height: cellHeight)
             cell.selectionStyle = .none
             return cell
         }

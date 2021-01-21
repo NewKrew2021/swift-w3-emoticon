@@ -52,7 +52,7 @@ class EmojiTableViewCell: UITableViewCell {
         emoji.image = UIImage(named: imageName)
     }
 
-    func setHeight(height: CGFloat) {
+    func resize(width: CGFloat, height: CGFloat) {
         emoji.frame.size = CGSize(width: height, height: height)
         buy.frame.size = CGSize(width: height, height: height)
         buy.frame.origin = CGPoint(x: self.frame.width-height, y: 0)
