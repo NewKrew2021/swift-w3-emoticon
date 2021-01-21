@@ -11,7 +11,7 @@ struct Cart {
     static let shared = Self()
     private let db = UserDefault()
     private var ownEmoticons: [History] {
-        db.getData() ?? []
+        db.getData()
     }
 
     var count: Int {

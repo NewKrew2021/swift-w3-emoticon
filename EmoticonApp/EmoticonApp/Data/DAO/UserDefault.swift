@@ -10,7 +10,7 @@ import Foundation
 struct UserDefault {
     private let key_History = "histories"
 
-    func getData() -> [History]? {
+    func getData() -> [History] {
         var arr: [History] = []
         if let data = UserDefaults.standard.data(forKey: key_History) {
             let dataArray = try! PropertyListDecoder().decode([History].self, from: data)
