@@ -24,4 +24,8 @@ struct Cart {
         self.data.remove(at: index)
         HistoryData.addData(data)
     }
+    
+    static func getHistory(index: Int) -> History? {
+        return self.data[index]
+    }
 }

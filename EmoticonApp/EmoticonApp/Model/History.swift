@@ -9,5 +9,5 @@ import Foundation
 
 struct History : Encodable, Decodable {
     let title: String
-    let data: Date
+    let date: Date
 }
