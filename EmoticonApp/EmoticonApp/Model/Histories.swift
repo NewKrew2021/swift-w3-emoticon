@@ -7,29 +7,35 @@
 
 import Foundation
 
-struct Histories {
-    
+struct HistoryCart : HistoriesProtocol{
     static private var histories : [History] = []
-    static var count : Int {
-        return histories.count
+    static private var histories: HistoriesProtocol
+    static var count: Int {
+        get {
+            return histories.count
+        }
     }
     
-    static func getHistory(index : Int) -> History {
+    static func getHistory(index: Int) -> History {
         return histories[index]
     }
     
-    static func addHistory(history : History) {
+    static func addHistory(history: History) {
         histories.append(history)
+    }
+    
+    static func deleteHistory(title: String, time: String) {
+        for index in 0...count {
+            let history = getHistory(index: index)
+            if history.title == title && history.time == time {
+                histories.remove(at: index)
+                return
+            }
+        }
     }
     
     static func clearHistory() {
         histories.removeAll()
-    }
-
-    static func fakeHistory() {
-        for data in temphistory {
-            histories.append(History(title: data[0], time: data[1]))
-        }
     }
 }
 
@@ -57,10 +63,3 @@ struct History : Hashable{
         _time = time
     }
 }
-
-private var temphistory = [
-    ["유년기오구의 쪼꼬만 일상", "2020-11-24 09:51:37 + 0000"],
-    ["콩글리시 이즈 꿀잼2", "2020-11-24 09:51:37 + 0000"],
-    ["진짜 찐?", "2020-11-24 09:51:37 + 0000"]
-
-]

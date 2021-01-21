@@ -1,4 +1,3 @@
-# swift-w3-emoticon
 모바일 3주차 이모티콘 저장소
 
 ### Setting Done
@@ -186,4 +185,73 @@
 - add action : clearButtonTouched
 
 ![image-20210120234431411](README.assets/image-20210120234431411.png)
+
+### ClearButtonTouched - add logic
+
+- add logic : reloadData()
+
+### Record Exact Log
+
+- using Date().description, record exact time when buy button touched
+
+![image-20210121113430086](README.assets/image-20210121113430086.png)
+
+### Remove from History
+
+- make swipeRecognizer
+- addGestureRecognizer : swipeRecognizer
+- use NotificationCenter to notify the history log is swiped
+- add HistoryTableViewController as a observer of swiping
+- add Method of Histories : deleteHistory()
+
+### Chenage cell style
+
+- change cell style : Right Detail
+
+### Configure label constraints
+
+- set leadingAnchor greaterThanOrEqualTo
+
+![image-20210121140614696](README.assets/image-20210121140614696.png)
+
+### Create Protocol : HistoriesProtocol
+
+- define varaible count
+- define mehods : getHistory, addHistory, deleteHistory, clearHistory
+- struct History adopts HistoriesProtocol
+
+### Refactoring
+
+- rename : HistoriesProtocol -> CartProtocol
+- refactor methods
+- make struct HistoryCart Singleton
+
+### Refactoring2
+
+- chagne HistoryCart Type : struct -> class, to use as singleton
+- in VCs, get HistoryCary instance using getHistoryCart method
+
+### remake Delete
+
+- instead of delete directly when swiped, present `Delete` button
+- touch delete button -> delete the cell
+
+![image-20210121164146708](README.assets/image-20210121164146708.png)
+
+![image-20210121164154688](README.assets/image-20210121164154688.png)
+
+### Feedback Modify - History Type
+
+- change history type : String -> Date
+- modify some codes : using History type
+
+### Feedback Modify - Notification.Name
+
+- move each Notification.Name to view file that calls the notification
+
+### Feedback Modify - Delete TableViewExtension
+
+- delete TableViewExtension
+- add method : setTableViewConstraints()
+- set delegate, dataSource directly
 
