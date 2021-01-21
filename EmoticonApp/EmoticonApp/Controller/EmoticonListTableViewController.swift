@@ -53,5 +53,5 @@ extension EmoticonListTableViewController : UITableViewDelegate, UITableViewData
 
 extension Notification.Name {
     static let buyButtonTouched = Notification.Name("buyButtonTouched")
-    static let historySwiped = Notification.Name("historySwiped")
+    static let deleteButtonTouched = Notification.Name("deleteButtonTouched")
 }

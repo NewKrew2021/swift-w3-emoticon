@@ -19,7 +19,7 @@ class CartViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(historySwiped(_:)), name: .historySwiped, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(historySwiped(_:)), name: .deleteButtonTouched, object: nil)
     }
     
     @objc func historySwiped(_ notification : Notification) {

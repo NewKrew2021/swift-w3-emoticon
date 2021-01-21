@@ -44,16 +44,17 @@ class CartCell: UITableViewCell {
     }
     
     @objc func deleteButtonTouched() {
-        detailTextLabel?.removeConstraint(NSLayoutConstraint())
+//        detailTextLabel?.removeConstraint(NSLayoutConstraint())
+        detailTextLabel?.removeConstraint(trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor, constant: 0))
         deleteButton.removeFromSuperview()
         guard let tempTextLabel = textLabel else { return }
         guard let tempDetailTextLabel = detailTextLabel else { return }
-        NotificationCenter.default.post(name: .historySwiped, object: nil, userInfo: ["title" : tempTextLabel.text ?? "", "time" : tempDetailTextLabel.text ?? ""])
+        NotificationCenter.default.post(name: .deleteButtonTouched, object: nil, userInfo: ["title" : tempTextLabel.text ?? "", "time" : tempDetailTextLabel.text ?? ""])
     }
         
     func setHistory(history : History) {
         textLabel?.text = history.title
-        detailTextLabel?.text = history.time
+        detailTextLabel?.text = history.time.description
     }
     
     func setConstraints() {

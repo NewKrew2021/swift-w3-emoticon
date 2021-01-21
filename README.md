@@ -240,3 +240,8 @@
 
 ![image-20210121164154688](README.assets/image-20210121164154688.png)
 
+### Feedback Modify - History Type
+
+- change history type : String -> Date
+- modify some codes : using History type
+

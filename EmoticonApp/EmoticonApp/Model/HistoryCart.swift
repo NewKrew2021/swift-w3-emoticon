@@ -36,7 +36,7 @@ class HistoryCart : CartProtocol{
     func deleteHistory(title: String, time: String) {
         for index in 0...count {
             let history = getHistory(index: index)
-            if history.title == title && history.time == time {
+            if history.title == title && history.time.description == time {
                 histories.remove(at: index)
                 return
             }
@@ -49,27 +49,7 @@ class HistoryCart : CartProtocol{
 }
 
 struct History : Hashable{
-    private var _title : String
-    private var _time : String
-    var title : String {
-        get {
-            return _title
-        }
-        set(newTitle) {
-            _title = newTitle
-        }
-    }
-    var time : String {
-        get {
-            return _time
-        }
-        set(newTime) {
-            _time = newTime
-        }
-    }
-    init(title : String, time : String) {
-        _title = title
-        _time = time
-    }
+    let title : String
+    let time : Date
 }
 
