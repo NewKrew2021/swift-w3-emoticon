@@ -208,3 +208,9 @@
 
 - change cell style : Right Detail
 
+### Configure label constraints
+
+- set leadingAnchor greaterThanOrEqualTo
+
+![image-20210121140614696](README.assets/image-20210121140614696.png)
+

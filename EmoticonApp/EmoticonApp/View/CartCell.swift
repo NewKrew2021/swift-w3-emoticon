@@ -33,9 +33,7 @@ class CartCell: UITableViewCell {
     }
         
     func setHistory(history : History) {
-        textLabel?.layer.borderWidth = 1
         textLabel?.text = history.title
-        detailTextLabel?.layer.borderWidth = 1
         detailTextLabel?.text = history.time
     }
     
@@ -50,7 +48,8 @@ class CartCell: UITableViewCell {
         detailTextLabel?.translatesAutoresizingMaskIntoConstraints = false
         detailTextLabel?.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         detailTextLabel?.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor).isActive = true
-        detailTextLabel?.leadingAnchor.constraint(equalTo: textLabel!.trailingAnchor, constant: height * 0.5).isActive = true
+        detailTextLabel?.leadingAnchor.constraint(greaterThanOrEqualTo: textLabel!.trailingAnchor, constant: height * 0.5).isActive = true
+        detailTextLabel?.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
     }
     
