@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F73A004F25B8593B00A7F70A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A004E25B8593B00A7F70A /* CartViewController.swift */; };
-		F73A005525B8599000A7F70A /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A005425B8599000A7F70A /* Notification+.swift */; };
 		F73A005A25B85C5400A7F70A /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A005925B85C5400A7F70A /* CartCell.swift */; };
 		F73A005F25B85E5600A7F70A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A005E25B85E5600A7F70A /* Product.swift */; };
 		F73A006425B85EB200A7F70A /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006325B85EB200A7F70A /* CartService.swift */; };
@@ -51,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		F73A004E25B8593B00A7F70A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		F73A005425B8599000A7F70A /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		F73A005925B85C5400A7F70A /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		F73A005E25B85E5600A7F70A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F73A006325B85EB200A7F70A /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 		F73A005325B8596700A7F70A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F73A005425B8599000A7F70A /* Notification+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 				F73A005F25B85E5600A7F70A /* Product.swift in Sources */,
 				F75C7AD825B58AEE007B6622 /* EmoticonCell.swift in Sources */,
 				F73A004F25B8593B00A7F70A /* CartViewController.swift in Sources */,
-				F73A005525B8599000A7F70A /* Notification+.swift in Sources */,
 				F797D24F25B80101009F2FA8 /* EmoticonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

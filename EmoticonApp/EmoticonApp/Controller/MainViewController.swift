@@ -69,3 +69,7 @@ extension MainViewController {
         cartService.addProduct(product: Product(emoticonName: emoticonName))
     }
 }
+
+extension Notification.Name {
+    static let selectEmoticon = Notification.Name("selectEmoticon")
+}
