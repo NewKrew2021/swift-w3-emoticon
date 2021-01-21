@@ -24,6 +24,8 @@
 		5D4B739C25B86ECE004417B3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B739B25B86ECE004417B3 /* HistoryViewController.swift */; };
 		5D4B73A025B91CA2004417B3 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B739F25B91CA2004417B3 /* NotificationCenter.swift */; };
 		5D4B73A525B948A0004417B3 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73A425B948A0004417B3 /* HistoryCell.swift */; };
+		5D4B73AF25B96C69004417B3 /* CartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73AE25B96C69004417B3 /* CartTest.swift */; };
+		5D4B73B225B96D93004417B3 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B739725B82A48004417B3 /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		5D4B739B25B86ECE004417B3 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5D4B739F25B91CA2004417B3 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		5D4B73A425B948A0004417B3 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		5D4B73AE25B96C69004417B3 /* CartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,7 @@
 				5D4B735F25B6B7D6004417B3 /* EmoticonAppTests.swift */,
 				5D4B736125B6B7D6004417B3 /* Info.plist */,
 				5D4B736C25B6B802004417B3 /* EmojiListTest.swift */,
+				5D4B73AE25B96C69004417B3 /* CartTest.swift */,
 			);
 			path = EmoticonAppTests;
 			sourceTree = "<group>";
@@ -316,7 +320,9 @@
 			files = (
 				5D4B736D25B6B802004417B3 /* EmojiListTest.swift in Sources */,
 				5D4B736925B6B7DF004417B3 /* Emoji.swift in Sources */,
+				5D4B73B225B96D93004417B3 /* Cart.swift in Sources */,
 				5D4B736025B6B7D6004417B3 /* EmoticonAppTests.swift in Sources */,
+				5D4B73AF25B96C69004417B3 /* CartTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

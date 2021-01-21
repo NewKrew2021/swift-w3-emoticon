@@ -7,60 +7,45 @@
 
 import Foundation
 
-protocol EmojiType {
-    var id: String { get }
-    var title: String { get }
-    var author: String { get }
-    var image: String { get }
-}
-
-protocol EmojiListModel {
-    var list: [EmojiType] { get }
+protocol EmojiListType {
+    var list: [Emoji] { get }
     var count: Int { get }
-    mutating func append(_ newElement: EmojiType)
+    mutating func append(_ newElement: Emoji)
     mutating func remove(at: Int)
-    func findById(id: String) -> EmojiType?
-    subscript(index: Int) -> EmojiType { get set }
+    func findById(id: UUID) -> Emoji?
+    subscript(index: Int) -> Emoji { get set }
 }
 
-struct Emoji: EmojiType {
+struct Emoji {
+    let id: UUID
     let title: String
     let author: String
     let image: String
-    let id: String
-
-    enum Property: String {
-        case title, author, image
-    }
 
     init(title: String, author: String, image: String) {
         self.title = title
         self.author = author
         self.image = image
-        self.id = "emoji-id-\(Emoji.randomId(length: 10))"
-    }
-
-    private static func randomId(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyz0123456789"
-        return String((0..<length).map { _ in letters.randomElement()! })
+        self.id = UUID()
     }
 }
 
-struct EmojiList: EmojiListModel {
-    var list: [EmojiType]
+struct EmojiList: EmojiListType {
+
+    var list: [Emoji]
     var count: Int {
         return list.count
     }
 
     init() {
-        list = [EmojiType]()
+        list = [Emoji]()
     }
 
-    init(list: [EmojiType]) {
+    init(list: [Emoji]) {
         self.list = list
     }
 
-    mutating func append(_ newElement: EmojiType) {
+    mutating func append(_ newElement: Emoji) {
         list.append(newElement)
     }
 
@@ -68,18 +53,24 @@ struct EmojiList: EmojiListModel {
         list.remove(at: at)
     }
 
-    func findById(id: String) -> EmojiType? {
-        for emoji in list {
-            if emoji.id == id {
-                return emoji
-            }
+    func findById(id: UUID) -> Emoji? {
+        for emoji in list where emoji.id == id {
+            return emoji
         }
         return nil
+    }
+    func findByIds(id: UUID) -> [Emoji] {
+        var emojis: [Emoji] = [Emoji]()
+        for emoji in list where emoji.id == id {
+            emojis.append(emoji)
+        }
+        return emojis
     }
 }
 
 class EmojiService {
-    private(set) var data: EmojiListModel = EmojiList()
+    static let shared: EmojiService = EmojiService()
+    private(set) var data: EmojiListType = EmojiList()
 
     init() {
         self.getData()
@@ -101,10 +92,13 @@ class EmojiService {
               ]
         self.data = EmojiList(list: data.map { return Emoji(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "default") })
     }
+    func findById(id: UUID) -> Emoji? {
+        return self.data.findById(id: id)
+    }
 }
 
 extension EmojiList {
-    subscript(index: Int) -> EmojiType {
+    subscript(index: Int) -> Emoji {
       get {
         return self.list[index]
       }
@@ -115,7 +109,7 @@ extension EmojiList {
 }
 
 extension EmojiList: Sequence {
-  func makeIterator() -> IndexingIterator<[EmojiType]> {
+  func makeIterator() -> IndexingIterator<[Emoji]> {
     return list.makeIterator()
   }
 }

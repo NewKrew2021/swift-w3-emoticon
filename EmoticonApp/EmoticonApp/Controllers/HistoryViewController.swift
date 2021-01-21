@@ -53,7 +53,7 @@ class HistoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell: HistoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.cellIdentifier, for: indexPath) as? HistoryTableViewCell {
             let cartItem = cart[indexPath.row] as CartItem
-            cell.setProperty(id: cartItem.emoji.id, title: cartItem.emoji.title, time: cartItem.time)
+            cell.setProperty(cartItem: cartItem)
             cell.resize(width: screenWidth)
             return cell
         }

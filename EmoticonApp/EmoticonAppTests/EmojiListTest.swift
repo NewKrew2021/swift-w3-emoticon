@@ -7,7 +7,8 @@
 
 import XCTest
 
-struct MockEmoji: EmojiType {
+struct MockEmojiForList {
+    var id: String = ""
     var title: String = ""
     var author: String = ""
     var image: String = ""
@@ -35,7 +36,7 @@ class EmojiListTest: XCTestCase {
           ]
 
     func testEmojiListCreate() throws {
-        let emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmoji(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
+        let emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmojiForList(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
         for (index, emoji) in emojiList.enumerated() {
             XCTAssertEqual(emoji.title, mockData[index]["title"])
             XCTAssertEqual(emoji.author, mockData[index]["author"])
@@ -46,13 +47,13 @@ class EmojiListTest: XCTestCase {
     func testEmojiListAppend() throws {
         var emojiList: EmojiList = EmojiList(list: [EmojiType]())
         for emoji in mockData {
-            emojiList.append(MockEmoji(title: emoji["title"] ?? "", author: emoji["author"] ?? "", image: emoji["image"] ?? ""))
+            emojiList.append(MockEmojiForList(title: emoji["title"] ?? "", author: emoji["author"] ?? "", image: emoji["image"] ?? ""))
         }
         XCTAssertEqual(emojiList.count, mockData.count)
     }
 
     func testEmojiListRemove() throws {
-        var emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmoji(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
+        var emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmojiForList(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
         for _ in 0..<mockData.count {
             emojiList.remove(at: 0)
         }

@@ -8,17 +8,17 @@
 import UIKit
 
 protocol EmojiTableCellDelegate: AnyObject {
-    func didButtonTapped(id: String)
+    func didButtonTapped(id: UUID)
 }
 
 class EmojiTableViewCell: UITableViewCell {
 
     static let cellIdentifier = "MainTableViewCell"
-    private var emojiId: String = ""
-    var emoji: UIImageView = UIImageView()
-    var emojiName: UILabel = UILabel()
-    var emojiDescription: UILabel = UILabel()
-    var buy: UIButton = UIButton()
+    private var emojiId: UUID?
+    private var emojiImageView: UIImageView = UIImageView()
+    private var emojiName: UILabel = UILabel()
+    private var emojiDescription: UILabel = UILabel()
+    private var buy: UIButton = UIButton()
     weak var delegate: EmojiTableCellDelegate?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -34,7 +34,7 @@ class EmojiTableViewCell: UITableViewCell {
     }
 
     private func setUI() {
-        emoji.contentMode = .scaleAspectFit
+        emojiImageView.contentMode = .scaleAspectFit
         emojiName.font = UIFont.systemFont(ofSize: UIFont.labelFontSize, weight: .medium)
         emojiName.contentMode = .top
         emojiDescription.font = UIFont.systemFont(ofSize: UIFont.systemFontSize, weight: .light)
@@ -45,15 +45,15 @@ class EmojiTableViewCell: UITableViewCell {
         buy.addTarget(self, action: #selector(buyTapped), for: .touchUpInside)
     }
 
-    func setProperty(id: String, title: String, author: String, imageName: String) {
-        emojiId = id
-        emojiName.text = title
-        emojiDescription.text = author
-        emoji.image = UIImage(named: imageName)
+    func setProperty(emoji: Emoji) {
+        emojiId = emoji.id
+        emojiName.text = emoji.title
+        emojiDescription.text = emoji.author
+        emojiImageView.image = UIImage(named: emoji.image)
     }
 
     func resize(width: CGFloat, height: CGFloat) {
-        emoji.frame.size = CGSize(width: height, height: height)
+        emojiImageView.frame.size = CGSize(width: height, height: height)
         buy.frame.size = CGSize(width: height, height: height)
         buy.frame.origin = CGPoint(x: self.frame.width-height, y: 0)
         emojiName.frame.origin = CGPoint(x: height, y: 0)
@@ -63,14 +63,16 @@ class EmojiTableViewCell: UITableViewCell {
     }
 
     private func addContentView() {
-        contentView.addSubview(emoji)
+        contentView.addSubview(emojiImageView)
         contentView.addSubview(emojiName)
         contentView.addSubview(emojiDescription)
         contentView.addSubview(buy)
     }
 
     @objc func buyTapped() {
-        delegate?.didButtonTapped(id: emojiId)
-        NotificationCenter.default.post(name: .pushToCart, object: emojiId)
+        if let id = emojiId {
+            delegate?.didButtonTapped(id: id)
+            NotificationCenter.default.post(name: .pushToCart, object: emojiId)
+        }
     }
 }

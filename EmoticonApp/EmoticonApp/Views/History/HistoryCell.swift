@@ -9,10 +9,11 @@ import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
     static let cellIdentifier: String = "HistoryTableViewCell"
-    private var emojiId: String = ""
-    var emojiName: UILabel = UILabel()
-    var emojiDescription: UILabel = UILabel()
+    private var emojiId: UUID?
+    private var emojiName: UILabel = UILabel()
+    private var emojiDescription: UILabel = UILabel()
     private let dateFormatter = DateFormatter()
+    private let emojiService = EmojiService.shared
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,11 +27,13 @@ class HistoryTableViewCell: UITableViewCell {
         addContentView()
     }
 
-    func setProperty(id: String, title: String, time: Date) {
+    func setProperty(cartItem: CartItem) {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        emojiId = id
-        emojiName.text = title
-        emojiDescription.text = dateFormatter.string(from: time)
+        emojiDescription.text = dateFormatter.string(from: cartItem.time)
+        emojiId = cartItem.emojiId
+        if let emoji = emojiService.findById(id: emojiId ?? UUID()) {
+            emojiName.text = emoji.title
+        }
     }
 
     private func setUI() {
