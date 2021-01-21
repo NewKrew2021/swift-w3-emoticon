@@ -19,7 +19,8 @@ class CartViewController: UITableViewController {
     }
     
     @objc func clickedClearButton() {
-        
+        Cart.removeAll()
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
