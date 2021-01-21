@@ -17,8 +17,8 @@ struct HistoryData {
         }
         return histories
     }
-
-    static func addData(_ data: [History]) {
+    
+    static func updateData(_ data: [History]) {
         db.set(try? PropertyListEncoder().encode(data), forKey:"history")
     }
 }

@@ -20,6 +20,7 @@ class EmoticonTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickedPurchase(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "purchaseButton"),object: History(title: titleLabel.text ?? "", data: Date()))
+        let dataDict:[String: History] = ["history": History(title: titleLabel.text ?? "", date: Date())]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "purchaseButton"),object: nil, userInfo: dataDict)
     }
 }
