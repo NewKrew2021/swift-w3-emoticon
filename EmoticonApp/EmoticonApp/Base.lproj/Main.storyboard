@@ -142,7 +142,7 @@
         <scene sceneID="O41-uh-rae">
             <objects>
                 <tableViewController storyboardIdentifier="cartViewController" id="CF1-mf-eoh" customClass="CartViewController" customModule="EmoticonApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zt-08-PM0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7zt-08-PM0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,21 +154,32 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8N0-pr-7Zp">
-                                            <rect key="frame" x="178" y="16.5" width="216" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-pr-7Zp">
+                                            <rect key="frame" x="178" y="16" width="216" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="216" id="dUv-3r-3jG"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hyj-5p-dEy">
-                                            <rect key="frame" x="20" y="15.5" width="150" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyj-5p-dEy">
+                                            <rect key="frame" x="20" y="16" width="150" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="7JF-Wm-Q1z"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8N0-pr-7Zp" firstAttribute="leading" secondItem="hyj-5p-dEy" secondAttribute="trailing" constant="8" id="AAM-gg-WSN"/>
+                                        <constraint firstItem="8N0-pr-7Zp" firstAttribute="trailing" secondItem="uGl-c3-dU7" secondAttribute="trailingMargin" id="VsS-Nj-xFl"/>
+                                        <constraint firstItem="8N0-pr-7Zp" firstAttribute="centerY" secondItem="uGl-c3-dU7" secondAttribute="centerY" id="fTN-vb-Bsw"/>
+                                        <constraint firstItem="hyj-5p-dEy" firstAttribute="leading" secondItem="uGl-c3-dU7" secondAttribute="leadingMargin" id="kQB-qi-9u1"/>
+                                        <constraint firstItem="hyj-5p-dEy" firstAttribute="centerY" secondItem="uGl-c3-dU7" secondAttribute="centerY" id="sf4-F1-HbP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="8N0-pr-7Zp" id="OcG-Uf-vro"/>
