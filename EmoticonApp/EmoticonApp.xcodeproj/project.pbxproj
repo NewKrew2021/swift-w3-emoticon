@@ -16,6 +16,7 @@
 		F73A007025B9387B00A7F70A /* CartServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006B25B85F1400A7F70A /* CartServiceImpl.swift */; };
 		F73A007425B93AAF00A7F70A /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006325B85EB200A7F70A /* CartService.swift */; };
 		F73A007825B93ABC00A7F70A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A005E25B85E5600A7F70A /* Product.swift */; };
+		F73A008A25B965A800A7F70A /* StringVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A008925B965A800A7F70A /* StringVO.swift */; };
 		F75C7AA425B54261007B6622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA325B54261007B6622 /* AppDelegate.swift */; };
 		F75C7AA625B54261007B6622 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA525B54261007B6622 /* SceneDelegate.swift */; };
 		F75C7AA825B54261007B6622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA725B54261007B6622 /* MainViewController.swift */; };
@@ -55,6 +56,7 @@
 		F73A005E25B85E5600A7F70A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F73A006325B85EB200A7F70A /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		F73A006B25B85F1400A7F70A /* CartServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartServiceImpl.swift; sourceTree = "<group>"; };
+		F73A008925B965A800A7F70A /* StringVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringVO.swift; path = ../../../../../../Documents/StringVO.swift; sourceTree = "<group>"; };
 		F75C7AA025B54261007B6622 /* EmoticonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoticonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75C7AA325B54261007B6622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F75C7AA525B54261007B6622 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		F73A008825B9659B00A7F70A /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				F73A008925B965A800A7F70A /* StringVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
 		F75C7A9725B54261007B6622 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		F75C7AA225B54261007B6622 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				F73A008825B9659B00A7F70A /* VO */,
 				F73A005325B8596700A7F70A /* Extension */,
 				F797D24A25B80061009F2FA8 /* Protocol */,
 				F75C7AF125B69A4D007B6622 /* View */,
@@ -335,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75C7AA825B54261007B6622 /* MainViewController.swift in Sources */,
+				F73A008A25B965A800A7F70A /* StringVO.swift in Sources */,
 				F797D24325B7CAC4009F2FA8 /* MainImageView.swift in Sources */,
 				F75C7AED25B67637007B6622 /* EmoticonServiceImpl.swift in Sources */,
 				F73A006C25B85F1400A7F70A /* CartServiceImpl.swift in Sources */,

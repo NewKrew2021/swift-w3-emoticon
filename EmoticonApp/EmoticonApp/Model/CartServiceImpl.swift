@@ -10,7 +10,7 @@ import Foundation
 class CartServiceImpl: CartService {
     
     static let instance: CartService = CartServiceImpl()
-    private var products: [Product] = []
+    var products: [Product] = []
     public var count: Int {
         get {
             return products.count
@@ -23,8 +23,8 @@ class CartServiceImpl: CartService {
         products.append(product)
     }
     
-    subscript(index: Int) -> Product {
-        return products[index]
+    public func setProducts(products: [Product]) {
+        self.products = products
     }
     
     public func removeProduct(at: Int) {
@@ -33,5 +33,9 @@ class CartServiceImpl: CartService {
     
     public func removeAll() {
         products.removeAll()
+    }
+    
+    subscript(index: Int) -> Product {
+        return products[index]
     }
 }
