@@ -14,6 +14,8 @@
 		F73A006425B85EB200A7F70A /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006325B85EB200A7F70A /* CartService.swift */; };
 		F73A006C25B85F1400A7F70A /* CartServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006B25B85F1400A7F70A /* CartServiceImpl.swift */; };
 		F73A007025B9387B00A7F70A /* CartServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006B25B85F1400A7F70A /* CartServiceImpl.swift */; };
+		F73A007425B93AAF00A7F70A /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A006325B85EB200A7F70A /* CartService.swift */; };
+		F73A007825B93ABC00A7F70A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A005E25B85E5600A7F70A /* Product.swift */; };
 		F75C7AA425B54261007B6622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA325B54261007B6622 /* AppDelegate.swift */; };
 		F75C7AA625B54261007B6622 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA525B54261007B6622 /* SceneDelegate.swift */; };
 		F75C7AA825B54261007B6622 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C7AA725B54261007B6622 /* MainViewController.swift */; };
@@ -353,6 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73A007425B93AAF00A7F70A /* CartService.swift in Sources */,
+				F73A007825B93ABC00A7F70A /* Product.swift in Sources */,
 				F75C7ABB25B54261007B6622 /* EmoticonAppTests.swift in Sources */,
 				F73A007025B9387B00A7F70A /* CartServiceImpl.swift in Sources */,
 			);
