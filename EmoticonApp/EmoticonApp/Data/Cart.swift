@@ -7,7 +7,14 @@
 
 import Foundation
 
+// Struct일 때는 ownEmoticons이 HistoryVC에서 정상적인 개수/데이터로 불리지 않음
+// Class 일 때는 정삭적으로 동작 Why??
 class Cart {
+    struct History: Codable {
+        let title: String
+        let date: Date
+    }
+
     static let shared = Cart()
     private let db = UserDefault()
     private var ownEmoticons: [History]
@@ -25,7 +32,7 @@ class Cart {
         db.setData(ownEmoticons)
     }
 
-    func remove(index: Int, completionHandler: @escaping () -> Void) {
+    func remove(at index: Int, completionHandler: @escaping () -> Void) {
         ownEmoticons.remove(at: index)
         db.setData(ownEmoticons)
         completionHandler()
@@ -40,9 +47,4 @@ class Cart {
     subscript(index: Int) -> History {
         return ownEmoticons[index]
     }
-}
-
-struct History: Codable {
-    let title: String
-    let date: Date
 }

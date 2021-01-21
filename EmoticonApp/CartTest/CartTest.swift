@@ -14,7 +14,7 @@ class CartTest: XCTestCase {
     private var count = 1
 
     override func setUpWithError() throws {
-        cart.removeAll()
+        cart.removeAll(completionHandler: {})
     }
 
     override func tearDownWithError() throws {}
@@ -22,10 +22,10 @@ class CartTest: XCTestCase {
     func test_구매이력추가_상세내용_성공() throws {
         var title: String = ""
         let date = Date()
-        
-        for index in 0..<count{
+
+        for index in 0 ..< count {
             title = "이모티콘\(index)"
-            cart.buyEmoticon(title: title, date: date)
+            cart.buyEmoticon(history: Cart.History(title: title, date: date))
         }
         XCTAssertEqual(title, db.getData().last?.title)
         XCTAssertEqual(date, db.getData().last?.date)
@@ -34,29 +34,29 @@ class CartTest: XCTestCase {
     func test_구매이력추가_개수_성공() throws {
         count = 5
         try test_구매이력추가_상세내용_성공()
-        
+
         XCTAssertEqual(5, db.getData().count)
     }
 
     func test_하나삭제_개수_성공() throws {
         count = 2
         try test_구매이력추가_상세내용_성공()
-        cart.remove(index: 0)
+        cart.remove(at: 0, completionHandler: {})
         XCTAssertEqual(1, db.getData().count)
     }
-    
-    func test_하나삭제_상세내용_성공() throws{
+
+    func test_하나삭제_상세내용_성공() throws {
         count = 2
         try test_구매이력추가_상세내용_성공()
-        
-        cart.remove(index: 0)
+
+        cart.remove(at: 0, completionHandler: {})
         XCTAssertEqual("이모티콘1", db.getData().last?.title)
     }
-    
-    func test_모두삭제_개수_성공() throws{
+
+    func test_모두삭제_개수_성공() throws {
         count = 100
         try test_구매이력추가_상세내용_성공()
-        cart.removeAll()
+        cart.removeAll(completionHandler: {})
         XCTAssertEqual(0, db.getData().count)
     }
 }

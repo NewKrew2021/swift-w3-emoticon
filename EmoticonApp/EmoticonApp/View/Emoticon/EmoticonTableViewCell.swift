@@ -17,7 +17,13 @@ class EmoticonTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setBorder(width: 0.2, color: UIColor.black.cgColor)
 
-        buyButton.addTarget(self, action: #selector(tappedBuyButton), for: .touchUpInside)
+        self.buyButton.addTarget(self, action: #selector(self.tappedBuyButton), for: .touchUpInside)
+    }
+
+    func updateUI(data: Emoticon) {
+        self.titleLabel.text = data.title
+        self.subTitleLabel.text = data.author
+        self.imageView?.image = UIImage(named: data.imagePath)
     }
 
     @objc private func tappedBuyButton() {

@@ -79,8 +79,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: historyCellName, for: indexPath) as? HistoryTableViewCell else { return UITableViewCell() }
 
-        cell.titleLabel.text = cart[indexPath.row].title
-        cell.dateLabel.text = cart[indexPath.row].date.description
+        cell.updateUI(data: cart[indexPath.row])
 
         return cell
     }
@@ -88,7 +87,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "삭제") { [weak self] _, _, _ in
             guard let self = self else { return }
-            self.cart.remove(index: indexPath.row) { [weak self] in
+            self.cart.remove(at: indexPath.row) { [weak self] in
                 guard let self = self else { return }
                 self.tableView.reloadData()
             }

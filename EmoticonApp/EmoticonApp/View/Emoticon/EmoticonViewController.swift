@@ -66,10 +66,10 @@ class EmoticonViewController: UIViewController {
     }
 
     @objc private func buyEmoticon(_ notification: Notification) {
-        guard let data = notification.object as? History else { return }
+        guard let data = notification.object as? Cart.History else { return }
         showAlert(style: .alert, title: "구매", message: "\"\(data.title)\" 이모티콘을 구매하시겠습니가?", confirm: "네", cancel: "아니오", destructive: nil) { [weak self] in
             guard let self = self else { return }
-            self.cart.buyEmoticon(history: History(title: data.title, date: data.date))
+            self.cart.buyEmoticon(history: Cart.History(title: data.title, date: data.date))
         }
     }
 
@@ -90,9 +90,7 @@ extension EmoticonViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let emoticon = shop[indexPath.row]
-        cell.titleLabel.text = emoticon.title
-        cell.subTitleLabel.text = emoticon.author
-        cell.imgView.image = UIImage(named: emoticon.imagePath)
+        cell.updateUI(data: emoticon)
         return cell
     }
 

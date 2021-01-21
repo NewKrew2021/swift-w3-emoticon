@@ -15,4 +15,9 @@ class HistoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.setBorder(width: 0.2, color: UIColor.black.cgColor)
     }
+    
+    func updateUI(data: Cart.History){
+        self.titleLabel.text = data.title
+        self.dateLabel.text = data.date.description
+    }
 }
