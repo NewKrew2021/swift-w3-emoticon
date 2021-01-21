@@ -9,11 +9,10 @@ import XCTest
 @testable import EmoticonApp
 
 class EmoticonAppTests: XCTestCase {
+    
+    let cartService: CartService = CartServiceImpl.instance
 
     override func setUpWithError() throws {
-    }
-
-    override func tearDownWithError() throws {
     }
 
     func testExample() throws {

@@ -11,5 +11,7 @@ protocol CartService {
     var count: Int { get }
     static var instance: CartService { get }
     func addProduct(product: Product)
+    func removeProduct(at: Int)
+    func removeAll()
     subscript(at: Int) -> Product { get }
 }
