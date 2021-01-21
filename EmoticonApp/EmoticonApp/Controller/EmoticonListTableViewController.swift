@@ -16,8 +16,9 @@ class EmoticonListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.setTableView(superView: view)
-        tableView.assignDelegateAndDataSource(controller: self)
+        setTableViewConstraints()
+        tableView.delegate = self
+        tableView.dataSource = self
 
         Emoticons.registerEmoticons()
         NotificationCenter.default.addObserver(self, selector: #selector(addHistory(_:)), name: .buyButtonTouched, object: nil)
@@ -27,6 +28,15 @@ class EmoticonListTableViewController: UIViewController {
     @objc func addHistory(_ notification : Notification) {
         guard let history = notification.userInfo?["history"] as? History else { return }
         cart.addHistory(history: history)
+    }
+    
+    func setTableViewConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.tableFooterView = UIView()
     }
     
 }

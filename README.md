@@ -249,3 +249,9 @@
 
 - move each Notification.Name to view file that calls the notification
 
+### Feedback Modify - Delete TableViewExtension
+
+- delete TableViewExtension
+- add method : setTableViewConstraints()
+- set delegate, dataSource directly
+

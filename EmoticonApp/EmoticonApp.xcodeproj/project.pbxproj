@@ -19,7 +19,6 @@
 		D2E9299525B52C8400E13879 /* EmoticonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E9299425B52C8400E13879 /* EmoticonAppUITests.swift */; };
 		D2E929C625B5A15800E13879 /* EmoticonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E929C525B5A15800E13879 /* EmoticonListTableViewController.swift */; };
 		D2F331E625B7E77E0054F6DD /* UpperBelowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331E525B7E77E0054F6DD /* UpperBelowView.swift */; };
-		D2F331EE25B812040054F6DD /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331ED25B812040054F6DD /* TableViewExtension.swift */; };
 		D2F331FE25B822B50054F6DD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331FD25B822B50054F6DD /* CartViewController.swift */; };
 		D2F3320625B849C40054F6DD /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3320525B849C40054F6DD /* CartCell.swift */; };
 		D2F3320B25B852850054F6DD /* HistoryCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3320A25B852850054F6DD /* HistoryCart.swift */; };
@@ -62,7 +61,6 @@
 		D2E9299625B52C8400E13879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2E929C525B5A15800E13879 /* EmoticonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonListTableViewController.swift; sourceTree = "<group>"; };
 		D2F331E525B7E77E0054F6DD /* UpperBelowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBelowView.swift; sourceTree = "<group>"; };
-		D2F331ED25B812040054F6DD /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		D2F331FD25B822B50054F6DD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		D2F3320525B849C40054F6DD /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		D2F3320A25B852850054F6DD /* HistoryCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCart.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			children = (
 				D2A2103A25B69FDA00904156 /* MyCell.swift */,
 				D2F331E525B7E77E0054F6DD /* UpperBelowView.swift */,
-				D2F331ED25B812040054F6DD /* TableViewExtension.swift */,
 				D2F3320525B849C40054F6DD /* CartCell.swift */,
 			);
 			path = View;
@@ -326,7 +323,6 @@
 				D2F3321425B9446D0054F6DD /* CartProtocol.swift in Sources */,
 				D2F331E625B7E77E0054F6DD /* UpperBelowView.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
-				D2F331EE25B812040054F6DD /* TableViewExtension.swift in Sources */,
 				D2E9297525B52C8200E13879 /* SceneDelegate.swift in Sources */,
 				D2E929C625B5A15800E13879 /* EmoticonListTableViewController.swift in Sources */,
 			);
