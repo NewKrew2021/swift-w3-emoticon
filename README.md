@@ -25,3 +25,14 @@
 3. Card 객체에 대해 test Code 작성
 
 <img width="290" alt="sc" src="https://user-images.githubusercontent.com/46565404/105170500-58383a00-5b60-11eb-93b1-bd4f4b7fa87a.png">
+
+## Step4
+1/21 15:07
+1. UserDefault에 저장해놓은 구매내역을 Cart 화면에 띄워주기
+2. 왼쪽으로 스와이프했을때 테이블 셀 삭제
+3. Clear버튼 눌렀을 때 전체 삭제되도록 구현
+4. Cart객체에 프로토콜 적용
+
+<img width="311" alt="sc1" src="https://user-images.githubusercontent.com/46565404/105286960-a4d05380-5bfa-11eb-99fd-cda36efdd85b.png">
+
+<img width="312" alt="sc2" src="https://user-images.githubusercontent.com/46565404/105286983-ad288e80-5bfa-11eb-9449-fac8c58d8b4b.png">
