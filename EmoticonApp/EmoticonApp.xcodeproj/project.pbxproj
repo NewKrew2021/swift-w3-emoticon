@@ -23,6 +23,7 @@
 		D2F331FE25B822B50054F6DD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F331FD25B822B50054F6DD /* CartViewController.swift */; };
 		D2F3320625B849C40054F6DD /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3320525B849C40054F6DD /* CartCell.swift */; };
 		D2F3320B25B852850054F6DD /* Histories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3320A25B852850054F6DD /* Histories.swift */; };
+		D2F3321425B9446D0054F6DD /* HistoriesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3321325B9446D0054F6DD /* HistoriesProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D2F331FD25B822B50054F6DD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		D2F3320525B849C40054F6DD /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		D2F3320A25B852850054F6DD /* Histories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histories.swift; sourceTree = "<group>"; };
+		D2F3321325B9446D0054F6DD /* HistoriesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoriesProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		D2E9297125B52C8200E13879 /* EmoticonApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2F3321225B944060054F6DD /* Protocol */,
 				D2F331DE25B7BEC30054F6DD /* Controller */,
 				D2A2103F25B6E03000904156 /* View */,
 				D2A2100D25B6702400904156 /* Model */,
@@ -174,6 +177,14 @@
 				D2F331FD25B822B50054F6DD /* CartViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D2F3321225B944060054F6DD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D2F3321325B9446D0054F6DD /* HistoriesProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 				D2F3320B25B852850054F6DD /* Histories.swift in Sources */,
 				D2A2101A25B670E900904156 /* Emoticons.swift in Sources */,
 				D2F331FE25B822B50054F6DD /* CartViewController.swift in Sources */,
+				D2F3321425B9446D0054F6DD /* HistoriesProtocol.swift in Sources */,
 				D2F331E625B7E77E0054F6DD /* UpperBelowView.swift in Sources */,
 				D2E9297325B52C8200E13879 /* AppDelegate.swift in Sources */,
 				D2F331EE25B812040054F6DD /* TableViewExtension.swift in Sources */,

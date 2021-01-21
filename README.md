@@ -214,3 +214,9 @@
 
 ![image-20210121140614696](README.assets/image-20210121140614696.png)
 
+### Create Protocol : HistoriesProtocol
+
+- define varaible count
+- define mehods : getHistory, addHistory, deleteHistory, clearHistory
+- struct History adopts HistoriesProtocol
+
