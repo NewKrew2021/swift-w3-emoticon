@@ -7,11 +7,11 @@
 
 import UIKit
 
-class myCell: UITableViewCell {
+class MyCell: UITableViewCell {
     
     private var titleLabel = UILabel()
-    private var descriptionLabel = UILabel()
-    private var purchaseLabel = UILabel()
+    private var authorLabel = UILabel()
+    var purchaseButton = UIButton()
     private var leadingImage = UIImageView()
     private var standardHeight : CGFloat?
 
@@ -21,45 +21,45 @@ class myCell: UITableViewCell {
         // Initialization code
         addSubview(leadingImage)
         addSubview(titleLabel)
-        addSubview(descriptionLabel)
-        addSubview(purchaseLabel)
+        addSubview(authorLabel)
+        addSubview(purchaseButton)
         setConstraints()
-        contentView.layer.borderWidth = 1
         standardHeight = standardHeight == nil ? frame.height : standardHeight
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
     
-    func setTitleText(text : String) {
-        titleLabel.text = text
-    }
-    
-    func setDescriptionText(text : String) {
-        descriptionLabel.text = text
-    }
-    
-    func setImage(src : String) {
-        leadingImage.image = UIImage(named: src)
+    func setEmoticon(emoticon : Emoticon) {
+        titleLabel.text = emoticon.title
+        authorLabel.text = emoticon.author
+        leadingImage.image = UIImage(named: emoticon.image)
     }
     
     func setConstraints() {
         guard let height = standardHeight else { return }
         titleLabel.setConstraint(target: .title, standardView: leadingImage, height : height)
-        descriptionLabel.setConstraint(target: .description, standardView: leadingImage, height: height)
+        authorLabel.setConstraint(target: .description, standardView: leadingImage, height: height)
         leadingImage.setConstraint(standardView: self, height: height)
-        purchaseLabel.text = "구매"
-        purchaseLabel.setConstraint(target: .purchase, standardView: self, height: height)
+        setPurchaseButton(standardView : self, height : height)
+    }
+    
+    func setPurchaseButton(standardView : UIView, height : CGFloat) {
+        purchaseButton.translatesAutoresizingMaskIntoConstraints = false
+        purchaseButton.leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant : -1.2 * height).isActive = true
+        purchaseButton.centerYAnchor.constraint(equalTo: standardView.centerYAnchor).isActive = true
+        purchaseButton.setTitle("구매", for: .normal)
+        purchaseButton.setTitleColor(.systemBlue, for: .normal)
+        purchaseButton.addTarget(self, action: #selector(buyButtonTouched), for: .touchUpInside)
+    }
+    
+    @objc func buyButtonTouched() {
+        let titleText = titleLabel.text!
+        let history = History(title: titleText, time: Date())
+        NotificationCenter.default.post(name: .buyButtonTouched, object: nil, userInfo: ["history" : history])
     }
 }
-
 extension UILabel {
     enum labelType {
         case title
         case description
-        case purchase
     }
     
     func setConstraint(target: labelType, standardView : UIView, height : CGFloat) {
@@ -70,20 +70,13 @@ extension UILabel {
         case .title:
             leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant: 2 * padding).isActive = true
             topAnchor.constraint(equalTo: standardView.topAnchor, constant: padding).isActive = true
-            layer.borderWidth = 1
             break
         case .description:
             leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant: 2 * padding).isActive = true
             topAnchor.constraint(equalTo: standardView.centerYAnchor, constant: padding).isActive = true
             textColor = .gray
-            layer.borderWidth = 1
             break
-        case .purchase:
-//            leadingAnchor.constraint(equalToSystemSpacingAfter: standardView.trailingAnchor, multiplier: 0.1).isActive = true
-            leadingAnchor.constraint(equalTo: standardView.trailingAnchor, constant : -1.2 * height).isActive = true
-            centerYAnchor.constraint(equalTo: standardView.centerYAnchor).isActive = true
-            textColor = .systemBlue
-            layer.borderWidth = 1
+            
         }
     }
 }
@@ -96,6 +89,9 @@ extension UIImageView {
         heightAnchor.constraint(equalTo: standardView.heightAnchor, constant: -2 * padding).isActive = true
         leadingAnchor.constraint(equalTo: standardView.leadingAnchor, constant: padding).isActive = true
         widthAnchor.constraint(equalTo: standardView.heightAnchor, constant: -2 * padding).isActive = true
-        layer.borderWidth = 1
     }
+}
+
+extension Notification.Name {
+    static let buyButtonTouched = Notification.Name("buyButtonTouched")
 }
