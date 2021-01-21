@@ -9,18 +9,19 @@ import Foundation
 
 class Product: NSObject, NSCoding {
     let emoticonName: String
-    let selectTimeAndDate: String
-    private let formatter = DateFormatter()
+    let selectTimeAndDate: Date
     
     init(emoticonName: String) {
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss +0000"
         self.emoticonName = emoticonName
-        self.selectTimeAndDate = formatter.string(from: Date())
+        self.selectTimeAndDate = Date()
     }
     
     required init?(coder: NSCoder) {
-        self.emoticonName = coder.decodeObject(forKey: "emoticonName") as! String
-        self.selectTimeAndDate = coder.decodeObject(forKey: "selectTimeAndDate") as! String
+        guard let emoticonName = coder.decodeObject(forKey: "emoticonName") as? String,
+              let selectTimeAndDate = coder.decodeObject(forKey: "selectTimeAndDate") as? Date
+        else { return nil }
+        self.emoticonName = emoticonName
+        self.selectTimeAndDate = selectTimeAndDate
     }
     
     func encode(with coder: NSCoder) {
