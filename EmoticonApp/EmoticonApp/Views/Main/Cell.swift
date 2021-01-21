@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol EmojiTableCellDelegate {
-    func buttonTapped(id: String)
+protocol EmojiTableCellDelegate: AnyObject {
+    func didButtonTapped(id: String)
 }
 
 class EmojiTableViewCell: UITableViewCell {
@@ -60,7 +60,6 @@ class EmojiTableViewCell: UITableViewCell {
         emojiName.frame.size = CGSize(width: self.frame.width-height*2, height: height / 2)
         emojiDescription.frame.origin = CGPoint(x: height, y: height/2)
         emojiDescription.frame.size = CGSize(width: self.frame.width-height, height: height / 2)
-
     }
 
     private func addContentView() {
@@ -71,6 +70,7 @@ class EmojiTableViewCell: UITableViewCell {
     }
 
     @objc func buyTapped() {
-        delegate?.buttonTapped(id: emojiId)
+        delegate?.didButtonTapped(id: emojiId)
+        NotificationCenter.default.post(name: .pushToCart, object: emojiId)
     }
 }

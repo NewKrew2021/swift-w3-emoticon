@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate {
+class MainViewController: UIViewController {
 
     private var mainImage: UIView!
     private var myTableView: UITableView!
@@ -15,31 +15,38 @@ class MainViewController: UIViewController, UITableViewDelegate {
     let screenHeight = UIScreen.main.bounds.size.height
     private var emojiService: EmojiService = EmojiService()
     private let emojiList: EmojiListModel
-    private var cart: Cart = Cart()
+    private var cart: CartType = Cart.shared
     private var clickedItemId: String?
     private var cellHeight: CGFloat = CGFloat(100)
     private let numOfCell: CGFloat = 6.5
     private var alert: UIAlertController
+    private var cartObserver: Observable?
 
     init() {
         emojiList = emojiService.data
         alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(nibName: nil, bundle: nil)
+        self.cartObserver = CartObserver(self, selector: #selector(willPushToCart))
+    }
+
+    deinit {
+        self.cartObserver?.removeObservers()
     }
 
     required init?(coder: NSCoder) {
         emojiList = emojiService.data
         alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(coder: coder)
+        self.cartObserver = CartObserver(self, selector: #selector(willPushToCart))
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         setUI()
         let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
-            guard let stringSelf = self else { return }
-            if let id = stringSelf.clickedItemId {
-                stringSelf.clickAlertOK(id: id)
+            guard let strongSelf = self else { return }
+            if let id = strongSelf.clickedItemId {
+                strongSelf.clickAlertOK(id: id)
             }
         }
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
@@ -82,20 +89,21 @@ class MainViewController: UIViewController, UITableViewDelegate {
     }
 
     @objc private func goToHistory() {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryViewController") {
-            self.navigationController?.pushViewController(vc, animated: true)    }
-        }
+        self.performSegue(withIdentifier: "ToHistory", sender: self)
+    }
 
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojiService.data.count
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,7 +113,6 @@ extension MainViewController: UITableViewDataSource {
             let author = emojiList[indexPath.row].author
             let image = emojiList[indexPath.row].image
             let emojiId = emojiList[indexPath.row].id
-            cell.delegate = self
             cell.setProperty(id: emojiId, title: title, author: author, imageName: image)
             cell.setHeight(height: cellHeight)
             cell.selectionStyle = .none
@@ -115,10 +122,12 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-extension MainViewController: EmojiTableCellDelegate {
-    func buttonTapped(id: String) {
-        self.present(alert, animated: true, completion: nil)
-        self.clickedItemId = id
-    }
+extension MainViewController {
+    @objc func willPushToCart(_ notification: Notification) {
+        if let id = notification.object as? String {
+            self.present(alert, animated: true, completion: nil)
+            self.clickedItemId = id
+        }
 
+    }
 }
