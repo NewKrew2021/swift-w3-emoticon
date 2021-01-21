@@ -13,7 +13,7 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var selectDateAndTime: UILabel!
     
     func setCell(product: Product) {
-        emoticonName.text = product.emoticonName
         selectDateAndTime.text = product.selectTimeAndDate
+        emoticonName.text = product.emoticonName
     }
 }
