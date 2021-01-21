@@ -9,6 +9,8 @@ import UIKit
 
 class CartViewController: UITableViewController {
 
+    var cart = Cart()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,12 +30,12 @@ class CartViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Cart.data.count
+        return Cart.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartTableViewCell", for: indexPath) as! CartTableViewCell
-        let history = Cart.getHistory(index: indexPath.row)
+        let history = Cart[at: indexPath.row]
         cell.setData(title: history?.title ?? "", date: history?.date ?? Date())
         
         return cell

@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Cart {
-    static var data = HistoryData.getData() ?? [History]()
+struct Cart : CartService {
     
+    static var data = HistoryData.getData() ?? [History]()
+
     static func add(history:History) {
         self.data.append(history)
         HistoryData.addData(data)
@@ -25,7 +26,11 @@ struct Cart {
         HistoryData.addData(data)
     }
     
-    static func getHistory(index: Int) -> History? {
+    static subscript(at index: Int) -> History? {
         return self.data[index]
+    }
+    
+    static var count: Int {
+        return self.data.count
     }
 }
