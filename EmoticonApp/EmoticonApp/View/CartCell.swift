@@ -81,4 +81,6 @@ class CartCell: UITableViewCell {
 
 }
 
-
+extension Notification.Name {
+    static let deleteButtonTouched = Notification.Name("deleteButtonTouched")
+}

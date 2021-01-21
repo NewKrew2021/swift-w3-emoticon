@@ -91,3 +91,7 @@ extension UIImageView {
         widthAnchor.constraint(equalTo: standardView.heightAnchor, constant: -2 * padding).isActive = true
     }
 }
+
+extension Notification.Name {
+    static let buyButtonTouched = Notification.Name("buyButtonTouched")
+}

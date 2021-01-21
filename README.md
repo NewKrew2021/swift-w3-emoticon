@@ -245,3 +245,7 @@
 - change history type : String -> Date
 - modify some codes : using History type
 
+### Feedback Modify - Notification.Name
+
+- move each Notification.Name to view file that calls the notification
+
