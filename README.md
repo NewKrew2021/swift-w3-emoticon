@@ -1,4 +1,3 @@
-# swift-w3-emoticon
 모바일 3주차 이모티콘 저장소
 
 ### Setting Done
@@ -196,4 +195,12 @@
 - using Date().description, record exact time when buy button touched
 
 ![image-20210121113430086](README.assets/image-20210121113430086.png)
+
+### Remove from History
+
+- make swipeRecognizer
+- addGestureRecognizer : swipeRecognizer
+- use NotificationCenter to notify the history log is swiped
+- add HistoryTableViewController as a observer of swiping
+- add Method of Histories : deleteHistory()
 

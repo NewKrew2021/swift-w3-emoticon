@@ -22,6 +22,18 @@ class CartCell: UITableViewCell {
         standardHeight = standardHeight == nil ? frame.height : standardHeight
         standardWidth = standardWidth == nil ? frame.width : standardWidth
         setConstraints()
+        addSwipeRecognizer()
+    }
+    
+    func addSwipeRecognizer() {
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(historySwiped(_:)))
+        swipeRecognizer.direction = .left
+        swipeRecognizer.numberOfTouchesRequired = 1
+        addGestureRecognizer(swipeRecognizer)
+    }
+    
+    @objc func historySwiped(_ sender : UISwipeGestureRecognizer) {
+        NotificationCenter.default.post(name: .historySwiped, object: nil, userInfo: ["title" : titleLabel.text ?? "", "time" : timeLabel.text ?? ""])
     }
         
     func setHistory(history : History) {
@@ -55,3 +67,5 @@ class CartCell: UITableViewCell {
     }
 
 }
+
+

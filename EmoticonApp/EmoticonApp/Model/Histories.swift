@@ -22,6 +22,16 @@ struct Histories {
         histories.append(history)
     }
     
+    static func deleteHistory(title : String, time : String) {
+        for index in 0...count {
+            let history = getHistory(index: index)
+            if history.title == title && history.time == time {
+                histories.remove(at: index)
+                return
+            }
+        }
+    }
+    
     static func clearHistory() {
         histories.removeAll()
     }

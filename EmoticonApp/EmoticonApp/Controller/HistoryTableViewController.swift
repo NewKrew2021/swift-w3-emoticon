@@ -16,6 +16,16 @@ class HistoryTableViewController: UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(historySwiped(_:)), name: .historySwiped, object: nil)
+    }
+    
+    @objc func historySwiped(_ notification : Notification) {
+        guard let info = notification.userInfo else { return }
+        guard let title = info["title"] as? String else { return }
+        guard let time = info["time"] as? String else { return }
+        Histories.deleteHistory(title: title, time: time)
+        tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
