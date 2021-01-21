@@ -62,7 +62,7 @@ class HistoryViewController: UITableViewController {
         return UITableViewCell()
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
+        if editingStyle == .delete {
             cart.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }

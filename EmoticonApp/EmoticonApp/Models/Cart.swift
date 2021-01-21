@@ -64,7 +64,7 @@ class Cart: CartType, CustomStringConvertible {
     func pop(emojiId: UUID) {
         idToCartItem[emojiId] = nil
     }
-    
+
     func remove(at index: Int) {
         let key = Array(idToCartItem.keys)[index]
         self.idToCartItem[key] = nil
