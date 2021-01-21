@@ -124,20 +124,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" id="u0M-co-8cl" customClass="CartCell" customModule="EmoticonApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="390" height="42.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="390" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0M-co-8cl" id="J3j-Uk-Jgv">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="42.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU1-sz-Azr">
-                                            <rect key="frame" x="20" y="11.000000000000002" width="42" height="20.666666666666671"/>
+                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwc-xx-w8E">
-                                            <rect key="frame" x="328" y="11.000000000000002" width="42" height="20.666666666666671"/>
+                                            <rect key="frame" x="328" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -163,7 +163,18 @@
                             <outlet property="delegate" destination="eFQ-rJ-kh6" id="VH6-aW-a7H"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="history" id="h9m-e0-9eY"/>
+                    <navigationItem key="navigationItem" title="history" id="h9m-e0-9eY">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="AEa-rj-sI7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4qD-yr-skz">
+                                <rect key="frame" x="288" y="7" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearCart:" destination="eFQ-rJ-kh6" eventType="touchUpInside" id="4FM-cF-Chz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1Z-R3-f7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

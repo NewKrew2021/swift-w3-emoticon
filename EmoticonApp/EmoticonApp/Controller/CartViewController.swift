@@ -29,4 +29,9 @@ class CartViewController: UITableViewController {
         cell.setCell(product: product)
         return cell
     }
+    
+    @IBAction func clearCart(_ sender: Any) {
+        cartService.removeAll()
+        tableView.reloadData()
+    }
 }
