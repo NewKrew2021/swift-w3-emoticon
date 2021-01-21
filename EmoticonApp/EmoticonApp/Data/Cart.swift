@@ -24,16 +24,18 @@ struct Cart {
         db.setData(arr)
     }
 
-    mutating func remove(index: Int) {
+    mutating func remove(index: Int, completionHandler: @escaping () -> Void) {
         var arr = ownEmoticons
         arr.remove(at: index)
         db.setData(arr)
+        completionHandler()
     }
 
-    mutating func removeAll() {
+    mutating func removeAll(completionHandler: @escaping () -> Void) {
         var arr = ownEmoticons
         arr.removeAll()
         db.setData(arr)
+        completionHandler()
     }
 
     subscript(index: Int) -> History {
