@@ -204,3 +204,7 @@
 - add HistoryTableViewController as a observer of swiping
 - add Method of Histories : deleteHistory()
 
+### Chenage cell style
+
+- change cell style : Right Detail
+

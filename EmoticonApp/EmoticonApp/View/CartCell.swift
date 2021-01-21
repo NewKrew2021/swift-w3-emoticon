@@ -9,18 +9,12 @@ import UIKit
 
 class CartCell: UITableViewCell {
     
-    private var titleLabel = UILabel()
-    private var timeLabel = UILabel()
     private var standardHeight : CGFloat?
     private var standardWidth : CGFloat?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        addSubview(titleLabel)
-        addSubview(timeLabel)
-        standardHeight = standardHeight == nil ? frame.height : standardHeight
-        standardWidth = standardWidth == nil ? frame.width : standardWidth
         setConstraints()
         addSwipeRecognizer()
     }
@@ -33,29 +27,30 @@ class CartCell: UITableViewCell {
     }
     
     @objc func historySwiped(_ sender : UISwipeGestureRecognizer) {
-        NotificationCenter.default.post(name: .historySwiped, object: nil, userInfo: ["title" : titleLabel.text ?? "", "time" : timeLabel.text ?? ""])
+        guard let tempTextLabel = textLabel else { return }
+        guard let tempDetailTextLabel = detailTextLabel else { return }
+        NotificationCenter.default.post(name: .historySwiped, object: nil, userInfo: ["title" : tempTextLabel.text ?? "", "time" : tempDetailTextLabel.text ?? ""])
     }
         
     func setHistory(history : History) {
-        titleLabel.text = history.title
-        timeLabel.text = history.time
+        textLabel?.layer.borderWidth = 1
+        textLabel?.text = history.title
+        detailTextLabel?.layer.borderWidth = 1
+        detailTextLabel?.text = history.time
     }
     
     func setConstraints() {
         guard let height = standardHeight else { return }
         guard let width = standardWidth else { return }
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: height/8).isActive = true
-        titleLabel.sizeToFit()
+        textLabel?.translatesAutoresizingMaskIntoConstraints = false
+        textLabel?.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        textLabel?.leadingAnchor.constraint(equalTo: leadingAnchor, constant: height/8).isActive = true
+        textLabel?.sizeToFit()
         
-        timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        timeLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        timeLabel.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor).isActive = true
-        timeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: height * 0.5).isActive = true
-//        timeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: width * 0.3).isActive = true
-//        timeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-//        timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        detailTextLabel?.translatesAutoresizingMaskIntoConstraints = false
+        detailTextLabel?.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        detailTextLabel?.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor).isActive = true
+        detailTextLabel?.leadingAnchor.constraint(equalTo: textLabel!.trailingAnchor, constant: height * 0.5).isActive = true
         
     }
     
