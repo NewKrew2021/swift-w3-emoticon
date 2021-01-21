@@ -7,39 +7,43 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate {
+class MainViewController: UIViewController {
 
     private var mainImage: UIView!
     private var myTableView: UITableView!
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    private var emojiService: EmojiService = EmojiService()
-    private let emojiList: EmojiListModel
-    private var cart: Cart = Cart()
-    private var clickedItemId: String?
+    private var emojiService: EmojiService = EmojiService.shared
+    private var cart: CartType = Cart.shared
+    private var clickedItemId: UUID?
     private var cellHeight: CGFloat = CGFloat(100)
     private let numOfCell: CGFloat = 6.5
     private var alert: UIAlertController
+    private var cartObserver: Observable?
 
     init() {
-        emojiList = emojiService.data
         alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(nibName: nil, bundle: nil)
+        self.cartObserver = CartObserver(self, selector: #selector(willPushToCart))
+    }
+
+    deinit {
+        self.cartObserver?.removeObservers()
     }
 
     required init?(coder: NSCoder) {
-        emojiList = emojiService.data
         alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(coder: coder)
+        self.cartObserver = CartObserver(self, selector: #selector(willPushToCart))
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         setUI()
         let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
-            guard let stringSelf = self else { return }
-            if let id = stringSelf.clickedItemId {
-                stringSelf.clickAlertOK(id: id)
+            guard let strongSelf = self else { return }
+            if let id = strongSelf.clickedItemId {
+                strongSelf.clickAlertOK(id: id)
             }
         }
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
@@ -75,17 +79,22 @@ class MainViewController: UIViewController, UITableViewDelegate {
         self.navigationItem.setRightBarButton(item, animated: true)
     }
 
-    private func clickAlertOK(id: String) {
-        if let emoji = emojiList.findById(id: id) {
-            cart.push(emoji: emoji)
+    private func clickAlertOK(id: UUID) {
+        if let emoji = emojiService.findById(id: id) {
+            cart.push(emojiId: emoji.id)
         }
     }
 
     @objc private func goToHistory() {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryViewController") {
-            self.navigationController?.pushViewController(vc, animated: true)    }
-        }
+        self.performSegue(withIdentifier: "ToHistory", sender: self)
+    }
 
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -94,20 +103,12 @@ extension MainViewController: UITableViewDataSource {
         return emojiService.data.count
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell: EmojiTableViewCell = tableView.dequeueReusableCell(withIdentifier: EmojiTableViewCell.cellIdentifier, for: indexPath) as? EmojiTableViewCell {
-            guard emojiList.count > indexPath.row else { return UITableViewCell() }
-            let title = emojiList[indexPath.row].title
-            let author = emojiList[indexPath.row].author
-            let image = emojiList[indexPath.row].image
-            let emojiId = emojiList[indexPath.row].id
-            cell.delegate = self
-            cell.setProperty(id: emojiId, title: title, author: author, imageName: image)
-            cell.setHeight(height: cellHeight)
+            guard emojiService.data.count > indexPath.row else { return UITableViewCell() }
+            let emoji: Emoji = emojiService.data[indexPath.row]
+            cell.setProperty(emoji: emoji)
+            cell.resize(width: screenWidth, height: cellHeight)
             cell.selectionStyle = .none
             return cell
         }
@@ -115,10 +116,12 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-extension MainViewController: EmojiTableCellDelegate {
-    func buttonTapped(id: String) {
-        self.present(alert, animated: true, completion: nil)
-        self.clickedItemId = id
-    }
+extension MainViewController {
+    @objc func willPushToCart(_ notification: Notification) {
+        if let id = notification.object as? UUID {
+            self.present(alert, animated: true, completion: nil)
+            self.clickedItemId = id
+        }
 
+    }
 }

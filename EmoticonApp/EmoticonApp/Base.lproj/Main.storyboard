@@ -20,7 +20,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Emoticon" id="wOn-N9-0xF"/>
                     <connections>
-                        <segue destination="eqs-hq-Np2" kind="presentation" modalPresentationStyle="fullScreen" id="kwF-WC-g85"/>
+                        <segue destination="eqs-hq-Np2" kind="show" identifier="ToHistory" id="kwF-WC-g85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rm-Hn-8sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -66,6 +66,7 @@
                             <outlet property="delegate" destination="eqs-hq-Np2" id="Lqc-iH-uuu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="sDi-bC-6pj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUJ-wX-rdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
