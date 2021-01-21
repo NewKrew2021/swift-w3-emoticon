@@ -191,3 +191,9 @@
 
 - add logic : reloadData()
 
+### Record Exact Log
+
+- using Date().description, record exact time when buy button touched
+
+![image-20210121113430086](README.assets/image-20210121113430086.png)
+

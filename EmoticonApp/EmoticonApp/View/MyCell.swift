@@ -52,7 +52,7 @@ class MyCell: UITableViewCell {
     
     @objc func buyButtonTouched() {
         let titleText = titleLabel.text!
-        let history = History(title: titleText, time: "2020-11-24 09:51:37 + 0000")
+        let history = History(title: titleText, time: Date().description)
         NotificationCenter.default.post(name: .buyButtonTouched, object: nil, userInfo: ["history" : history])
     }
 }
