@@ -9,7 +9,6 @@ import UIKit
 
 class CartCell: UITableViewCell {
     
-    private var deleteButton = UIButton()
     private var standardHeight : CGFloat?
     private var standardWidth : CGFloat?
 
@@ -18,39 +17,8 @@ class CartCell: UITableViewCell {
         // Initialization code
         standardHeight = standardHeight == nil ? frame.height : standardHeight
         setConstraints()
-        addSwipeRecognizer()
     }
     
-    func addSwipeRecognizer() {
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(historySwiped(_:)))
-        swipeRecognizer.direction = .left
-        swipeRecognizer.numberOfTouchesRequired = 1
-        addGestureRecognizer(swipeRecognizer)
-    }
-    
-    @objc func historySwiped(_ sender : UISwipeGestureRecognizer) {
-        guard let height = standardHeight else { return }
-        
-        addSubview(deleteButton)
-        detailTextLabel?.trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor, constant: 0).isActive = true
-        deleteButton.setTitle("Delete", for: .normal)
-        deleteButton.setTitleColor(.systemRed, for: .normal)
-        deleteButton.translatesAutoresizingMaskIntoConstraints = false
-        deleteButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2/3).isActive = true
-        deleteButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        deleteButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -height * 1.5).isActive = true
-        deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        deleteButton.addTarget(self, action: #selector(deleteButtonTouched), for: .touchUpInside)
-    }
-    
-    @objc func deleteButtonTouched() {
-//        detailTextLabel?.removeConstraint(NSLayoutConstraint())
-        detailTextLabel?.removeConstraint(trailingAnchor.constraint(equalTo: deleteButton.leadingAnchor, constant: 0))
-        deleteButton.removeFromSuperview()
-        guard let tempTextLabel = textLabel else { return }
-        guard let tempDetailTextLabel = detailTextLabel else { return }
-        NotificationCenter.default.post(name: .deleteButtonTouched, object: nil, userInfo: ["title" : tempTextLabel.text ?? "", "time" : tempDetailTextLabel.text ?? ""])
-    }
         
     func setHistory(history : History) {
         textLabel?.text = history.title
@@ -79,8 +47,4 @@ class CartCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-}
-
-extension Notification.Name {
-    static let deleteButtonTouched = Notification.Name("deleteButtonTouched")
 }

@@ -14,6 +14,6 @@ protocol CartProtocol {
     static func getHistoryCart() -> CartProtocol
     func getHistory(index : Int) -> History
     mutating func addHistory(history : History)
-    mutating func deleteHistory(title : String, time : String)
+    mutating func deleteHistory(index : Int)
     mutating func clearHistory()
 }

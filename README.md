@@ -255,3 +255,9 @@
 - add method : setTableViewConstraints()
 - set delegate, dataSource directly
 
+### Delete Button Change
+
+- overriding tableView method that can add action of swiping and touching Delete button
+
+![image-20210121203705362](README.assets/image-20210121203705362.png)
+

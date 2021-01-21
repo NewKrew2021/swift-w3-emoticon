@@ -18,16 +18,6 @@ class CartViewController: UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(historySwiped(_:)), name: .deleteButtonTouched, object: nil)
-    }
-    
-    @objc func historySwiped(_ notification : Notification) {
-        guard let info = notification.userInfo else { return }
-        guard let title = info["title"] as? String else { return }
-        guard let time = info["time"] as? String else { return }
-        cart.deleteHistory(title: title, time: time)
-        tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,7 +38,18 @@ class CartViewController: UITableViewController {
         cell.setHistory(history: cart.getHistory(index: row))
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cart.deleteHistory(index : indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     func setNavigationItem() {
         let item = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearButtonTouched))
         navigationItem.setRightBarButton(item, animated: true)

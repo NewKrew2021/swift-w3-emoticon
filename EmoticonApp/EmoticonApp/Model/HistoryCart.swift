@@ -15,7 +15,7 @@ class HistoryCart : CartProtocol{
             return histories.count
         }
     }
-    
+        
     static func getHistoryCart() -> CartProtocol{
         if let returnCart = historyCart {
             return returnCart
@@ -33,14 +33,18 @@ class HistoryCart : CartProtocol{
         histories.append(history)
     }
     
-    func deleteHistory(title: String, time: String) {
-        for index in 0...count {
-            let history = getHistory(index: index)
-            if history.title == title && history.time.description == time {
-                histories.remove(at: index)
-                return
-            }
-        }
+//    func deleteHistory(title: String, time: String) {
+//        for index in 0...count {
+//            let history = getHistory(index: index)
+//            if history.title == title && history.time.description == time {
+//                histories.remove(at: index)
+//                return
+//            }
+//        }
+//    }
+    
+    func deleteHistory(index : Int) {
+        histories.remove(at: index)
     }
     
     func clearHistory() {
