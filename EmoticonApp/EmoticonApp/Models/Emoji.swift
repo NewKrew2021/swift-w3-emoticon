@@ -69,7 +69,6 @@ struct EmojiList: EmojiListType {
 }
 
 class EmojiService {
-    static let shared: EmojiService = EmojiService()
     private(set) var data: EmojiListType = EmojiList()
 
     init() {

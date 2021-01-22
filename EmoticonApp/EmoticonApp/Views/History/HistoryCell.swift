@@ -13,7 +13,7 @@ class HistoryTableViewCell: UITableViewCell {
     private var emojiName: UILabel = UILabel()
     private var emojiDescription: UILabel = UILabel()
     private let dateFormatter = DateFormatter()
-    private let emojiService = EmojiService.shared
+    private let emojiService = EmojiService()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

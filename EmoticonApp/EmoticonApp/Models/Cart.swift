@@ -8,7 +8,6 @@
 import Foundation
 
 protocol CartType {
-    static var shared: CartType { get }
     var defaults: UserDefaults { get }
     var idToCartItem: [UUID: CartItem] { get }
     var count: Int { get }
@@ -37,7 +36,6 @@ class Cart: CartType, CustomStringConvertible {
     var description: String {
         return self.idToCartItem.description
     }
-    static var shared: CartType = Cart()
     internal let defaults: UserDefaults = UserDefaults.standard
     internal var idToCartItem: CartDictionaryType
     private let cartKey: String = "Cart"

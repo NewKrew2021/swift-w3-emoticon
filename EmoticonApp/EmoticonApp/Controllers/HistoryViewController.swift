@@ -9,7 +9,7 @@ import UIKit
 
 class HistoryViewController: UITableViewController {
 
-    var cart: CartType = Cart.shared
+    var cart: CartType = Cart()
     private let cellIdentifier: String = "historyCell"
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
