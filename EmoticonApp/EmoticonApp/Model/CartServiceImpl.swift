@@ -10,28 +10,50 @@ import Foundation
 class CartServiceImpl: CartService {
     
     static let instance: CartService = CartServiceImpl()
-    private var products: [Product] = []
+    var products: [Product] = []
     public var count: Int {
         get {
             return products.count
         }
     }
     
-    private init() {}
+    private init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(addToCart(_:)), name: .selectEmoticon, object: nil)
+    }
     
     public func addProduct(product: Product) {
         products.append(product)
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
+    }
+    
+    public func setProducts(products: [Product]) {
+        self.products = products
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
+    }
+    
+    public func removeProduct(at: Int) {
+        products.remove(at: at)
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
+    }
+    
+    public func removeAll() {
+        products.removeAll()
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
     }
     
     subscript(index: Int) -> Product {
         return products[index]
     }
+}
+
+extension CartServiceImpl {
     
-    public func removeProduct(at: Int) {
-        products.remove(at: at)
+    @objc func addToCart(_ notification: Notification) {
+        guard let emoticonName = notification.userInfo?["title"] as? String else { return }
+        addProduct(product: Product(emoticonName: emoticonName))
     }
-    
-    public func removeAll() {
-        products.removeAll()
-    }
+}
+
+extension Notification.Name {
+    static let selectEmoticon = Notification.Name("selectEmoticon")
 }

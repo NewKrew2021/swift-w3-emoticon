@@ -18,3 +18,7 @@
 4. CartVC에서 스와이프로 삭제기능 구현, Clear 기능 구현.  Cart기능 테스트 함수 추가 1/21 15:30
 <div><img width = "200" src = "https://user-images.githubusercontent.com/45382324/105300896-46a56f80-5bfe-11eb-8194-31ffffa20814.png">
 <img width = "200" src = "https://user-images.githubusercontent.com/45382324/105300860-44431580-5bfe-11eb-8cad-70e09008e4f9.png"></div>
+
+5. 앱 종료후에도 카트에 있는 장바구니 목록 유지하도록 구현 1/21 18:00
+
+6. CartService의 의존성 문제 해결, 옵저버 패턴 추가 적용 1/22 18:25

@@ -9,8 +9,10 @@ import Foundation
 
 protocol CartService {
     var count: Int { get }
+    var products: [Product] { get set }
     static var instance: CartService { get }
     func addProduct(product: Product)
+    func setProducts(products: [Product])
     func removeProduct(at: Int)
     func removeAll()
     subscript(at: Int) -> Product { get }
