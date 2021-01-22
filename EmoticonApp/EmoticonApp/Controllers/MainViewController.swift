@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
 
     private func clickAlertOK(id: UUID) {
         if let emoji = emojiService.findById(id: id) {
-            cart.push(emojiId: emoji.id)
+            cart.push(emoji: emoji)
         }
     }
 

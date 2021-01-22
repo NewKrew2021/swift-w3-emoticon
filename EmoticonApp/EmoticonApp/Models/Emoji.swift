@@ -13,6 +13,7 @@ protocol EmojiListType {
     mutating func append(_ newElement: Emoji)
     mutating func remove(at: Int)
     func findById(id: UUID) -> Emoji?
+    func findByTitle(title: String) -> Emoji?
     subscript(index: Int) -> Emoji { get set }
 }
 
@@ -59,12 +60,11 @@ struct EmojiList: EmojiListType {
         }
         return nil
     }
-    func findByIds(id: UUID) -> [Emoji] {
-        var emojis: [Emoji] = [Emoji]()
-        for emoji in list where emoji.id == id {
-            emojis.append(emoji)
+    func findByTitle(title: String) -> Emoji? {
+        for emoji in list where emoji.title == title {
+            return emoji
         }
-        return emojis
+        return nil
     }
 }
 
@@ -95,6 +95,10 @@ class EmojiService {
     func findById(id: UUID) -> Emoji? {
         return self.data.findById(id: id)
     }
+    func findByTitle(title: String) -> Emoji? {
+        return self.data.findByTitle(title: title)
+    }
+    
 }
 
 extension EmojiList {

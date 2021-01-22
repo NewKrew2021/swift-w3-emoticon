@@ -12,18 +12,22 @@ protocol CartType {
     var defaults: UserDefaults { get }
     var idToCartItem: [UUID: CartItem] { get }
     var count: Int { get }
-    func push(emojiId: UUID)
-    func pop(emojiId: UUID)
+    func push(emoji: Emoji)
+    func pop(emoji: Emoji)
     func remove(at index: Int)
-    mutating func clear()
+    func loadDataFromUserDefaults()
+    func synchronizeDataWithUserDefaults()
+    func clear()
     subscript(index: Int) -> CartItem { get }
 }
 
 struct CartItem: Codable {
     let emojiId: UUID
+    let emojiName: String
     let time: Date
-    init(emojiId: UUID) {
-        self.emojiId = emojiId
+    init(emoji: Emoji) {
+        self.emojiId = emoji.id
+        self.emojiName = emoji.title
         self.time = Date()
     }
 }
@@ -33,7 +37,7 @@ class Cart: CartType, CustomStringConvertible {
     var description: String {
         return self.idToCartItem.description
     }
-    static let shared: CartType = Cart()
+    static var shared: CartType = Cart()
     internal let defaults: UserDefaults = UserDefaults.standard
     internal var idToCartItem: CartDictionaryType
     private let cartKey: String = "Cart"
@@ -43,13 +47,7 @@ class Cart: CartType, CustomStringConvertible {
 
     init() {
         idToCartItem = CartDictionaryType()
-        if let saveData = defaults.object(forKey: cartKey) as? Data {
-            let propertyDecoder = PropertyListDecoder()
-            do {
-                let data: CartDictionaryType? = try? propertyDecoder.decode(CartDictionaryType.self, from: saveData)
-                idToCartItem = data ?? CartDictionaryType()
-            }
-        }
+        self.loadDataFromUserDefaults()
     }
 
     deinit {
@@ -57,12 +55,12 @@ class Cart: CartType, CustomStringConvertible {
         defaults.set(data, forKey: cartKey)
     }
 
-    func push(emojiId: UUID) {
-        idToCartItem[emojiId] = CartItem(emojiId: emojiId)
+    func push(emoji: Emoji) {
+        idToCartItem[emoji.id] = CartItem(emoji: emoji)
     }
 
-    func pop(emojiId: UUID) {
-        idToCartItem[emojiId] = nil
+    func pop(emoji: Emoji) {
+        idToCartItem[emoji.id] = nil
     }
 
     func remove(at index: Int) {
@@ -75,6 +73,21 @@ class Cart: CartType, CustomStringConvertible {
             idToCartItem[key] = nil
         }
         NotificationCenter.default.post(name: .clearCart, object: nil)
+    }
+    
+    internal func loadDataFromUserDefaults() {
+        if let saveData = defaults.object(forKey: cartKey) as? Data {
+            let propertyDecoder = PropertyListDecoder()
+            do {
+                let data: CartDictionaryType? = try? propertyDecoder.decode(CartDictionaryType.self, from: saveData)
+                idToCartItem = data ?? CartDictionaryType()
+            }
+        }
+    }
+    
+    func synchronizeDataWithUserDefaults() {
+        let data = try? PropertyListEncoder().encode(idToCartItem)
+        defaults.set(data, forKey: cartKey)
     }
 
     subscript(index: Int) -> CartItem {
