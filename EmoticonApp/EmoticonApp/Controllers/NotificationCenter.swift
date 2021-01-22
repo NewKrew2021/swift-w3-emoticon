@@ -26,14 +26,14 @@ class CartObserver: Observable {
     init(_ sender: Any) {
         self.sender = sender
     }
-    
+
     func addObserver(name: Notification.Name, selector aSelector: Selector) {
         NotificationCenter.default.addObserver(sender, selector: aSelector, name: name, object: nil)
     }
     func addObserver(name: Notification.Name, queue: OperationQueue, using: @escaping (Notification) -> Void) {
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: queue, using: using)
     }
-    
+
     func removeObserver(name: Notification.Name) {
         NotificationCenter.default.removeObserver(sender, name: name, object: nil)
     }

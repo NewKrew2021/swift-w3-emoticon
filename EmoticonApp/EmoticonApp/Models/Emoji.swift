@@ -97,7 +97,7 @@ class EmojiService {
     func findByTitle(title: String) -> Emoji? {
         return self.data.findByTitle(title: title)
     }
-    
+
 }
 
 extension EmojiList {

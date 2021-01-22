@@ -12,8 +12,9 @@ protocol CartType {
     var idToCartItem: [UUID: CartItem] { get }
     var count: Int { get }
     func push(emoji: Emoji)
-    func pop(emoji: Emoji)
+    func pop() -> CartItem?
     func remove(at index: Int)
+    func remove(emoji: Emoji)
     func loadDataFromUserDefaults()
     func synchronizeDataWithUserDefaults()
     func clear()
@@ -50,7 +51,14 @@ class Cart: CartType, CustomStringConvertible {
         self.loadDataFromUserDefaults()
         NotificationCenter.default.addObserver(self, selector: #selector(synchronizeDataWithUserDefaults), name: UIApplication.willResignActiveNotification, object: nil)
     }
-    
+
+    convenience init(carKey: String, cartItems: [Emoji]) {
+        self.init(cartKey: carKey)
+        for idx in 0..<cartItems.count {
+            self.push(emoji: cartItems[idx])
+        }
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
     }
@@ -59,13 +67,23 @@ class Cart: CartType, CustomStringConvertible {
         idToCartItem[emoji.id] = CartItem(emoji: emoji)
     }
 
-    func pop(emoji: Emoji) {
-        idToCartItem[emoji.id] = nil
+    func pop() -> CartItem? {
+        if idToCartItem.count <= 0 {
+            return nil
+        }
+        let key = Array(idToCartItem.keys)[0]
+        let cartItem: CartItem = idToCartItem[key]!
+        idToCartItem[key] = nil
+        return cartItem
     }
 
     func remove(at index: Int) {
         let key = Array(idToCartItem.keys)[index]
         self.idToCartItem[key] = nil
+    }
+
+    func remove(emoji: Emoji) {
+        idToCartItem[emoji.id] = nil
     }
 
     func clear() {
@@ -74,7 +92,7 @@ class Cart: CartType, CustomStringConvertible {
         }
         NotificationCenter.default.post(name: .clearCart, object: nil)
     }
-    
+
     internal func loadDataFromUserDefaults() {
         if let saveData = defaults.object(forKey: cartKey) as? Data {
             let propertyDecoder = PropertyListDecoder()
@@ -84,7 +102,7 @@ class Cart: CartType, CustomStringConvertible {
             }
         }
     }
-    
+
     @objc func synchronizeDataWithUserDefaults() {
         let data = try? PropertyListEncoder().encode(idToCartItem)
         defaults.set(data, forKey: cartKey)

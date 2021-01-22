@@ -33,8 +33,7 @@ class HistoryTableViewCell: UITableViewCell {
         emojiId = cartItem.emojiId
         if let emoji = emojiService.findById(id: emojiId ?? UUID()) {
             emojiName.text = emoji.title
-        }
-        else if let emoji = emojiService.findByTitle(title: cartItem.emojiName) {
+        } else if let emoji = emojiService.findByTitle(title: cartItem.emojiName) {
             emojiName.text = emoji.title
         }
     }

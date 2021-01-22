@@ -56,7 +56,7 @@ class HistoryViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cart?.count ?? 0
     }

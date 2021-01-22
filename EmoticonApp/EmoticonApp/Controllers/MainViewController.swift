@@ -79,7 +79,7 @@ class MainViewController: UIViewController {
     @objc private func goToHistory() {
         self.performSegue(withIdentifier: "goToHistory", sender: self)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToHistory" {
             if let destinationVC = segue.destination as? HistoryViewController {
@@ -117,18 +117,18 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController {
     @objc func willPushToCart(_ notification: Notification) {
-        
+
         let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
             guard let strongSelf = self else { return }
             if let id = strongSelf.clickedItemId {
                 strongSelf.clickAlertOK(id: id)
             }
         }
-        
+
         let alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
         alert.addAction(UIAlertAction(title: "취소", style: .default, handler: nil))
-        
+
         if let id = notification.object as? UUID {
             self.present(alert, animated: true, completion: nil)
             self.clickedItemId = id
