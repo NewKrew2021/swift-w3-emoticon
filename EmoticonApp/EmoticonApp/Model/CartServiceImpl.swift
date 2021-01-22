@@ -17,7 +17,9 @@ class CartServiceImpl: CartService {
         }
     }
     
-    private init() {}
+    private init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(addToCart(_:)), name: .selectEmoticon, object: nil)
+    }
     
     public func addProduct(product: Product) {
         products.append(product)
@@ -42,4 +44,16 @@ class CartServiceImpl: CartService {
     subscript(index: Int) -> Product {
         return products[index]
     }
+}
+
+extension CartServiceImpl {
+    
+    @objc func addToCart(_ notification: Notification) {
+        guard let emoticonName = notification.userInfo?["title"] as? String else { return }
+        addProduct(product: Product(emoticonName: emoticonName))
+    }
+}
+
+extension Notification.Name {
+    static let selectEmoticon = Notification.Name("selectEmoticon")
 }
