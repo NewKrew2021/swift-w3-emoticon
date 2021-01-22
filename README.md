@@ -255,3 +255,26 @@
 - add method : setTableViewConstraints()
 - set delegate, dataSource directly
 
+### Delete Button Change
+
+- overriding tableView method that can add action of swiping and touching Delete button
+
+![image-20210121203705362](README.assets/image-20210121203705362.png)
+
+### UserDefaults
+
+- create struct : UserDefault
+- save data in user DB using method : applicationWillTerminate
+
+### Modify - When to use UserDefaults
+
+Use App Lifecycle in the SceneDelegate to backup and restore data
+
+- sceneDidBecomeActive : resotreHistories
+- sceneWillResignActive : setData
+
+### XCTest
+
+make HistoryCartTest.swift
+
+add some test methods

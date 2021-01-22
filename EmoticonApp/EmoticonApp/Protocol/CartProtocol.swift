@@ -13,7 +13,9 @@ protocol CartProtocol {
     static var historyCart : CartProtocol? { get }
     static func getHistoryCart() -> CartProtocol
     func getHistory(index : Int) -> History
+    func getHistories() -> [History]
+    mutating func restoreHistories()
     mutating func addHistory(history : History)
-    mutating func deleteHistory(title : String, time : String)
+    mutating func deleteHistory(index : Int)
     mutating func clearHistory()
 }
