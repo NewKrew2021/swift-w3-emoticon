@@ -101,13 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F73A005325B8596700A7F70A /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		F73A008825B9659B00A7F70A /* VO */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				F73A008825B9659B00A7F70A /* VO */,
-				F73A005325B8596700A7F70A /* Extension */,
 				F797D24A25B80061009F2FA8 /* Protocol */,
 				F75C7AF125B69A4D007B6622 /* View */,
 				F75C7AE325B67250007B6622 /* Controller */,
