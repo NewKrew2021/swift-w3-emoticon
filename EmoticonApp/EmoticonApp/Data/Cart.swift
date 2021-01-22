@@ -27,20 +27,21 @@ class Cart {
         ownEmoticons = db.getData()
     }
 
+    func saveEmoticons() {
+        db.setData(ownEmoticons)
+    }
+
     func buyEmoticon(history: History) {
         ownEmoticons.append(history)
-        db.setData(ownEmoticons)
     }
 
     func remove(at index: Int, completionHandler: @escaping () -> Void) {
         ownEmoticons.remove(at: index)
-        db.setData(ownEmoticons)
         completionHandler()
     }
 
     func removeAll(completionHandler: @escaping () -> Void) {
         ownEmoticons.removeAll()
-        db.setData(ownEmoticons)
         completionHandler()
     }
 
