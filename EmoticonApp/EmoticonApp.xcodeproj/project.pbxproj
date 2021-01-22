@@ -26,6 +26,7 @@
 		5D4B73A525B948A0004417B3 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73A425B948A0004417B3 /* HistoryCell.swift */; };
 		5D4B73AF25B96C69004417B3 /* CartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B73AE25B96C69004417B3 /* CartTest.swift */; };
 		5D4B73B225B96D93004417B3 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B739725B82A48004417B3 /* Cart.swift */; };
+		5D4B73B925BAC7B5004417B3 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B739F25B91CA2004417B3 /* NotificationCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D4B736D25B6B802004417B3 /* EmojiListTest.swift in Sources */,
+				5D4B73B925BAC7B5004417B3 /* NotificationCenter.swift in Sources */,
 				5D4B736925B6B7DF004417B3 /* Emoji.swift in Sources */,
 				5D4B73B225B96D93004417B3 /* Cart.swift in Sources */,
 				5D4B736025B6B7D6004417B3 /* EmoticonAppTests.swift in Sources */,

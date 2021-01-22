@@ -5,7 +5,7 @@
 //  Created by bean Milky on 2021/01/20.
 //
 
-import Foundation
+import UIKit
 
 protocol CartType {
     var defaults: UserDefaults { get }
@@ -38,19 +38,21 @@ class Cart: CartType, CustomStringConvertible {
     }
     internal let defaults: UserDefaults = UserDefaults.standard
     internal var idToCartItem: CartDictionaryType
-    private let cartKey: String = "Cart"
+    private let cartKey: String
     var count: Int {
         return self.idToCartItem.keys.count
     }
+    private var cartObserver: Observable?
 
-    init() {
+    init(cartKey: String) {
+        self.cartKey = cartKey
         idToCartItem = CartDictionaryType()
         self.loadDataFromUserDefaults()
+        NotificationCenter.default.addObserver(self, selector: #selector(synchronizeDataWithUserDefaults), name: UIApplication.willResignActiveNotification, object: nil)
     }
-
+    
     deinit {
-        let data = try? PropertyListEncoder().encode(idToCartItem)
-        defaults.set(data, forKey: cartKey)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
     }
 
     func push(emoji: Emoji) {
@@ -83,7 +85,7 @@ class Cart: CartType, CustomStringConvertible {
         }
     }
     
-    func synchronizeDataWithUserDefaults() {
+    @objc func synchronizeDataWithUserDefaults() {
         let data = try? PropertyListEncoder().encode(idToCartItem)
         defaults.set(data, forKey: cartKey)
     }

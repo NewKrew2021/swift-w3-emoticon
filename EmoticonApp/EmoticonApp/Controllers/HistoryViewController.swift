@@ -9,7 +9,7 @@ import UIKit
 
 class HistoryViewController: UITableViewController {
 
-    var cart: CartType = Cart()
+    var cart: CartType?
     private let cellIdentifier: String = "historyCell"
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
@@ -43,7 +43,7 @@ class HistoryViewController: UITableViewController {
     @objc func checkBeforeClear() {
         let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
             guard let strongSelf = self else { return }
-            strongSelf.cart.clear()
+            strongSelf.cart?.clear()
         }
         let alert: UIAlertController = UIAlertController(title: "알림", message: "모두 삭제하시겠습니까?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
@@ -58,20 +58,21 @@ class HistoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cart.count
+        return self.cart?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell: HistoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.cellIdentifier, for: indexPath) as? HistoryTableViewCell {
-            let cartItem = cart[indexPath.row] as CartItem
-            cell.setProperty(cartItem: cartItem)
-            cell.resize(width: screenWidth)
+            if let cartItem = cart?[indexPath.row] {
+                cell.setProperty(cartItem: cartItem)
+                cell.resize(width: screenWidth)
+            }
             return cell
         }
         return UITableViewCell()
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            cart.remove(at: indexPath.row)
+            cart?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         }
     }

@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     private var myTableView: UITableView!
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    private(set) var cart: CartType = Cart()
+    private(set) var cart: CartType = Cart(cartKey: "EmoticonApp/Cart")
     private var emojiService: EmojiService = EmojiService()
     private var clickedItemId: UUID?
     private var cellHeight: CGFloat = CGFloat(100)
@@ -77,11 +77,11 @@ class MainViewController: UIViewController {
     }
 
     @objc private func goToHistory() {
-        self.performSegue(withIdentifier: "ToHistory", sender: self)
+        self.performSegue(withIdentifier: "goToHistory", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "HistoryViewController" {
+        if segue.identifier == "goToHistory" {
             if let destinationVC = segue.destination as? HistoryViewController {
                 destinationVC.cart = cart
             }

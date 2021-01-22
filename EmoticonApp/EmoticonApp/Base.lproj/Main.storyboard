@@ -20,7 +20,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Emoticon" id="wOn-N9-0xF"/>
                     <connections>
-                        <segue destination="eqs-hq-Np2" kind="show" identifier="ToHistory" id="kwF-WC-g85"/>
+                        <segue destination="eqs-hq-Np2" kind="show" identifier="goToHistory" id="8lv-s8-hT0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rm-Hn-8sd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

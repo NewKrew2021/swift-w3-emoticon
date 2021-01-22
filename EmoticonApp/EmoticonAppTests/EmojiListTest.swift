@@ -7,18 +7,6 @@
 
 import XCTest
 
-struct MockEmojiForList {
-    var id: String = ""
-    var title: String = ""
-    var author: String = ""
-    var image: String = ""
-    init(title: String, author: String, image: String) {
-        self.title = title
-        self.author = author
-        self.image = image
-    }
-}
-
 class EmojiListTest: XCTestCase {
     private let mockData = [
           [ "title": "유년기오구의 쪼꼬만 일상", "author": "문랩", "image": "image01.png" ],
@@ -35,8 +23,8 @@ class EmojiListTest: XCTestCase {
           [ "title": "안녕! 아기 보노보노", "author": "보노보노", "image": "image12.png" ]
           ]
 
-    func testEmojiListCreate() throws {
-        let emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmojiForList(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
+    func testEmojiList생성() throws {
+        let emojiList: EmojiList = EmojiList(list: mockData.map { return Emoji(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
         for (index, emoji) in emojiList.enumerated() {
             XCTAssertEqual(emoji.title, mockData[index]["title"])
             XCTAssertEqual(emoji.author, mockData[index]["author"])
@@ -44,16 +32,16 @@ class EmojiListTest: XCTestCase {
         }
     }
 
-    func testEmojiListAppend() throws {
-        var emojiList: EmojiList = EmojiList(list: [EmojiType]())
+    func testEmojiList아이템추가() throws {
+        var emojiList: EmojiList = EmojiList(list: [Emoji]())
         for emoji in mockData {
-            emojiList.append(MockEmojiForList(title: emoji["title"] ?? "", author: emoji["author"] ?? "", image: emoji["image"] ?? ""))
+            emojiList.append(Emoji(title: emoji["title"] ?? "", author: emoji["author"] ?? "", image: emoji["image"] ?? ""))
         }
         XCTAssertEqual(emojiList.count, mockData.count)
     }
 
-    func testEmojiListRemove() throws {
-        var emojiList: EmojiList = EmojiList(list: mockData.map { return MockEmojiForList(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
+    func testEmojiList아이템삭제() throws {
+        var emojiList: EmojiList = EmojiList(list: mockData.map { return Emoji(title: $0["title"] ?? "", author: $0["author"] ?? "", image: $0["image"] ?? "") })
         for _ in 0..<mockData.count {
             emojiList.remove(at: 0)
         }
