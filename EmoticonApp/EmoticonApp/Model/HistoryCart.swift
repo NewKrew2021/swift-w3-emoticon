@@ -27,7 +27,7 @@ class HistoryCart : CartProtocol{
     }
     
     func restoreHistories() {
-        histories = UserDefault().getData()
+        histories = UserDefault.getData()
     }
 
     func getHistory(index: Int) -> History {
@@ -41,16 +41,6 @@ class HistoryCart : CartProtocol{
     func addHistory(history: History) {
         histories.append(history)
     }
-    
-//    func deleteHistory(title: String, time: String) {
-//        for index in 0...count {
-//            let history = getHistory(index: index)
-//            if history.title == title && history.time.description == time {
-//                histories.remove(at: index)
-//                return
-//            }
-//        }
-//    }
     
     func deleteHistory(index : Int) {
         histories.remove(at: index)

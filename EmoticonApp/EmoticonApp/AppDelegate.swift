@@ -32,10 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        let cart : CartProtocol = HistoryCart.getHistoryCart()
-        let histories = cart.getHistories()
-        UserDefault().setData(histories)
     }
+    
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
     }

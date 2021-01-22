@@ -8,20 +8,21 @@
 import Foundation
 
 struct UserDefault {
-    private let key_History = "histories"
+    private static let key = "histories"
 
-    func getData() -> [History] {
+    static func getData() -> [History] {
         var arr: [History] = []
-        if let data = UserDefaults.standard.data(forKey: key_History) {
+        if let data = UserDefaults.standard.data(forKey: key) {
             let dataArray = try! PropertyListDecoder().decode([History].self, from: data)
             arr = dataArray
         }
         return arr
     }
 
-    func setData(_ dataArray: [History]) {
+    static func setData(_ dataArray: [History]) {
         if let data = try? PropertyListEncoder().encode(dataArray) {
-            UserDefaults.standard.set(data, forKey: key_History)
+            UserDefaults.standard.set(data, forKey: key)
         }
     }
 }
+

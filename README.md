@@ -265,3 +265,16 @@
 
 - create struct : UserDefault
 - save data in user DB using method : applicationWillTerminate
+
+### Modify - When to use UserDefaults
+
+Use App Lifecycle in the SceneDelegate to backup and restore data
+
+- sceneDidBecomeActive : resotreHistories
+- sceneWillResignActive : setData
+
+### XCTest
+
+make HistoryCartTest.swift
+
+add some test methods
