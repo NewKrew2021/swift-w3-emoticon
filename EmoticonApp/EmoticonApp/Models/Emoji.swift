@@ -10,9 +10,10 @@ import Foundation
 protocol EmojiListType {
     var list: [Emoji] { get }
     var count: Int { get }
-    mutating func append(_ newElement: Emoji)
-    mutating func remove(at: Int)
+    func append(_ newElement: Emoji)
+    func remove(at: Int)
     func findById(id: UUID) -> Emoji?
+    func findByTitle(title: String) -> Emoji?
     subscript(index: Int) -> Emoji { get set }
 }
 
@@ -30,7 +31,7 @@ struct Emoji {
     }
 }
 
-struct EmojiList: EmojiListType {
+class EmojiList: EmojiListType {
 
     var list: [Emoji]
     var count: Int {
@@ -45,11 +46,11 @@ struct EmojiList: EmojiListType {
         self.list = list
     }
 
-    mutating func append(_ newElement: Emoji) {
+    func append(_ newElement: Emoji) {
         list.append(newElement)
     }
 
-    mutating func remove(at: Int) {
+    func remove(at: Int) {
         list.remove(at: at)
     }
 
@@ -59,17 +60,15 @@ struct EmojiList: EmojiListType {
         }
         return nil
     }
-    func findByIds(id: UUID) -> [Emoji] {
-        var emojis: [Emoji] = [Emoji]()
-        for emoji in list where emoji.id == id {
-            emojis.append(emoji)
+    func findByTitle(title: String) -> Emoji? {
+        for emoji in list where emoji.title == title {
+            return emoji
         }
-        return emojis
+        return nil
     }
 }
 
 class EmojiService {
-    static let shared: EmojiService = EmojiService()
     private(set) var data: EmojiListType = EmojiList()
 
     init() {
@@ -95,6 +94,10 @@ class EmojiService {
     func findById(id: UUID) -> Emoji? {
         return self.data.findById(id: id)
     }
+    func findByTitle(title: String) -> Emoji? {
+        return self.data.findByTitle(title: title)
+    }
+
 }
 
 extension EmojiList {

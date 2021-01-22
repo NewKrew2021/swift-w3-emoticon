@@ -13,7 +13,7 @@ class HistoryTableViewCell: UITableViewCell {
     private var emojiName: UILabel = UILabel()
     private var emojiDescription: UILabel = UILabel()
     private let dateFormatter = DateFormatter()
-    private let emojiService = EmojiService.shared
+    private let emojiService = EmojiService()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,6 +32,8 @@ class HistoryTableViewCell: UITableViewCell {
         emojiDescription.text = dateFormatter.string(from: cartItem.time)
         emojiId = cartItem.emojiId
         if let emoji = emojiService.findById(id: emojiId ?? UUID()) {
+            emojiName.text = emoji.title
+        } else if let emoji = emojiService.findByTitle(title: cartItem.emojiName) {
             emojiName.text = emoji.title
         }
     }

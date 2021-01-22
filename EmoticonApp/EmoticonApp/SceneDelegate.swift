@@ -9,4 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+
+    func sceneWillResignActive(_ scene: UIScene) {
+        NotificationCenter.default.post(name: UIApplication.willResignActiveNotification, object: self)
+    }
 }

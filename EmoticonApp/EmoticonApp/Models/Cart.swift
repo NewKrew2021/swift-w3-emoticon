@@ -5,25 +5,29 @@
 //  Created by bean Milky on 2021/01/20.
 //
 
-import Foundation
+import UIKit
 
 protocol CartType {
-    static var shared: CartType { get }
     var defaults: UserDefaults { get }
     var idToCartItem: [UUID: CartItem] { get }
     var count: Int { get }
-    func push(emojiId: UUID)
-    func pop(emojiId: UUID)
+    func push(emoji: Emoji)
+    func pop() -> CartItem?
     func remove(at index: Int)
-    mutating func clear()
+    func remove(emoji: Emoji)
+    func loadDataFromUserDefaults()
+    func synchronizeDataWithUserDefaults()
+    func clear()
     subscript(index: Int) -> CartItem { get }
 }
 
 struct CartItem: Codable {
     let emojiId: UUID
+    let emojiName: String
     let time: Date
-    init(emojiId: UUID) {
-        self.emojiId = emojiId
+    init(emoji: Emoji) {
+        self.emojiId = emoji.id
+        self.emojiName = emoji.title
         self.time = Date()
     }
 }
@@ -33,16 +37,63 @@ class Cart: CartType, CustomStringConvertible {
     var description: String {
         return self.idToCartItem.description
     }
-    static let shared: CartType = Cart()
     internal let defaults: UserDefaults = UserDefaults.standard
     internal var idToCartItem: CartDictionaryType
-    private let cartKey: String = "Cart"
+    private let cartKey: String
     var count: Int {
         return self.idToCartItem.keys.count
     }
+    private var cartObserver: Observable?
 
-    init() {
+    init(cartKey: String) {
+        self.cartKey = cartKey
         idToCartItem = CartDictionaryType()
+        self.loadDataFromUserDefaults()
+        NotificationCenter.default.addObserver(self, selector: #selector(synchronizeDataWithUserDefaults), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+
+    convenience init(carKey: String, cartItems: [Emoji]) {
+        self.init(cartKey: carKey)
+        for idx in 0..<cartItems.count {
+            self.push(emoji: cartItems[idx])
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+    }
+
+    func push(emoji: Emoji) {
+        idToCartItem[emoji.id] = CartItem(emoji: emoji)
+    }
+
+    func pop() -> CartItem? {
+        if idToCartItem.count <= 0 {
+            return nil
+        }
+        let key = Array(idToCartItem.keys)[0]
+        let cartItem: CartItem = idToCartItem[key]!
+        idToCartItem[key] = nil
+        return cartItem
+    }
+
+    func remove(at index: Int) {
+        let key = Array(idToCartItem.keys)[index]
+        self.idToCartItem[key] = nil
+    }
+
+    func remove(emoji: Emoji) {
+        idToCartItem[emoji.id] = nil
+    }
+
+    func clear() {
+        for key in idToCartItem.keys {
+            idToCartItem[key] = nil
+        }
+        NotificationCenter.default.post(name: .clearCart, object: nil)
+    }
+
+    internal func loadDataFromUserDefaults() {
         if let saveData = defaults.object(forKey: cartKey) as? Data {
             let propertyDecoder = PropertyListDecoder()
             do {
@@ -52,28 +103,9 @@ class Cart: CartType, CustomStringConvertible {
         }
     }
 
-    deinit {
+    @objc func synchronizeDataWithUserDefaults() {
         let data = try? PropertyListEncoder().encode(idToCartItem)
         defaults.set(data, forKey: cartKey)
-    }
-
-    func push(emojiId: UUID) {
-        idToCartItem[emojiId] = CartItem(emojiId: emojiId)
-    }
-
-    func pop(emojiId: UUID) {
-        idToCartItem[emojiId] = nil
-    }
-
-    func remove(at index: Int) {
-        let key = Array(idToCartItem.keys)[index]
-        self.idToCartItem[key] = nil
-    }
-
-    func clear() {
-        for key in idToCartItem.keys {
-            idToCartItem[key] = nil
-        }
     }
 
     subscript(index: Int) -> CartItem {
