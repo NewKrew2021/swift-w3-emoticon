@@ -10,8 +10,8 @@ import Foundation
 protocol EmojiListType {
     var list: [Emoji] { get }
     var count: Int { get }
-    mutating func append(_ newElement: Emoji)
-    mutating func remove(at: Int)
+    func append(_ newElement: Emoji)
+    func remove(at: Int)
     func findById(id: UUID) -> Emoji?
     func findByTitle(title: String) -> Emoji?
     subscript(index: Int) -> Emoji { get set }
@@ -31,7 +31,7 @@ struct Emoji {
     }
 }
 
-struct EmojiList: EmojiListType {
+class EmojiList: EmojiListType {
 
     var list: [Emoji]
     var count: Int {
@@ -46,11 +46,11 @@ struct EmojiList: EmojiListType {
         self.list = list
     }
 
-    mutating func append(_ newElement: Emoji) {
+    func append(_ newElement: Emoji) {
         list.append(newElement)
     }
 
-    mutating func remove(at: Int) {
+    func remove(at: Int) {
         list.remove(at: at)
     }
 
