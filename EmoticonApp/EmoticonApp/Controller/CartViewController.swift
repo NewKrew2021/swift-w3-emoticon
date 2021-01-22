@@ -13,6 +13,7 @@ class CartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(cartsChanged(_:)), name: .cartsChanged, object: nil)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,6 +40,13 @@ class CartViewController: UITableViewController {
     
     @IBAction func clearCart(_ sender: Any) {
         cartService.removeAll()
+    }
+    
+    @objc func cartsChanged(_ notification: Notification) {
         tableView.reloadData()
     }
+}
+
+extension Notification.Name {
+    static let cartsChanged = Notification.Name("cartsChanged")
 }

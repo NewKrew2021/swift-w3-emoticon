@@ -21,18 +21,22 @@ class CartServiceImpl: CartService {
     
     public func addProduct(product: Product) {
         products.append(product)
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
     }
     
     public func setProducts(products: [Product]) {
         self.products = products
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
     }
     
     public func removeProduct(at: Int) {
         products.remove(at: at)
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
     }
     
     public func removeAll() {
         products.removeAll()
+        NotificationCenter.default.post(name: .cartsChanged, object: nil)
     }
     
     subscript(index: Int) -> Product {
