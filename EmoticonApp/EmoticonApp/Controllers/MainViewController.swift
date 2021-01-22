@@ -18,13 +18,12 @@ class MainViewController: UIViewController {
     private var clickedItemId: UUID?
     private var cellHeight: CGFloat = CGFloat(100)
     private let numOfCell: CGFloat = 6.5
-    private var alert: UIAlertController
     private var cartObserver: Observable?
 
     init() {
-        alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(nibName: nil, bundle: nil)
-        self.cartObserver = CartObserver(self, selector: #selector(willPushToCart))
+        self.cartObserver = CartObserver(self)
+        self.cartObserver?.addObserver(name: .pushToCart, selector: #selector(willPushToCart))
     }
 
     deinit {
@@ -32,22 +31,14 @@ class MainViewController: UIViewController {
     }
 
     required init?(coder: NSCoder) {
-        alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
         super.init(coder: coder)
-        self.cartObserver = CartObserver(self, selector: #selector(willPushToCart))
+        self.cartObserver = CartObserver(self)
+        self.cartObserver?.addObserver(name: .pushToCart, selector: #selector(willPushToCart))
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         setUI()
-        let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
-            guard let strongSelf = self else { return }
-            if let id = strongSelf.clickedItemId {
-                strongSelf.clickAlertOK(id: id)
-            }
-        }
-        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
-        alert.addAction(UIAlertAction(title: "취소", style: .default, handler: nil))
     }
 
     private func setUI() {
@@ -118,6 +109,18 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController {
     @objc func willPushToCart(_ notification: Notification) {
+        
+        let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            if let id = strongSelf.clickedItemId {
+                strongSelf.clickAlertOK(id: id)
+            }
+        }
+        
+        let alert = UIAlertController(title: "알림", message: "구매하시겠습니까?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
+        alert.addAction(UIAlertAction(title: "취소", style: .default, handler: nil))
+        
         if let id = notification.object as? UUID {
             self.present(alert, animated: true, completion: nil)
             self.clickedItemId = id

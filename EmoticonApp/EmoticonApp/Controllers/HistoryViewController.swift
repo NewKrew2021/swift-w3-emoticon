@@ -10,19 +10,21 @@ import UIKit
 class HistoryViewController: UITableViewController {
 
     var cart: CartType = Cart.shared
-    private var alert: UIAlertController
     private let cellIdentifier: String = "historyCell"
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
+    private var cartObserver: Observable?
 
     init() {
-        alert = UIAlertController(title: "알림", message: "모두 삭제하시겠습니까?", preferredStyle: .alert)
         super.init(nibName: nil, bundle: nil)
+        self.cartObserver = CartObserver(self)
+        self.cartObserver?.addObserver(name: .clearCart, selector: #selector(reloadTable))
     }
 
     required init?(coder: NSCoder) {
-        alert = UIAlertController(title: "알림", message: "모두 삭제하시겠습니까?", preferredStyle: .alert)
         super.init(coder: coder)
+        self.cartObserver = CartObserver(self)
+        self.cartObserver?.addObserver(name: .clearCart, selector: #selector(reloadTable))
     }
 
     override func viewDidLoad() {
@@ -36,19 +38,25 @@ class HistoryViewController: UITableViewController {
     func setNavigationUI() {
         self.navigationItem.title = "History"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(checkBeforeClear))
-        let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
-            guard let strongSelf = self else { return }
-            strongSelf.cart.clear()
-            strongSelf.tableView.reloadData()
-        }
-        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
-        alert.addAction(UIAlertAction(title: "취소", style: .default, handler: nil))
     }
 
     @objc func checkBeforeClear() {
+        let okHandler: (UIAlertAction) -> Void = { [weak self] _ in
+            guard let strongSelf = self else { return }
+            strongSelf.cart.clear()
+        }
+        let alert: UIAlertController = UIAlertController(title: "알림", message: "모두 삭제하시겠습니까?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: okHandler))
+        alert.addAction(UIAlertAction(title: "취소", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
 
+    @objc func reloadTable(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cart.count
     }

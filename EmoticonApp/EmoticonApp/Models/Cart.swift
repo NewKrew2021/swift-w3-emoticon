@@ -74,6 +74,7 @@ class Cart: CartType, CustomStringConvertible {
         for key in idToCartItem.keys {
             idToCartItem[key] = nil
         }
+        NotificationCenter.default.post(name: .clearCart, object: nil)
     }
 
     subscript(index: Int) -> CartItem {
